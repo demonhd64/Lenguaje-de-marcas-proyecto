@@ -1,0 +1,27 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgba(134, 134, 134, 0.541);
+}
+nav {
+    background-color: rgb(19, 161, 19);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: ;
+    padding-left: ;
+    padding-right: ;
+}
+
+#Titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    margin-top: 10px;
+    margin-bottom: 0%;
+}
+#Subencabezado{
+    background-color: rgb(46, 204, 46);
+    margin-top: 1%;
+    padding-top: 25px;
+    padding-bottom: 3.5%;
+    text-align: center;
+}
