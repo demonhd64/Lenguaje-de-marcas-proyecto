@@ -3,19 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/Proyecto/Secundarias/css/desayuno.css">
+    <script src="/Proyecto/Secundarias/JS/desayuno.js"></script>
+    <title>Desayunos</title>
 </head>
 <body>
-    <div>
-        <img src="/Proyecto/Imagenes/Desayuno/tortitas-de-avena-con-platano_00000000_230215171241_447x600.jpg" alt="">
-        
-        <img src="" alt="">
-        
-        <img src="" alt="">
-        
-        <img src="" alt="">
-        
-        <img src="" alt="">
+    <div class="wrapper">
+      <div class="container">
+        <input type="checkbox" name="slide" id="c1" class="opcionCheck" onclick="MirarSiActivo(this)">
+        <label for="c1" class="card">
+            <div class="row">
+                <div class="icon">1</div>
+                <div class="description">
+                    <h4>Tortitas de avena con platano</h4>
+                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                </div>
+            </div>
+        </label>
+        <input type="checkbox" name="slide" id="c2" class="opcionCheck" onclick="MirarSiActivo(this)">
+        <label for="c2" class="card">
+            <div class="row">
+                <div class="icon">2</div>
+                <div class="description">
+                    <h4>Smothie de acai</h4>
+                    <p></p>
+                </div>
+            </div>
+        </label>
+        <input type="checkbox" name="slide" id="c3" class="opcionCheck" onclick="MirarSiActivo(this)">
+        <label for="c3" class="card">
+            <div class="row">
+                <div class="icon">3</div>
+                <div class="description">
+                    <h4>Tortitas de avena con platano</h4>
+                    <p></p>
+                </div>
+            </div>
+        </label>
+        <input type="checkbox" name="slide" id="c4" class="opcionCheck" onclick="MirarSiActivo(this)">
+        <label for="c4" class="card">
+            <div class="row">
+                <div class="icon">4</div>
+                <div class="description">
+                    <h4>Tortitas de avena con platano</h4>
+                    <p></p>
+                </div>
+            </div>
+        </label>
+        <input type="checkbox" name="slide" id="c5" class="opcionCheck" onclick="MirarSiActivo(this)">
+        <label for="c5" class="card">
+            <div class="row">
+                <div class="icon">5</div>
+                <div class="description">
+                    <h4>Tortitas de avena con platano</h4>
+                    <p></p>
+                </div>
+            </div>
+        </label>
+      </div>
+      <div class="atras" oneclick="goback()">←</div>  
     </div>
 </body>
 </html>

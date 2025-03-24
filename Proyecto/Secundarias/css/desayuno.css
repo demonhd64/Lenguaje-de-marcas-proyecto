@@ -1,4 +1,121 @@
-img{
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
     position: relative;
-    
+}
+.card {
+    width: 50%;
+    height: 400px;
+    border-radius: 2rem;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    position: relative; /* Añadido para el posicionamiento de los elementos internos */
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos dentro de la fila */
+    justify-content: center; /* Centra horizontalmente los elementos dentro de la fila */
+    width: 100%; /* Asegura que la fila ocupe todo el ancho de la card */
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px; /* Ancho fijo para el icono */
+    height: 50px; /* Altura fija para el icono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    flex-shrink: 0; /* Evita que el icono se reduzca al expandir la card */
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+.description p {
+    color: aqua;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 100%; /* MODIFICADO: Cambiado a 100% para que ocupe todo el ancho */
+}
+
+input:checked + label .description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NUEVO: Estilos para la vista de pantalla completa */
+.fullscreen {
+    position: fixed; /* NUEVO: Fijo para ocupar toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* NUEVO: Asegura que esté por encima de otros elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    background-size: cover; /* NUEVO: Asegura que la imagen de fondo cubra toda la pantalla */
+    background-position: center; /* NUEVO: Centra la imagen de fondo */
+}
+
+/* NUEVO: Estilos para la flecha de retroceso */
+.atras {
+    position: absolute; /* NUEVO: Posición absoluta para que esté en la esquina superior izquierda */
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    display: none; /* NUEVO: Oculto inicialmente */
+    cursor: pointer;
+}
+.card[for = "c1"] {
+    background-image: url(/Proyecto/Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
+}
+
+.card[for = "c2"] {
+    background-image: url(/Proyecto/Imagenes/Desayuno/smoothie-de-acai_00000000_230215171429_720x1080.jpg);
 }
