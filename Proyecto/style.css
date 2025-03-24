@@ -1,27 +1,95 @@
-body{
-    margin: 0%;
-    padding: 0%;
+header {
+    margin-top: 0px;
     background-color: rgba(134, 134, 134, 0.541);
-}
-nav {
-    background-color: rgb(19, 161, 19);
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: ;
-    padding-left: ;
-    padding-right: ;
+    padding-top: 12px;
+    padding-bottom: 9px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
 }
 
-#Titulo{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: xx-large;
-    margin-top: 10px;
-    margin-bottom: 0%;
+.lista {
+    position: relative;
+    display: inline-block;
 }
-#Subencabezado{
-    background-color: rgb(46, 204, 46);
-    margin-top: 1%;
-    padding-top: 25px;
-    padding-bottom: 3.5%;
-    text-align: center;
+
+button {
+    margin-left: 20px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    gap: 0.64rem;
+}
+
+button > div {
+    background: black;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+
+button:hover div:first-child {
+    transform: rotate(45deg);
+}
+
+button:hover div:nth-child(2) {
+    opacity: 0;
+}
+
+button:hover div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.desplegable {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: rgba(134, 134, 134, 0.541);
+    min-width: 160px;
+    width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.desplegable li {
+    padding: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.desplegable li:hover {
+    background-color: whitesmoke;
+}
+
+.lista:hover .desplegable {
+    display:block;
+}
+
+.lista .desplegable a {
+    text-decoration: none;
+    color: #333;
+    font-size: x-large;
+}
+
+#recetario-magico {
+    margin-left: 750px; 
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: whitesmoke;
 }
