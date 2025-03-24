@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>GastroLab</title>
 </head>
 
@@ -13,13 +13,16 @@
     <header>
         <nav>
             <div class="lista">
-                <button>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </button>
+                <input type="checkbox" id="toggle" class="toggle" />
+                <label for="toggle">
+                    <button>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </button>
+                </label>
                 <ul class="desplegable">
-                    <li><a href="">Desayunos</a></li>
+                    <li><a href="/Proyecto/Secundarias/html/desayunos.html">Desayunos</a></li>
                     <li><a href="">Comidas</a></li>
                     <li><a href="">Cenas</a></li>
                     <li><a href="">Carnes</a></li>
@@ -29,7 +32,7 @@
                 </ul>
             </div>
         </nav>
-        <div id="recetario-magico">Recetario Mágico</div>
+        <div id="recetario-magico"><p>Recetario Mágico</p></div>
     </header>
     <main></main>
 </body>

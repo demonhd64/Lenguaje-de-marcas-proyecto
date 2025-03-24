@@ -1,16 +1,24 @@
 header {
     margin-top: 0px;
     background-color: rgba(134, 134, 134, 0.541);
-    padding-top: 12px;
-    padding-bottom: 9px;
+    padding: 12px 20px; /* Ajusta el padding para un mejor espaciado */
     border-radius: 4px;
     display: flex;
-    align-items: center;
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacia los elementos */
 }
 
 .lista {
     position: relative;
     display: inline-block;
+}
+
+input[type="checkbox"] {
+    display: none; /* Oculta el checkbox */
+}
+
+label {
+    cursor: default; /* Cambia el cursor al pasar sobre el label */
 }
 
 button {
@@ -24,6 +32,7 @@ button {
     border-radius: 5px;
     background: transparent;
     gap: 0.64rem;
+    cursor: pointer;
 }
 
 button > div {
@@ -48,10 +57,10 @@ button:hover div:nth-child(3) {
 }
 
 .desplegable {
-    display: none;
+    display: none; /* Mantiene la lista oculta por defecto */
     position: absolute;
     left: 0;
-    background-color: rgba(134, 134, 134, 0.541);
+    background-color: rgb(139, 139, 139);
     min-width: 160px;
     width: 200px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -71,25 +80,28 @@ button:hover div:nth-child(3) {
     background-color: whitesmoke;
 }
 
-.lista:hover .desplegable {
-    display:block;
+.toggle:checked + label + .desplegable {
+    display: block; /* Muestra la lista cuando el checkbox está marcado */
 }
 
 .lista .desplegable a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-size: x-large;
 }
 
 #recetario-magico {
-    margin-left: 750px; 
     font-size: 2.5rem;
     color: #333;
     font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Permite que el div ocupe el espacio disponible */
+    display: flex; 
+    justify-content: center; 
 }
 
 body {
-    margin: 0%;
-    padding: 0%;
-    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(230, 230, 230);
 }
