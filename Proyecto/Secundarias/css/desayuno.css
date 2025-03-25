@@ -24,18 +24,20 @@ html, body {
 
 .card {
     width: 50%;
-    height: 400px;
+    height: 800px; 
+    max-height: 800px; 
     border-radius: 2rem;
     background-size: cover;
-    background-position: center;
     cursor: pointer;
     overflow: hidden;
     margin: 10px;
     display: flex;
     flex-direction: column;
     position: relative; /* Necesario para que los elementos hijos se posicionen en relación a la tarjeta */
-    transition: 0.3s ease;
+    transition:  0.3s ease;
 }
+
+
 .card > .row {
     color: white;
     display: flex; 
@@ -68,9 +70,14 @@ html, body {
     opacity: 1; /* Asegúrate de que la opacidad sea 1 para que el texto sea visible */
 }
 
-.description p {
+#elementos {
     color: aqua;
-    padding-top: 5px;
+    display: none;
+}
+
+#elementos ol li {
+    margin-bottom: 45px; /* Ajusta el valor según el espacio que desees */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .description h4 {
@@ -87,6 +94,10 @@ input {
 
 input:checked + label {
     width: 100%;
+    height: 100vh; /* Para asegurarte de que ocupa todo */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 input:checked + label .description {
@@ -94,13 +105,40 @@ input:checked + label .description {
     transform: translateY(0);
 }
 
-.card[for = "c1"] {
-    background-image: url(/Proyecto/Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
-    background-position: center 10%;
+input:checked + label .row #elementos {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute; /* Lo hace dependiente de la tarjeta */
+    top: 50%; /* Mueve el elemento desde el top de la tarjeta */
+    left: 0%;
+    right: 65%; /* Alinea desde el lado derecho */
+    bottom: 4.8%; /* Alinea desde el fondo */
 }
 
-.card[for = "c2"] {
+/* Imagen cuando el input NO está marcado */
+.card[for="c1"]:not(input:checked) {
+    background-image: url(/Proyecto/Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c2"]:not(input:checked) {
     background-image: url(/Proyecto/Imagenes/Desayuno/smoothie-de-acai_00000000_230215171429_720x1080.jpg);
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+/* Imagen cuando el input está marcado */
+input#c1:checked + label[for="c1"] {
+    background-image: url(/Proyecto/Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
+    background-position: center;
+    transition: background-image 1s ease;
+}
+
+input#c2:checked + label[for="c2"] {
+    background-image: url(/Proyecto/Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
+    background-position: center;
+    transition: background-image 1s ease;
 }
 
 header {
