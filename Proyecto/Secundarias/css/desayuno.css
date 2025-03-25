@@ -1,5 +1,4 @@
 html, body {
-    overflow: hidden; /* Evita el scrollbar */
     height: 100%; /* Asegura que el body tome toda la altura */
     margin: 0;
     padding: 0;
@@ -7,7 +6,7 @@ html, body {
 
 .wrapper {
     width: 100%;
-    min-height: 100vh; /* Evita problemas de altura */
+    min-height: 90%; /* Evita problemas de altura */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +18,9 @@ html, body {
     justify-content: start;
     align-items: center;
     position: relative;
+    width: 100%;
 }
+
 .card {
     width: 50%;
     height: 400px;
@@ -31,17 +32,12 @@ html, body {
     margin: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-    position: relative; 
+    position: relative; /* Necesario para que los elementos hijos se posicionen en relación a la tarjeta */
+    transition: 0.3s ease;
 }
-
 .card > .row {
     color: white;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
+    display: flex; 
     width: 100%; 
 }
 
@@ -60,24 +56,28 @@ html, body {
 }
 
 .card > .row > .description {
+    position: absolute; /* Posiciona la descripción de forma absoluta */
+    bottom: 0; /* Coloca la descripción en la parte inferior */
+    left: 0; /* Alinea la descripción a la izquierda */
+    right: 0; /* Alinea la descripción a la derecha */
+    padding: 10px; /* Espaciado interno */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semiopaco para mejorar la legibilidad */
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    height: 80px;
-    width: 100%;
-    opacity: 0;
-    transform: translateY(30px);
-    transition-delay: .3s;
-    transition: all .3s ease;
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    opacity: 1; /* Asegúrate de que la opacidad sea 1 para que el texto sea visible */
 }
+
 .description p {
     color: aqua;
     padding-top: 5px;
 }
 
 .description h4 {
+    color: white; /* Asegúrate de que el color del texto sea legible */
     text-transform: uppercase;
+    margin: 0; /* Asegúrate de que no haya margen adicional */
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input {
@@ -85,7 +85,7 @@ input {
 }
 
 input:checked + label {
-    width: 100%; 
+    width: 100%;
 }
 
 input:checked + label .description {
@@ -95,10 +95,15 @@ input:checked + label .description {
 
 .card[for = "c1"] {
     background-image: url(/Proyecto/Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
+    background-position: center 10%;
 }
 
 .card[for = "c2"] {
     background-image: url(/Proyecto/Imagenes/Desayuno/smoothie-de-acai_00000000_230215171429_720x1080.jpg);
+}
+
+nav{
+    height: 10%;
 }
 
 nav a#atras {
