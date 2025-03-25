@@ -2,6 +2,7 @@ html, body {
     height: 100%; /* Asegura que el body tome toda la altura */
     margin: 0;
     padding: 0;
+    background-color: whitesmoke;
 }
 
 .wrapper {
@@ -102,18 +103,25 @@ input:checked + label .description {
     background-image: url(/Proyecto/Imagenes/Desayuno/smoothie-de-acai_00000000_230215171429_720x1080.jpg);
 }
 
+header {
+    padding-top: 10px;
+    background-color: rgba(134, 134, 134, 0.541);
+    box-shadow: 1px 1px 5px;
+    border-radius: 10px;
+}
+
 nav{
-    height: 10%;
+    height: 110px;
 }
 
 nav a#atras {
-    background-color: #223;
-    color: white;
+    color:whitesmoke;
     display: block;
 }
 
 #atras {
     text-decoration: none;
     font-size: xxx-large;
-    color: black;
+    margin-top: 40px;
+    margin-left: 20px;
 }
