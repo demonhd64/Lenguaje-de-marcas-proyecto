@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('toggle');
+    const toggle = document.getElementById('activo');
     const desplegable = document.querySelector('.desplegable');
     const button = document.querySelector('button'); // Selecciona el botón
 
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Cerrar el desplegable si se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        const isClickInside = toggle.contains(event.target) || desplegable.contains(event.target) || button.contains(event.target);
-        if (!isClickInside) {
+    document.addEventListener('click'/* Comprueba si se hace la opcion click y ejecuta la funcion siguiente */, function(event) {
+        const isClickInside = toggle.contains(event.target) || desplegable.contains(event.target) || button.contains(event.target); // Opciones permitidas de hacer click dentro. (Los nombres son los de las constantes)
+        if (!isClickInside) { // Si se detecta el click en cualquier otro que no sea el de los permitidos se desmarca el checkbox y el display en none.
             toggle.checked = false; // Desmarcar el checkbox
             desplegable.style.display = 'none'; // Ocultar el desplegable
         }
