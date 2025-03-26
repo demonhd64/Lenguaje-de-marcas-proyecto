@@ -142,20 +142,30 @@ input#c2:checked + label[for="c2"] {
 }
 
 header {
-    margin-top: 0px;
     background-color: rgba(134, 134, 134, 0.541);
-    padding: 12px 20px; /* Ajusta el padding para un mejor espaciado */
     border-radius: 9px;
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: space-between; /* Espacia los elementos */
+    align-items: center;
+    justify-content: space-between; 
     box-shadow: 1px 1px 10px;
-    margin-bottom: 60px;
-    padding-bottom: 30px;
+    height: 120px; 
+    padding: 0 20px; 
+}
+
+nav {
+    width: 100%;
+    height: 100px; /* Asegúrate de que coincida con el header */
+}
+
+.menu-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    height: 100%;
 }
 
 .lista {
-    margin-left: 20px;
+    margin-left: 40px;
+    padding-bottom: 40px;
     position: relative;
     display: inline-block;
 }
@@ -165,7 +175,6 @@ label {
 }
 
 button {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     width: 3rem;
@@ -175,6 +184,8 @@ button {
     background: transparent;
     gap: 0.64rem;
     cursor: pointer;
+    position: static;
+    align-self: center;  
 }
 
 button > div {
@@ -251,4 +262,12 @@ button:hover div:nth-child(3) {
 .desplegable li a:last-child {
     padding-right: 30px;
     margin-left: 10px;
+}
+
+#recetario-magico {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 700px;
 }
