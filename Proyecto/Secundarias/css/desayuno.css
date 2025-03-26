@@ -158,7 +158,6 @@ header {
     margin-left: 20px;
     position: relative;
     display: inline-block;
-
 }
 
 label {
@@ -204,7 +203,7 @@ button:hover div:nth-child(3) {
     display: none; /* Mantiene la lista oculta por defecto */
     position: absolute;
     left: 0;
-    background-color: rgb(139, 139, 139);
+    background-color: rgba(139, 139, 139);
     min-width: 160px;
     width: auto;
     box-shadow: 1px 1px 3px; 
@@ -239,4 +238,17 @@ button:hover div:nth-child(3) {
 .desplegable li:hover {
     background-color: rgb(48, 48, 48);
     border-radius: 10px;
+}
+
+.desplegable li a {
+    margin-left: 30px;
+}
+
+.desplegable li a:first-child {
+    margin-left: -25px;
+}
+
+.desplegable li a:last-child {
+    padding-right: 30px;
+    margin-left: 10px;
 }
