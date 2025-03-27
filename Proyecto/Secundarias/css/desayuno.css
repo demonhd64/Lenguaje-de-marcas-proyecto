@@ -35,8 +35,6 @@ html, body {
     transition:  0.3s ease;
 }
 
-
-
 .card > .row {
     color: white;
     display: flex; 
@@ -69,21 +67,30 @@ html, body {
     opacity: 1; /* Asegúrate de que la opacidad sea 1 para que el texto sea visible */
 }
 
+#pasoSelector{
+    height: 10%;
+    transform: translateX(100%) translateY(38px);
+}
+
+#Texto-De-Opcion {
+    display: flex;
+    color: aqua;
+    margin-left: -32%;
+    margin-right: 15px;
+    transform: translateY(90%); /* Ajusta solo la posición vertical */
+}
+
 .elementos {
     color: aqua;
     display: none;
 }
 
-.elementos ol li {
-    margin-bottom: 35%; /* Ajusta el valor según el espacio que desees */
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 .elementos p {
     margin-bottom: 35%;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    transform: translateX(25vh);
+    transform: translateX(30vh);
 }
 
 .elementos-ingredientes {

@@ -45,3 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+document.getElementById('pasoSelector').addEventListener('change', function() {
+    const textoPaso = document.getElementById('Texto-De-Opcion');
+    const pasoSeleccionado = this.value;
+
+    if (pasoSeleccionado === '1') {
+        textoPaso.textContent = 'Texto de receta';
+    } else if (pasoSeleccionado === '2') {
+        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
+    } else {
+        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
+    }
+});
