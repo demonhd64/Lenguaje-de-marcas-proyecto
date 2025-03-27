@@ -67,12 +67,12 @@ html, body {
     opacity: 1; /* Asegúrate de que la opacidad sea 1 para que el texto sea visible */
 }
 
-#pasoSelector{
+.pasoSelector{
     height: 10%;
     transform: translateX(100%) translateY(38px);
 }
 
-#Texto-De-Opcion {
+#Texto-De-Opcion, #Texto-De-Opcion2, #Texto-De-Opcion3, #Texto-De-Opcion4, #Texto-De-Opcion5 {
     display: flex;
     color: aqua;
     margin-left: -32%;

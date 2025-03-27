@@ -11,6 +11,17 @@ function MirarSiActivo(el) {
         // Mostrar solo la card que se marque
         el.nextElementSibling.style.display = 'flex'; 
     } else {
+        // Reiniciar el selector y limpiar el texto
+        const pasoSelector = el.nextElementSibling.querySelector('.pasoSelector');
+        const textoPaso = el.nextElementSibling.querySelector('.texto');
+        
+        if (pasoSelector) {
+            pasoSelector.value = ""; // Reiniciar a la opción por defecto
+        }
+        if (textoPaso) {
+            textoPaso.textContent = ''; // Limpiar el texto
+        }
+
         // Si están todas desmarcadas, que aparezcan todas
         let AlgunaMarcada = Array.from(listaDeChecks).some(check => check.checked);
         if (!AlgunaMarcada) {
@@ -46,9 +57,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Para cuadro 1
 
 document.getElementById('pasoSelector').addEventListener('change', function() {
     const textoPaso = document.getElementById('Texto-De-Opcion');
+    const pasoSeleccionado = this.value;
+
+    if (pasoSeleccionado === '1') {
+        textoPaso.textContent = 'Texto de receta';
+    } else if (pasoSeleccionado === '2') {
+        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
+    } else {
+        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
+    }
+});
+
+//Para cuadro 2
+
+document.getElementById('pasoSelector2').addEventListener('change', function() {
+    const textoPaso = document.getElementById('Texto-De-Opcion2');
     const pasoSeleccionado = this.value;
 
     if (pasoSeleccionado === '1') {
