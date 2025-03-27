@@ -7,7 +7,6 @@ html, body {
 
 .wrapper {
     width: 100%;
-    min-height: 90%; /* Evita problemas de altura */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,8 +23,7 @@ html, body {
 
 .card {
     width: 50%;
-    height: 800px; 
-    max-height: 800px; 
+    height: 80vh;
     border-radius: 2rem;
     background-size: cover;
     cursor: pointer;
@@ -36,6 +34,7 @@ html, body {
     position: relative; /* Necesario para que los elementos hijos se posicionen en relación a la tarjeta */
     transition:  0.3s ease;
 }
+
 
 
 .card > .row {
@@ -70,14 +69,38 @@ html, body {
     opacity: 1; /* Asegúrate de que la opacidad sea 1 para que el texto sea visible */
 }
 
-#elementos {
+.elementos {
     color: aqua;
     display: none;
 }
 
-#elementos ol li {
-    margin-bottom: 45px; /* Ajusta el valor según el espacio que desees */
+.elementos ol li {
+    margin-bottom: 35%; /* Ajusta el valor según el espacio que desees */
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.elementos p {
+    margin-bottom: 35%;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translateX(25vh);
+}
+
+.elementos-ingredientes {
+    color: aqua;
+    display: none;
+}
+
+.elementos-ingredientes ol li {
+    margin-bottom: 25%; /* Ajusta el valor según el espacio que desees */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.elementos-ingredientes p {
+    text-transform: uppercase;
+    margin-bottom: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translateX(25vh);
 }
 
 .description h4 {
@@ -102,18 +125,32 @@ input:checked + label {
 
 input:checked + label .description {
     opacity: 1;
-    transform: translateY(0);
 }
 
-input:checked + label .row #elementos {
+input:checked + label .row .elementos {
     display: flex;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute; /* Lo hace dependiente de la tarjeta */
     top: 50%; /* Mueve el elemento desde el top de la tarjeta */
     left: 0%;
     right: 65%; /* Alinea desde el lado derecho */
-    bottom: 4.8%; /* Alinea desde el fondo */
+    bottom: 5.2%; /* Alinea desde el fondo */
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
 }
+
+input:checked + label .row .elementos-ingredientes {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute; /* Lo hace dependiente de la tarjeta */
+    top: 50%; /* Mueve el elemento desde el top de la tarjeta */
+    left: 65%;
+    right: 0%; /* Alinea desde el lado derecho */
+    bottom: 5.2%; /* Alinea desde el fondo */
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+}
+
 
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
@@ -133,12 +170,34 @@ input#c1:checked + label[for="c1"] {
     background-image: url(/Proyecto/Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
     background-position: center;
     transition: background-image 1s ease;
+    height: 80vh;
 }
 
 input#c2:checked + label[for="c2"] {
     background-image: url(/Proyecto/Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c3:checked + label[for="c3"] {
+    background-image: url();
     background-position: center;
     transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c4:checked + label[for="c4"] {
+    background-image: url();
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c5:checked + label[for="c5"] {
+    background-image: url();
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
 }
 
 header {
