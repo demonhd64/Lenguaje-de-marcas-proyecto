@@ -68,21 +68,38 @@ html, body {
 }
 
 .pasoSelector{
-    height: 10%;
-    transform: translateX(100%) translateY(38px);
+    height: 5%;
+    position: absolute;
+    top: 13%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
-
 #Texto-De-Opcion, #Texto-De-Opcion2, #Texto-De-Opcion3, #Texto-De-Opcion4, #Texto-De-Opcion5 {
     display: flex;
+    position: absolute;
     color: aqua;
-    margin-left: -32%;
-    margin-right: 15px;
-    transform: translateY(90%); /* Ajusta solo la posición vertical */
+    transform: translate(0,90px);
+    background-color: red;
+
 }
 
 .elementos {
     color: aqua;
     display: none;
+    position: relative;
+}
+
+
+    
+.elementos p:first-child{
+    margin-bottom: 35%;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 2.5%;
+    left: 47%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -90,25 +107,40 @@ html, body {
     margin-bottom: 35%;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    transform: translateX(30vh);
 }
 
 .elementos-ingredientes {
     color: aqua;
     display: none;
+    position: relative;
+}
+
+.elementos-ingredientes ol {
+    margin-top: 5vh;
 }
 
 .elementos-ingredientes ol li {
-    margin-bottom: 25%; /* Ajusta el valor según el espacio que desees */
+    margin-bottom: 65%; /* Ajusta el valor según el espacio que desees */
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .elementos-ingredientes p {
     text-transform: uppercase;
     margin-bottom: 35%;
     font-family: Arial, Helvetica, sans-serif;
-    transform: translateX(25vh);
 }
+
+.elementos-ingredientes p:first-child{
+    margin-bottom: 35%;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 2.5%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+
 
 .description h4 {
     color: white; /* Asegúrate de que el color del texto sea legible */
