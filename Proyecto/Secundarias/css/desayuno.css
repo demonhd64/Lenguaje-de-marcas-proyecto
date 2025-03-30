@@ -35,6 +35,20 @@ html, body {
     transition:  0.3s ease;
 }
 
+/* Clase para cards en estado filtrado (o inactivo) */
+.card.limite {
+    width: 50%;
+    max-width: 500px; /* límite máximo */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Clase para la card activa (al hacer click) */
+  .card.activa {
+    width: 95%;
+    max-width: none; /* quita el límite */
+  }
+
 .card > .row {
     color: white;
     display: flex; 
@@ -89,6 +103,7 @@ html, body {
     color: aqua;
     display: none;
     position: relative;
+    transform: translateY(15px);
 }
 
 
@@ -113,6 +128,7 @@ html, body {
     color: aqua;
     display: none;
     position: relative;
+    transform: translateY(15px);
 }
 
 .elementos-ingredientes ul {

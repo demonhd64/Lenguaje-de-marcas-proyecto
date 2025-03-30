@@ -2,22 +2,31 @@ import { ingredientesParaFiltro } from "../../Almacenamiento/datos.js";
 
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
+    if (ingredientesParaFiltro.length === 0) {
+        return;
+    }
+    
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
-        // Obtener los ingredientes de la tarjeta
         const ingredientesCard = Array.from(card.querySelectorAll(".elementos-ingredientes ul li"))
-            .map(li => li.textContent.toLowerCase().trim());
+            .map(li => li.textContent.toLowerCase());
 
-        // Verificar si algún ingrediente está en la lista de filtros
-        const mostrarPorIngredientes = ingredientesParaFiltro.some(ingrediente => 
-            ingredientesCard.includes(ingrediente.toLowerCase().trim())
+        const mostrarPorIngredientes = ingredientesParaFiltro.some(filtro =>
+            ingredientesCard.some(ingrediente => ingrediente.includes(filtro.toLowerCase()))
         );
-
-        // Mostrar u ocultar la tarjeta según el filtro
-        card.style.visibility = mostrarPorIngredientes ? "hidden" : "visible";
+          
+        if(mostrarPorIngredientes){
+            card.style.display = "flex";
+            card.classList.add("limite");  // Aplica límite en estado filtrado
+        } else {
+            card.style.display = "none";
+            card.classList.remove("limite");
+        }
     });
 }
+
+
 document.addEventListener('DOMContentLoaded',function(){
     aplicarFiltros()
 })
@@ -27,36 +36,36 @@ function MirarSiActivo(el) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
     
-    // Si el checkbox que se clickeó ya está marcado
     if (el.checked) {
-        // Ocultar todas las cards
         cards.forEach(function(card) {
-            card.style.display = 'none'; 
+            card.style.display = 'none';
+            card.classList.remove("activa");
         });
-        // Mostrar solo la card que se marque
-        el.nextElementSibling.style.display = 'flex'; 
+        el.nextElementSibling.style.display = 'flex';
+        el.nextElementSibling.classList.add("activa"); // Activa la card para que ocupe el 100%
     } else {
-        // Reiniciar el selector y limpiar el texto
         const pasoSelector = el.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = el.nextElementSibling.querySelector('.texto');
         
         if (pasoSelector) {
-            pasoSelector.value = ""; // Reiniciar a la opción por defecto
+            pasoSelector.value = "";
         }
         if (textoPaso) {
-            textoPaso.textContent = ''; // Limpiar el texto
+            textoPaso.textContent = '';
         }
 
-        // Si están todas desmarcadas, que aparezcan todas las cards
         const AlgunaMarcada = Array.from(listaDeChecks).some(check => check.checked);
         if (!AlgunaMarcada) {
             cards.forEach(function(card) {
-                card.style.display = 'flex'; 
+                card.style.display = 'flex';
+                card.classList.remove("activa");
+                card.classList.add("limite");
             });
         }
+        aplicarFiltros();
     }
-    aplicarFiltros()
 }
+
 
 // Exponemos la función al ámbito global para que pueda ser llamada desde el HTML inline
 window.MirarSiActivo = MirarSiActivo;

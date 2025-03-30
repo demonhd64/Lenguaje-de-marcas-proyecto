@@ -1,9 +1,7 @@
 //Ejemplos de cada dato sacado.
 
 let ingredientesParaFiltro = [
-    'tomate',
-    'plátano',
-    'lechuga'
+    'plátano'
 ]
 
 export {ingredientesParaFiltro};
