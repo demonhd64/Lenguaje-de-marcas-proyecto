@@ -1,5 +1,9 @@
 //Ejemplos de cada dato sacado.
-
-let ingredientesParaFiltro = []
-
+/*
+let ingredientesParaFiltro = [
+    'tomate',
+    'plátano',
+    'lechuga'
+]
+*/
 export {ingredientesParaFiltro};
