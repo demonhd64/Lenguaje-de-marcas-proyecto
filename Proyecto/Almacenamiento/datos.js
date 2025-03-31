@@ -2,4 +2,6 @@
 
 let ingredientesParaFiltro = []
 
-export {ingredientesParaFiltro};
+let ingredientesParaFiltro_export = ingredientesParaFiltro.map(ingrediente => ingrediente.toLowerCase())
+
+export {ingredientesParaFiltro_export};

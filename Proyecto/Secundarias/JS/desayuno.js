@@ -2,34 +2,44 @@ import { ingredientesParaFiltro } from "../../Almacenamiento/datos.js";
 
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
-    if (ingredientesParaFiltro.length === 0) {
-        return;
-    }
-    
     const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
+    let NumeroVisible = 0; // Contador para las tarjetas visibles
+    //Bucle que itera por cada cards las cuales son todas las card, sacando los argumentos card que es la card actual y un index para la numeracion
+    cards.forEach((card, index) => {
+        //Saca todas las palabras en los li de los ingredientes en minusculas para comprobarlos y que sea más sencillo su uso.
         const ingredientesCard = Array.from(card.querySelectorAll(".elementos-ingredientes ul li"))
             .map(li => li.textContent.toLowerCase());
-
-        const mostrarPorIngredientes = ingredientesParaFiltro.some(filtro =>
+        
+        // Comprobador de existencia de filtro (false no filtro True hay filtro)
+        const mostrarPorIngredientes = ingredientesParaFiltro.length > 0 && ingredientesParaFiltro.some(filtro =>
             ingredientesCard.some(ingrediente => ingrediente.includes(filtro.toLowerCase()))
         );
-          
-        if(mostrarPorIngredientes){
+        // Si el comprobador es True ejecuta el codigo y mira si se ha de visibilizar la card o si la lista de datos es 0 ya que si no hay datos aunque se muestren todos se recorren las cards
+        if (mostrarPorIngredientes || ingredientesParaFiltro.length === 0) {
             card.style.display = "flex";
             card.classList.add("limite");  // Aplica límite en estado filtrado
+            NumeroVisible++; // Incrementa el contador de tarjetas visibles
         } else {
             card.style.display = "none";
             card.classList.remove("limite");
         }
+                
+        // Actualizar el icono correspondiente
+        const iconElement = document.querySelector(`#icon${index + 1}`); // Selecciona el icono correspondiente //Hace la busqueda de la class icon con el index el cual empieza en 0 y le suma 1 para que empiece en 1 en cada ciclo
+        if (iconElement) {
+            // Asigna el número solo si la tarjeta está visible
+            if (mostrarPorIngredientes || ingredientesParaFiltro.length === 0) {
+                iconElement.textContent = NumeroVisible; // Asigna el número de la tarjeta visible
+            } else {
+                iconElement.textContent = ''; // Limpia el contenido si no está visible
+            }
+        }
     });
 }
 
-
-document.addEventListener('DOMContentLoaded',function(){
-    aplicarFiltros()
-})
+document.addEventListener('DOMContentLoaded', function() {
+    aplicarFiltros();
+});
 
 // Función para controlar la visibilidad de las cards
 function MirarSiActivo(el) {
