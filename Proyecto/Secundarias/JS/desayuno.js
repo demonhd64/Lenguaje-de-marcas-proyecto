@@ -1,5 +1,5 @@
-import { ingredientesParaFiltro } from "../../Almacenamiento/datos.js";
-
+import { ingredientesParaFiltro_export } from "../../Almacenamiento/datos.js";
+ 
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -9,13 +9,13 @@ function aplicarFiltros() {
         //Saca todas las palabras en los li de los ingredientes en minusculas para comprobarlos y que sea más sencillo su uso.
         const ingredientesCard = Array.from(card.querySelectorAll(".elementos-ingredientes ul li"))
             .map(li => li.textContent.toLowerCase());
-        
+       
         // Comprobador de existencia de filtro (false no filtro True hay filtro)
-        const mostrarPorIngredientes = ingredientesParaFiltro.length > 0 && ingredientesParaFiltro.some(filtro =>
+        const mostrarPorIngredientes = ingredientesParaFiltro_export.length > 0 && ingredientesParaFiltro_export.some(filtro =>
             ingredientesCard.some(ingrediente => ingrediente.includes(filtro.toLowerCase()))
         );
         // Si el comprobador es True ejecuta el codigo y mira si se ha de visibilizar la card o si la lista de datos es 0 ya que si no hay datos aunque se muestren todos se recorren las cards
-        if (mostrarPorIngredientes || ingredientesParaFiltro.length === 0) {
+        if (mostrarPorIngredientes || ingredientesParaFiltro_export.length === 0) {
             card.style.display = "flex";
             card.classList.add("limite");  // Aplica límite en estado filtrado
             NumeroVisible++; // Incrementa el contador de tarjetas visibles
@@ -23,12 +23,12 @@ function aplicarFiltros() {
             card.style.display = "none";
             card.classList.remove("limite");
         }
-                
+               
         // Actualizar el icono correspondiente
         const iconElement = document.querySelector(`#icon${index + 1}`); // Selecciona el icono correspondiente //Hace la busqueda de la class icon con el index el cual empieza en 0 y le suma 1 para que empiece en 1 en cada ciclo
         if (iconElement) {
             // Asigna el número solo si la tarjeta está visible
-            if (mostrarPorIngredientes || ingredientesParaFiltro.length === 0) {
+            if (mostrarPorIngredientes || ingredientesParaFiltro_export.length === 0) {
                 iconElement.textContent = NumeroVisible; // Asigna el número de la tarjeta visible
             } else {
                 iconElement.textContent = ''; // Limpia el contenido si no está visible
@@ -36,16 +36,16 @@ function aplicarFiltros() {
         }
     });
 }
-
+ 
 document.addEventListener('DOMContentLoaded', function() {
     aplicarFiltros();
 });
-
+ 
 // Función para controlar la visibilidad de las cards
 function MirarSiActivo(el) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
-    
+   
     if (el.checked) {
         cards.forEach(function(card) {
             card.style.display = 'none';
@@ -56,14 +56,14 @@ function MirarSiActivo(el) {
     } else {
         const pasoSelector = el.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = el.nextElementSibling.querySelector('.texto');
-        
+       
         if (pasoSelector) {
             pasoSelector.value = "";
         }
         if (textoPaso) {
             textoPaso.textContent = '';
         }
-
+ 
         const AlgunaMarcada = Array.from(listaDeChecks).some(check => check.checked);
         if (!AlgunaMarcada) {
             cards.forEach(function(card) {
@@ -75,16 +75,16 @@ function MirarSiActivo(el) {
         aplicarFiltros();
     }
 }
-
-
+ 
+ 
 // Exponemos la función al ámbito global para que pueda ser llamada desde el HTML inline
 window.MirarSiActivo = MirarSiActivo;
-
+ 
 document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.getElementById('activo');
     const desplegable = document.querySelector('.desplegable');
     const button = document.querySelector('button'); // Selecciona el botón
-
+ 
     // Cambia el estado del checkbox y muestra/oculta el desplegable al hacer clic en el botón
     button.addEventListener('click', function() {
         toggle.checked = !toggle.checked; // Cambia el estado del checkbox
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             desplegable.style.display = 'none';
         }
     });
-
+ 
     // Cerrar el desplegable si se hace clic fuera de él
     document.addEventListener('click', function(event) {
         const isClickInside = toggle.contains(event.target) || desplegable.contains(event.target) || button.contains(event.target);
@@ -104,14 +104,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
+ 
 //Se tienen que copiar y pegar los textos para que tengan pasos de linea
-
+ 
 // Para cuadro 1: Manejo del select
 document.getElementById('pasoSelector').addEventListener('change', function() {
     const textoPaso = document.getElementById('Texto-De-Opcion');
     const pasoSeleccionado = this.value;
-
+ 
     if (pasoSeleccionado === '1') {
         textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
     } else if (pasoSeleccionado === '2') {
@@ -128,12 +128,12 @@ document.getElementById('pasoSelector').addEventListener('change', function() {
         textoPaso.textContent = ''; // Limpiar el texto si no hay selección
     }
 });
-
+ 
 // Para cuadro 2: Manejo del select
 document.getElementById('pasoSelector2').addEventListener('change', function() {
     const textoPaso = document.getElementById('Texto-De-Opcion2');
     const pasoSeleccionado = this.value;
-    
+   
     if (pasoSeleccionado === '1') {
         textoPaso.textContent = '';
     } else if (pasoSeleccionado === '2') {
@@ -142,3 +142,4 @@ document.getElementById('pasoSelector2').addEventListener('change', function() {
         textoPaso.textContent = ''; // Limpiar el texto si no hay selección
     }
 });
+ 
