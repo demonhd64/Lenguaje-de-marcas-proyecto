@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//Se tienen que copiar y pegar los textos para que tengan pasos de linea
+
 // Para cuadro 1: Manejo del select
 document.getElementById('pasoSelector').addEventListener('change', function() {
     const textoPaso = document.getElementById('Texto-De-Opcion');
@@ -121,9 +123,9 @@ document.getElementById('pasoSelector').addEventListener('change', function() {
 document.getElementById('pasoSelector2').addEventListener('change', function() {
     const textoPaso = document.getElementById('Texto-De-Opcion2');
     const pasoSeleccionado = this.value;
-
+    
     if (pasoSeleccionado === '1') {
-        textoPaso.textContent = 'Texto de receta';
+        textoPaso.textContent = '';
     } else if (pasoSeleccionado === '2') {
         textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
     } else {

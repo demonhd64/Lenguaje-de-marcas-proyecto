@@ -38,16 +38,12 @@ html, body {
 /* Clase para cards en estado filtrado (o inactivo) */
 .card.limite {
     width: 50%;
-    max-width: 500px; /* límite máximo */
-    margin-left: auto;
-    margin-right: auto;
-  }
+}
   
   /* Clase para la card activa (al hacer click) */
-  .card.activa {
+.card.activa {
     width: 95%;
-    max-width: none; /* quita el límite */
-  }
+}
 
 .card > .row {
     color: white;
@@ -71,39 +67,39 @@ html, body {
 }
 
 .card > .row > .description {
-    position: absolute; /* Posiciona la descripción de forma absoluta */
-    bottom: 0; /* Coloca la descripción en la parte inferior */
-    left: 0; /* Alinea la descripción a la izquierda */
-    right: 0; /* Alinea la descripción a la derecha */
-    padding: 10px; /* Espaciado interno */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semiopaco para mejorar la legibilidad */
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    padding: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
-    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-    opacity: 1; /* Asegúrate de que la opacidad sea 1 para que el texto sea visible */
+    flex-direction: column; 
+    opacity: 1; 
 }
 
 .pasoSelector{
-    height: 5%;
+    height: 7%;
     position: absolute;
-    top: 13%;
+    top: 14%;
     left: 47%;
     transform: translate(-50%, -50%);
     text-align: center;
+    
 }
-#Texto-De-Opcion, #Texto-De-Opcion2, #Texto-De-Opcion3, #Texto-De-Opcion4, #Texto-De-Opcion5 {
+.texto {
     display: flex;
-    position: absolute;
     color: aqua;
-    transform: translate(0,90px);
+    position: absolute;
+    transform: translate(0,65px);
     text-align: center;
-
+    background-color: red;
 }
 
 .elementos {
     color: aqua;
     display: none;
     position: relative;
-    transform: translateY(15px);
 }
 
 
@@ -118,17 +114,19 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
-
-.elementos p {
-    margin-bottom: 35%;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .elementos-ingredientes {
     color: aqua;
     display: none;
-    position: relative;
-    transform: translateY(15px);
+    overflow-y: auto;
+}
+
+.elementos-ingredientes::-webkit-scrollbar{
+    width: 10px;
+}
+
+.elementos-ingredientes::-webkit-scrollbar-thumb{
+    background-color: rgb(109, 109, 109);
+    border-radius: 0 0 0 55px;
 }
 
 .elementos-ingredientes ul {
@@ -157,6 +155,9 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+.elementos-ingredientes ul li:last-child{
+    padding-bottom: 5%;
+}
 
 .description h4 {
     color: white; /* Asegúrate de que el color del texto sea legible */
@@ -176,6 +177,8 @@ input:checked + label {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    margin-left: 2.29%;
+    margin-top: 1.5%;
 }
 
 input:checked + label .description {
@@ -190,7 +193,6 @@ input:checked + label .row .elementos {
     left: 0%;
     right: 65%; /* Alinea desde el lado derecho */
     bottom: 5.2%; /* Alinea desde el fondo */
-    border-top-left-radius: 55px;
     border-top-right-radius: 55px;
 }
 
@@ -203,7 +205,6 @@ input:checked + label .row .elementos-ingredientes {
     right: 0%; /* Alinea desde el lado derecho */
     bottom: 5.2%; /* Alinea desde el fondo */
     border-top-left-radius: 55px;
-    border-top-right-radius: 55px;
 }
 
 
