@@ -143,3 +143,16 @@ document.getElementById('pasoSelector2').addEventListener('change', function() {
     }
 });
  
+
+//Para el media controls: (si la resolucion es igual o menor a 768 use la forma vertical)
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.card').forEach(card => {
+            card.classList.add('mobile-view');
+        });
+    } else {
+        document.querySelectorAll('.card').forEach(card => {
+            card.classList.remove('mobile-view');
+        });
+    }
+});
