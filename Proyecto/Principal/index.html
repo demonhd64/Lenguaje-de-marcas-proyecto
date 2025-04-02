@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>GastroLab</title>
@@ -11,9 +12,10 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">GastroLab</a>
             <div class="lista">
-                <input type="checkbox" id="activo"/>
+                <input type="checkbox" id="activo" />
                 <label for="activo">
                     <button>
                         <div></div>
@@ -23,31 +25,36 @@
                 </label>
                 <ul class="desplegable">
                     <li><a href="/Proyecto/Secundarias/html/desayunos.html">Desayunos</a></li>
-                    <li><a href="">Comidas</a></li>
-                    <li><a href="">Cenas</a></li>
-                    <li><a href="">Carnes</a></li>
-                    <li><a href="">Pescados</a></li>
-                    <li><a href="">Recetas Veganas</a></li>
-                    <li><a href="">Postres</a></li>
+                    <li><a href="#">Comidas</a></li>
+                    <li><a href="#">Cenas</a></li>
+                    <li><a href="#">Carnes</a></li>
+                    <li><a href="#">Pescados</a></li>
+                    <li><a href="#">Recetas Veganas</a></li>
+                    <li><a href="#">Postres</a></li>
                 </ul>
             </div>
         </nav>
-        <div id="recetario-magico"><p>Recetario Mágico</p></div>
+        <div id="recetario-magico">
+            <p>Recetario Mágico</p>
+        </div>
     </header>
-    <main>
-        <div id="prin"> <!-- Div principal, es como una hoja de papel -->
-            <div id="Receta_adecuada"><button><a href="../Secundarias/html/Formulario.html">TU RECETA IDEAL</a></button></div>
+    <main class="container">
+        <div id="prin">
+            <div id="Receta_adecuada">
+                <button>
+                    <a href="../Secundarias/html/Formulario.html">TU RECETA IDEAL</a>
+                </button>
+            </div>
         </div>
     </main>
 
     <footer id="info">
-
+        <p>&copy; 2023 GastroLab. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
-
-<!--
-Aplicación de recetas: Crea una página donde los usuarios puedan buscar, compartir y guardar recetas.
-Puedes incluir una función de búsqueda, categorías y la opción de dejar comentarios
--->

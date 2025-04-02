@@ -8,15 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
         toggle.checked = !toggle.checked; // Cambia el estado del checkbox
         if (toggle.checked) {
             desplegable.style.display = 'block';
-        } else {
+ } else {
             desplegable.style.display = 'none';
         }
     });
 
     // Cerrar el desplegable si se hace clic fuera de él
-    document.addEventListener('click'/* Comprueba si se hace la opcion click y ejecuta la funcion siguiente */, function(event) {
-        const isClickInside = toggle.contains(event.target) || desplegable.contains(event.target) || button.contains(event.target); // Opciones permitidas de hacer click dentro. (Los nombres son los de las constantes)
-        if (!isClickInside) { // Si se detecta el click en cualquier otro que no sea el de los permitidos se desmarca el checkbox y el display en none.
+    document.addEventListener('click', function(event) {
+        const isClickInside = toggle.contains(event.target) || desplegable.contains(event.target) || button.contains(event.target);
+        if (!isClickInside) {
             toggle.checked = false; // Desmarcar el checkbox
             desplegable.style.display = 'none'; // Ocultar el desplegable
         }
