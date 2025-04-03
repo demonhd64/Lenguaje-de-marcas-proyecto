@@ -10,6 +10,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 100px;
 }
 
 .container {
@@ -33,6 +34,8 @@ html, body {
     flex-direction: column;
     position: relative; /* Necesario para que los elementos hijos se posicionen en relación a la tarjeta */
     transition:  0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    will-change: transform, opacity;
 }
 
 /* Clase para cards en estado filtrado (o inactivo) */
@@ -43,6 +46,15 @@ html, body {
   /* Clase para la card activa (al hacer click) */
 .card.activa {
     width: 95%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 2; /* Asegura que la card activa esté sobre las demás */
+}
+
+/* Transición para ocultar las cards inactivas */
+.card:not(.activa) {
+    transition: all 0.3s ease-in-out, opacity 0.2s linear;
+    opacity: 1;
+    visibility: visible;
 }
 
 .card > .row {
@@ -210,27 +222,27 @@ input:checked + label .row .elementos-ingredientes {
 
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
-    background-image: url(/Proyecto/Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
+    background-image: url(../../Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c2"]:not(input:checked) {
-    background-image: url(/Proyecto/Imagenes/Desayuno/smoothie-de-acai_00000000_230215171429_720x1080.jpg);
+    background-image: url(../../Imagenes/Desayuno/smoothie-de-acai_00000000_230215171429_720x1080.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 /* Imagen cuando el input está marcado */
 input#c1:checked + label[for="c1"] {
-    background-image: url(/Proyecto/Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
+    background-image: url(../../Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c2:checked + label[for="c2"] {
-    background-image: url(/Proyecto/Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
+    background-image: url(../..//Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
     transition: background-image 1s ease;
     height: 80vh;
 }
@@ -371,3 +383,33 @@ button:hover div:nth-child(3) {
     margin-left: 10px;
 }
 
+
+/*Media controls para las diferentes resoluciones*/ 
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .card {
+      width: 90%;
+      height: 60vh;
+      margin: 10px 0;
+    }
+    
+    .card.activa {
+      width: 95% ;
+      height: 80vh;
+    }
+    
+    input:checked + label {
+      margin-left: 0;
+      margin-top: 0;
+    }
+}
+
+
+.card.mobile-view {
+    width: 100% ;
+    margin: 10px 0 ;
+}
