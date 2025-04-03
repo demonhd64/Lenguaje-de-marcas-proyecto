@@ -96,8 +96,7 @@ html, body {
     top: 14%;
     left: 47%;
     transform: translate(-50%, -50%);
-    text-align: center;
-    
+    text-align: center;    
 }
 .texto {
     display: flex;
@@ -386,6 +385,10 @@ button:hover div:nth-child(3) {
 
 /*Media controls para las diferentes resoluciones*/ 
 @media (max-width: 768px) {
+    *{
+        font-size: x-small;
+    }
+
     .desplegable{
         overflow: auto;
         max-width: 100%;
@@ -396,16 +399,79 @@ button:hover div:nth-child(3) {
     }
     
     .card {
-      width: 90%;
+        /*Se ve mla el width*/
+      width: 95%;
       height: 60vh;
-      margin: 10px 0;
     }
     
     .card.activa {
       width: 95% ;
       height: 80vh;
     }
-    
+
+    .elementos,.elementos-ingredientes:checked{
+        display: block;
+        position: relative;
+        margin-bottom: 0.8%;
+    }
+
+    .elementos,
+    .elementos-ingredientes {
+    display: none; /* Ocultar por defecto */
+    }
+
+    .texto {
+        font-size: medium;
+        overflow: auto;
+        max-height: 150px;
+    }
+
+    .pasoSelector{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transform: scale(90%) translate(-55%, -50%);
+        height: 7%;
+        position: absolute;
+        top: 14%;
+        left: 47%;
+        text-align: center;
+    }
+
+    /* Imagen cuando el input está marcado */
+    input#c1:checked + label[for="c1"] {
+        background-image: url(../../Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
+        background-position: center;
+        transition: background-image 1s ease;
+        height: 80vh;
+    }
+
+    input#c2:checked + label[for="c2"] {
+        background-image: url(../..//Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
+        transition: background-image 1s ease;
+        height: 80vh;
+    }
+
+    input#c3:checked + label[for="c3"] {
+        background-image: url();
+        background-position: center;
+        transition: background-image 1s ease;
+        height: 80vh;
+    }
+
+    input#c4:checked + label[for="c4"] {
+        background-image: url();
+        background-position: center;
+        transition: background-image 1s ease;
+        height: 80vh;
+    }
+
+    input#c5:checked + label[for="c5"] {
+        background-image: url();
+        background-position: center;
+        transition: background-image 1s ease;
+        height: 80vh;
+    }
+
     input:checked + label {
       margin-left: 0;
       margin-top: 0;
