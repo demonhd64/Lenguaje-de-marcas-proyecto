@@ -14,7 +14,6 @@ header {
     display: inline-block;
 }
 
-
 label {
     cursor: default; /* Cambia el cursor al pasar sobre el label */
 }
