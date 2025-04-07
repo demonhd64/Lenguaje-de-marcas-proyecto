@@ -115,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
         selectores[i].addEventListener('change', function() { //Evento de cambio de option para el value
             const pasoSeleccionado = this.value; // Values de los pasos
             const idSelector = this.id;
-            console.log(pasoSeleccionado)
             if (idSelector === 'pasoSelector1') {
                 const textoPaso = document.getElementById('Texto-De-Opcion');
                 
