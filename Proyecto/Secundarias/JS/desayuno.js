@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
  
 //Se tienen que copiar y pegar los textos para que tengan pasos de linea
  
-// Para cuadro 1: Manejo del select
+// Para manejar textos de cuadros.
 document.addEventListener('DOMContentLoaded', function() {
     const selectores = document.getElementsByClassName('pasoSelector');
     
-    for (let i = 0; i < selectores.length; i++) {
+    for (let i = 0; i < selectores.length; i++) { // manejo de actualizacion del evento de la deteccion del cambio de paso
         selectores[i].addEventListener('change', function() { //Evento de cambio de option para el value
             const pasoSeleccionado = this.value; // Values de los pasos
             const idSelector = this.id;
