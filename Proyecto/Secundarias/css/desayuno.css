@@ -112,8 +112,6 @@ html, body {
     display: none;
     position: relative;
 }
-
-
     
 .elementos p:first-child{
     margin-bottom: 35%;
@@ -163,7 +161,6 @@ html, body {
     position: absolute;
     top: 2.5%;
     left: 47%;
-    transform: translate(-50%, -50%);
 }
 
 .elementos-ingredientes ul li:last-child{
@@ -211,6 +208,7 @@ input:checked + label .row .elementos-ingredientes {
 
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
+    /*Hay que arreglar la imagen por resolucion*/
     background-image: url(../../Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
     background-position: center;
     background-size: clamp(85%,100%,100%) clamp(50%,100%,100%);
@@ -397,9 +395,8 @@ button:hover div:nth-child(3) {
     }
     
     .card {
-        /*Se ve mla el width*/
-      width: 95%;
-      height: 60vh;
+      width: 100%;
+      height: 50vh;
       align-items: center;
     }
     
@@ -414,8 +411,7 @@ button:hover div:nth-child(3) {
         margin-bottom: 0.8%;
     }
 
-    .elementos,
-    .elementos-ingredientes {
+    .elementos,.elementos-ingredientes {
     display: none; /* Ocultar por defecto */
     }
 
@@ -438,6 +434,7 @@ button:hover div:nth-child(3) {
 
     /* Imagen cuando el input está marcado */
     input#c1:checked + label[for="c1"] {
+        /*Hay que arreglar la imagen por resolucion*/
         background-image: url(../../Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
         background-position: center;
         background-repeat: no-repeat;
