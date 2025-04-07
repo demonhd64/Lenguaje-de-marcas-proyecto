@@ -42,20 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
  
 // Función para controlar la visibilidad de las cards
-function MirarSiActivo(el) {
+function MirarSiActivo(container) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
    
-    if (el.checked) {
+    if (container.checked) {
         cards.forEach(function(card) {
             card.style.display = 'none';
             card.classList.remove("activa");
         });
-        el.nextElementSibling.style.display = 'flex';
-        el.nextElementSibling.classList.add("activa"); // Activa la card para que ocupe el 100%
+        container.nextElementSibling.style.display = 'flex';
+        container.nextElementSibling.classList.add("activa"); // Activa la card para que ocupe el 100%
     } else {
-        const pasoSelector = el.nextElementSibling.querySelector('.pasoSelector');
-        const textoPaso = el.nextElementSibling.querySelector('.texto');
+        const pasoSelector = container.nextElementSibling.querySelector('.pasoSelector');
+        const textoPaso = container.nextElementSibling.querySelector('.texto');
        
         if (pasoSelector) {
             pasoSelector.value = "";
