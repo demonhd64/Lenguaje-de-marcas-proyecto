@@ -213,6 +213,7 @@ input:checked + label .row .elementos-ingredientes {
 .card[for="c1"]:not(input:checked) {
     background-image: url(../../Imagenes/Desayuno/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
     background-position: center;
+    background-size: clamp(85%,100%,100%) clamp(50%,100%,100%);
     transition: background-image 3.5s ease;
 }
 
@@ -232,6 +233,7 @@ input#c1:checked + label[for="c1"] {
 
 input#c2:checked + label[for="c2"] {
     background-image: url(../..//Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
+    background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
@@ -392,6 +394,7 @@ button:hover div:nth-child(3) {
         /*Se ve mla el width*/
       width: 95%;
       height: 60vh;
+      align-items: center;
     }
     
     .card.activa {
@@ -431,12 +434,17 @@ button:hover div:nth-child(3) {
     input#c1:checked + label[for="c1"] {
         background-image: url(../../Imagenes/Desayuno/pankake\ con\ platano\ horizontal.jpg);
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
         transition: background-image 1s ease;
         height: 80vh;
     }
 
     input#c2:checked + label[for="c2"] {
         background-image: url(../..//Imagenes/Desayuno/smoothie\ fresa\ horizontal.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
         transition: background-image 1s ease;
         height: 80vh;
     }
@@ -444,6 +452,8 @@ button:hover div:nth-child(3) {
     input#c3:checked + label[for="c3"] {
         background-image: url();
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
         transition: background-image 1s ease;
         height: 80vh;
     }
@@ -451,6 +461,8 @@ button:hover div:nth-child(3) {
     input#c4:checked + label[for="c4"] {
         background-image: url();
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
         transition: background-image 1s ease;
         height: 80vh;
     }
@@ -458,6 +470,8 @@ button:hover div:nth-child(3) {
     input#c5:checked + label[for="c5"] {
         background-image: url();
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
         transition: background-image 1s ease;
         height: 80vh;
     }
