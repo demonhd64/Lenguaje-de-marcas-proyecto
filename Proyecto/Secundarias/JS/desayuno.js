@@ -108,40 +108,46 @@ document.addEventListener('DOMContentLoaded', function() {
 //Se tienen que copiar y pegar los textos para que tengan pasos de linea
  
 // Para cuadro 1: Manejo del select
-document.getElementById('pasoSelector').addEventListener('change', function() {
-    const textoPaso = document.getElementById('Texto-De-Opcion');
-    const pasoSeleccionado = this.value;
- 
-    if (pasoSeleccionado === '1') {
-        textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
-    } else if (pasoSeleccionado === '2') {
-        textoPaso.textContent = 'Ponemos el puré de plátano en un bol y le añadimos 1 huevo, media cucharadita de canela en polvo, una pizca de sal y 10 g de impulsor químico. Vertemos también 50 ml de leche de avena sin azúcar y mezclamos todo muy bien.';
-    } else if (pasoSeleccionado === '3') {
-        textoPaso.textContent = 'Con la masa anterior bien mezclada, añadimos 100 g de harina de avena y volvemos a mezclar.';
-    } else if (pasoSeleccionado === '4') {
-        textoPaso.textContent = 'Preparamos una sartén plana con un poco de aceite que podremos untar con una brocha o un trozo de papel (añadir aceite es opcional, las tortitas pueden hacerse sin aceite). Llevamos la sartén al fuego y esperamos hasta que esté caliente. Vertemos una cuchara grande de la masa.';
-    } else if (pasoSeleccionado === '5') {
-        textoPaso.textContent = 'Dejamos que se haga la tortita por un lado durante unos segundos, el fuego no debe estar muy alto o se nos quemarán. Sabremos que están bien hechas por el lado en que las cocinamos primero, cuando veamos salir burbujas de la masa. Entonces le damos la vuelta y dejamos que se cocine por el otro lado. Seguimos haciendo más tortitas.';
-    } else if (pasoSeleccionado === '6') {
-        textoPaso.textContent = 'Servimos las tortitas recién hechas con plátano en rodajas y sirope de agave. También podemos guardarlas en la nevera durante un par de días y calentarlas un poco en el microondas o el horno antes de comerlas.';
-    } else {
-        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
+document.addEventListener('DOMContentLoaded', function() {
+    const selectores = document.getElementsByClassName('pasoSelector');
+    
+    for (let i = 0; i < selectores.length; i++) {
+        selectores[i].addEventListener('change', function() { //Evento de cambio de option para el value
+            const pasoSeleccionado = this.value; // Values de los pasos
+            const idSelector = this.id;
+            console.log(pasoSeleccionado)
+            if (idSelector === 'pasoSelector1') {
+                const textoPaso = document.getElementById('Texto-De-Opcion');
+                
+                if (pasoSeleccionado === '1') {
+                    textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
+                } else if (pasoSeleccionado === '2') {
+                    textoPaso.textContent = 'Ponemos el puré de plátano en un bol y le añadimos 1 huevo, media cucharadita de canela en polvo, una pizca de sal y 10 g de impulsor químico. Vertemos también 50 ml de leche de avena sin azúcar y mezclamos todo muy bien.';
+                } else if (pasoSeleccionado === '3') {
+                    textoPaso.textContent = 'Con la masa anterior bien mezclada, añadimos 100 g de harina de avena y volvemos a mezclar.';
+                } else if (pasoSeleccionado === '4') {
+                    textoPaso.textContent = 'Preparamos una sartén plana con un poco de aceite que podremos untar con una brocha o un trozo de papel (añadir aceite es opcional, las tortitas pueden hacerse sin aceite). Llevamos la sartén al fuego y esperamos hasta que esté caliente. Vertemos una cuchara grande de la masa.';
+                } else if (pasoSeleccionado === '5') {
+                    textoPaso.textContent = 'Dejamos que se haga la tortita por un lado durante unos segundos, el fuego no debe estar muy alto o se nos quemarán. Sabremos que están bien hechas por el lado en que las cocinamos primero, cuando veamos salir burbujas de la masa. Entonces le damos la vuelta y dejamos que se cocine por el otro lado. Seguimos haciendo más tortitas.';
+                } else if (pasoSeleccionado === '6') {
+                    textoPaso.textContent = 'Servimos las tortitas recién hechas con plátano en rodajas y sirope de agave. También podemos guardarlas en la nevera durante un par de días y calentarlas un poco en el microondas o el horno antes de comerlas.';
+                } else {
+                    textoPaso.textContent = ''; // Limpiar el texto si no hay selección
+                }
+            } else if (idSelector === 'pasoSelector2') {
+                const textoPaso = document.getElementById('Texto-De-Opcion2');
+                
+                if (pasoSeleccionado === '1') {
+                    textoPaso.textContent = '';
+                } else if (pasoSeleccionado === '2') {
+                    textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
+                } else {
+                    textoPaso.textContent = ''; // Limpiar el texto si no hay selección
+                }
+            }
+        });
     }
-});
- 
-// Para cuadro 2: Manejo del select
-document.getElementById('pasoSelector2').addEventListener('change', function() {
-    const textoPaso = document.getElementById('Texto-De-Opcion2');
-    const pasoSeleccionado = this.value;
-   
-    if (pasoSeleccionado === '1') {
-        textoPaso.textContent = '';
-    } else if (pasoSeleccionado === '2') {
-        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
-    } else {
-        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-    }
-});
+}); 
  
 
 //Para el media controls: (si la resolucion es igual o menor a 768 use la forma vertical)
