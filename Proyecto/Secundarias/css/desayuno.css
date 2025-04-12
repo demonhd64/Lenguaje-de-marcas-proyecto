@@ -45,6 +45,7 @@ html, body {
     display: flex;
     width: 100%; /* Ajusta el ancho de la card activa */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: none;
 }
 
 /* Transición para ocultar las cards inactivas */
@@ -75,6 +76,29 @@ html, body {
     font-size: x-large;
 }
 
+#Patras{
+    display: none;
+}
+
+input[type="checkbox"]:checked + label .row #Patras{
+    display: flex;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    flex-shrink: 0; /* Evita que el icono se reduzca al expandir la card */
+    font-size: x-large;
+    pointer-events: all;
+}
+
 .card > .row > .description {
     position: absolute;
     bottom: 0; 
@@ -99,7 +123,10 @@ html, body {
     padding: 0.5em; /* Padding relativo al tamaño de la letra */
     font-size: clamp(0.6rem, 2.5vw, 1rem);
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    pointer-events: all;
+    cursor: pointer;
 }
+
 
 .texto {
     display: flex;
@@ -132,6 +159,7 @@ html, body {
     display: none;
     overflow-y: auto;
     font-size: clamp(0.8rem, 2.5vw, 1rem);
+    pointer-events: none;
 }
 
 /*Scrollbar de el div de la derecha de ingredientes*/
@@ -140,17 +168,20 @@ html, body {
     width: 15px;
     background-color: transparent; /* Color de fondo del track */
     border-radius: 0 10px 10px 0;
+    pointer-events: auto !important;
 }
 
 .elementos-ingredientes::-webkit-scrollbar-thumb {
     background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
     border-radius: 10px;
     border: 2px solid rgba(139, 139, 139);
+    pointer-events: auto !important;
 }
 
 .elementos-ingredientes::-webkit-scrollbar-track {
     background: transparent; /* Color del track */
     border-radius: 0 10px 10px 0;
+    pointer-events: auto !important;
 }
 
 .elementos-ingredientes ul li:first-child {
@@ -176,6 +207,12 @@ html, body {
 
 .elementos-ingredientes ul li:last-child {
     padding-bottom: 5%;
+}
+
+.elementos-ingredientes,
+.pasoSelector {
+    pointer-events: auto !important; /* Forzar interacción */
+    z-index: 1; /* Asegurar que están por encima */
 }
 
 .card .description h4 {
