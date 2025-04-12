@@ -6,192 +6,190 @@
     <link rel="stylesheet" href="../css/desayuno.css">
     <title>Desayunos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
-    <div>
-        <header>
-            <nav>
-                <div class="menu-container">
-                    <div class="lista">
-                        <input type="checkbox" id="activo"/>
-                        <label for="activo">
-                            <button>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </button>
-                        </label>
-                        <ul class="desplegable">
-                            <li><a href="../../Principal/index.html">Inicio</a></li>
-                            <li><a href="">Comidas</a></li>
-                            <li><a href="">Cenas</a></li>
-                            <li><a href="">Carnes</a></li>
-                            <li><a href="">Vegano</a></li>
-                            <li><a href="">Postres</a></li>
-                        </ul>
+    <div class="row-header">
+        <div class="col-sm-12">
+            <header>
+                <nav>
+                    <div class="menu-container">
+                        <div class="lista">
+                            <input type="checkbox" id="activo"/>
+                            <label for="activo">
+                                <button>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </button>
+                            </label>
+                            <ul class="desplegable">
+                                <li><a href="../../Principal/index.html">Inicio</a></li>
+                                <li><a href="">Comidas</a></li>
+                                <li><a href="">Cenas</a></li>
+                                <li><a href="">Carnes</a></li>
+                                <li><a href="">Vegano</a></li>
+                                <li><a href="">Postres</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+            </header>
+        </div>
     </div>
-    <div class="wrapper">
-        <div class="container">
-            <input type="checkbox" name="slide" id="c1" class="opcionCheck" onclick="MirarSiActivo(this)">
-            <label for="c1" class="card">
-                <div class="row">
-                    <div><p id="icon1"></p></div>
-                    <div class="elementos">
-                        <p>Receta</p>
-                        <select id="pasoSelector1" class="pasoSelector">
-                            <option value="">-- Selecciona un paso --</option>
-                            <option value="1">Paso 1</option>
-                            <option value="2">Paso 2</option>
-                            <option value="3">Paso 3</option>
-                            <option value="4">Paso 4</option>
-                            <option value="5">Paso 5</option>
-                            <option value="6">Paso 6</option>
-                        </select>
-                        <p id="Texto-De-Opcion" class="texto"></p>
-                    </div>
-                    <div class="elementos-ingredientes">
-                        <p>ingredientes</p>
-                        <ul>
-                            <li>2 plátanos maduros.</li>
-                            <li>1 huevo.</li>
-                            <li>Media cucharadita de canela en polvo.</li>
-                            <li>Una pizca de sal.</li>
-                            <li>10 g de impulsor químico (levadura química tipo Royal).</li>
-                            <li>50 ml de bebida o leche de avena sin azúcar (se puede sustituir por otro tipo de leche).</li>
-                            <li>100 g de harina de avena.</li>
-                            <li>Plátano en rodajas y sirope de agave (opcional para servir).</li>
-                        </ul>
+    <div class="row">
+        <div class="wrapper">
+            <div class="container-body d-flex flex-wrap justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c1" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c1" class="card">
+                        <div class="row">
+                            <div><p id="icon1"></p></div>
+                            <div class="elementos">
+                                <p>Receta</p>
+                                <select id="pasoSelector1" class="pasoSelector">
+                                    <option value="">-- Selecciona un paso --</option>
+                                    <option value="1">Paso 1</option>
+                                    <option value="2">Paso 2</option>
+                                    <option value="3">Paso 3</option>
+                                    <option value="4">Paso 4</option>
+                                    <option value="5">Paso 5</option>
+                                    <option value="6">Paso 6</option>
+                                </select>
+                                <p id="Texto-De-Opcion" class="texto"></p>
+                            </div>
+                            <div class="elementos-ingredientes">
+                                <p>ingredientes</p>
+                                <ul>
+                                    <li>2 plátanos maduros.</li>
+                                    <li>1 huevo.</li>
+                                    <li>Media cucharadita de canela en polvo.</li>
+                                    <li>Una pizca de sal.</li>
+                                    <li>10 g de impulsor químico (levadura química tipo Royal).</li>
+                                    <li>50 ml de bebida o leche de avena sin azúcar (se puede sustituir por otro tipo de leche).</li>
+                                    <li>100 g de harina de avena.</li>
+                                    <li>Plátano en rodajas y sirope de agave (opcional para servir).</li>
+                                </ul>
+                            </div>
+                            <div class="description">
+                                <h4>Tortitas de avena con plátano</h4>
+                            </div>
+                        </div>
+                    </label>
                 </div>
-                <div class="description">
-                    <h4>Tortitas de avena con plátano</h4>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c2" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c2" class="card">
+                        <div class="row">
+                            <div><p id="icon2"></p></div>
+                            <div class="elementos">
+                                <p>Receta</p>
+                                <select id="pasoSelector2" class="pasoSelector">
+                                    <option value="">-- Selecciona un paso --</option>
+                                    <option value="1">Paso 1</option>
+                                    <option value="2">Paso 2</option>
+                                    <option value="3">Paso 3</option>
+                                    <option value="4">Paso 4</option>
+                                    <option value="5">Paso 5</option>
+                                    <option value="6">Paso 6</option>
+                                </select>
+                                <p id="Texto-De-Opcion2" class="texto"></p>
+                            </div>
+                            <div class="elementos-ingredientes">
+                                <p>ingredientes</p>
+                                <ul>
+                                    <li>Ingredientes para el smoothie de acai.</li>
+                                </ul>
+                            </div>
+                            <div class="description">
+                                <h4>Smoothie de Acai</h4>
+                            </div>
+                        </div>
+                    </label>
                 </div>
-            </div>
-        </label>
-        <input type="checkbox" name="slide" id="c2" class="opcionCheck" onclick="MirarSiActivo(this)">
-        <label for="c2" class="card">
-            <div class="row">
-                <div><p id="icon2"></p></div>
-                <div class="elementos">
-                    <p>Receta</p>
-                    <select id="pasoSelector2" class="pasoSelector">
-                        <option value="">-- Selecciona un paso --</option>
-                        <option value="1">Paso 1</option>
-                        <option value="2">Paso 2</option>
-                        <option value="3">Paso 3</option>
-                        <option value="4">Paso 4</option>
-                        <option value="5">Paso 5</option>
-                        <option value="6">Paso 6</option>
-                    </select>
-                    <p id="Texto-De-Opcion2" class="texto"></p>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c3" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c3" class="card">
+                        <div class="row">
+                            <div><p id="icon3"></p></div>
+                            <div class="elementos">
+                                <p>Receta</p>
+                                <select id="pasoSelector3" class="pasoSelector">
+                                    <option value="">-- Selecciona un paso --</option>
+                                    <option value="1">Paso 1</option>
+                                    <option value="2">Paso 2</option>
+                                </select>
+                                <p id="Texto-De-Opcion3" class="texto"></p>
+                            </div>
+                            <div class="elementos-ingredientes">
+                                <p>ingredientes</p>
+                                <ul>
+                                    <li>Patata</li>
+                                    <li>Otros ingredientes.</li>
+                                </ul>
+                            </div>
+                            <div class="description">
+                                <h4>Tortitas de Avena con Plátano</h4>
+                            </div>
+                        </div>
+                    </label>
                 </div>
-                <div class="elementos-ingredientes">
-                    <p>ingredientes</p>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c4" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c4" class="card">
+                        <div class="row">
+                            <div><p id="icon4"></p></div>
+                            <div class="elementos">
+                                <p>Receta</p>
+                                <select id="pasoSelector4" class="pasoSelector">
+                                    <option value="">-- Selecciona un paso --</option>
+                                    <option value="1">Paso 1</option>
+                                    <option value="2">Paso 2</option>
+                                </select>
+                                <p id="Texto-De-Opcion4" class="texto"></p>
+                            </div>
+                            <div class="elementos-ingredientes">
+                                <p>ingredientes</p>
+                                <ul>
+                                    <li>Ingredientes para la receta 4.</li>
+                                </ul>
+                            </div>
+                            <div class="description">
+                                <h4>Receta 4</h4>
+                            </div>
+                        </div>
+                    </label>
                 </div>
-                <div class="description">
-                    <h4>smoothie de acai</h4>
-                </div>
-            </div>
-        </label>
-        <input type="checkbox" name="slide" id="c3" class="opcionCheck" onclick="MirarSiActivo(this)">
-        <label for="c3" class="card">
-            <div class="row">
-                <div><p id="icon3"></p></div>
-                <div class="elementos">
-                    <p>Receta</p>
-                    <select id="pasoSelector3" class="pasoSelector">
-                        <option value="">-- Selecciona un paso --</option>
-                        <option value="1">Paso 1</option>
-                        <option value="2">Paso 2</option>
-                    </select>
-                    <p id="Texto-De-Opcion3" class="texto"></p>
-                </div>
-                <div class="elementos-ingredientes">
-                    <ul>
-                        <p>ingredientes</p>
-                        <li>patata</li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-                    </ul>
-                </div>
-                <div class="description">
-                    <h4>Tortitas de avena con platano</h4>
-                </div>
-            </div>
-        </label>
-        <input type="checkbox" name="slide" id="c4" class="opcionCheck" onclick="MirarSiActivo(this)">
-        <label for="c4" class="card">
-            <div class="row">
-                <div><p id="icon4"></p></div>
-                <div class="elementos">
-                    <p>Receta</p>
-                    <select id="pasoSelector4" class="pasoSelector">
-                        <option value="">-- Selecciona un paso --</option>
-                        <option value="1">Paso 1</option>
-                        <option value="2">Paso 2</option>
-                    </select>
-                    <p id="Texto-De-Opcion4" class="texto"></p>
-                </div>
-                <div class="elementos-ingredientes">
-                    <ul>
-                        <p>ingredientes</p>
-                        <li>patata</li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-                    </ul>
-                </div>
-                <div class="description">
-                    <h4>Tortitas de avena con platano</h4>
-                </div>
-            </div>
-        </label>
-        <input type="checkbox" name="slide" id="c5" class="opcionCheck" onclick="MirarSiActivo(this)">
-        <label for="c5" class="card">
-            <div class="row">
-                <div><p id="icon5"></p></div>
-                <div class="elementos">
-                    <p>Receta</p>
-                    <select id="pasoSelector5" class="pasoSelector">
-                        <option value="">-- Selecciona un paso --</option>
-                        <option value="1">Paso 1</option>
-                        <option value="2">Paso 2</option>
-                    </select>
-                    <p id="Texto-De-Opcion5" class="texto"></p>
-                </div>
-                <div class="elementos-ingredientes">
-                    <ul>
-                        <p>ingredientes</p>
-                        <li>patata</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="description">
-                    <h4>Tortitas de avena con platano</h4>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c5" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c5" class="card">
+                        <div class="row">
+                            <div><p id="icon5"></p></div>
+                            <div class="elementos">
+                                <p>Receta</p>
+                                <select id="pasoSelector5" class="pasoSelector">
+                                    <option value="">-- Selecciona un paso --</option>
+                                    <option value="1">Paso 1</option>
+                                    <option value="2">Paso 2</option>
+                                </select>
+                                <p id="Texto-De-Opcion5" class="texto"></p>
+                            </div>
+                            <div class="elementos-ingredientes">
+                                <p>ingredientes</p>
+                                <ul>
+                                    <li>Ingredientes para la receta 5.</li>
+                                </ul>
+                            </div>
+                            <div class="description">
+                                <h4>Receta 5</h4>
+                            </div>
+                        </div>
+                    </label>
                 </div>
             </div>
-        </label>
-      </div> 
+        </div>
     </div>
     <script type="module" src="../JS/desayuno.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

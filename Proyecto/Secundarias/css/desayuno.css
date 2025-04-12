@@ -3,39 +3,33 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
+    overflow-x: none;
 }
 
 .wrapper {
+    position: absolute;
     width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    min-width: 100px;
 }
 
-.container {
-    height: auto; /* Permite que se ajuste al contenido */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-body {
+    height: auto; 
     position: relative;
     width: 100%;
+    gap: 20px;
 }
 
 .card {
-    width: 100%;
-    height: 80vh;
-    border-radius: 2rem;
+    position: relative;
+    width: 100%; /* Mantener el ancho al 100% */
+    height: 80vh; /* Altura de las cards */
     background-size: cover;
     cursor: pointer;
-    overflow: hidden;
     margin: 10px;
     display: flex;
     flex-direction: column;
-    position: relative; /* Necesario para que los elementos hijos se posicionen en relación a la tarjeta */
-    transition:  0.3s ease;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    will-change: transform, opacity;
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 
 /* Clase para cards en estado filtrado (o inactivo) */
@@ -43,12 +37,14 @@ html, body {
     width: 100%;
     height: 80vh;
 }
-  
-  /* Clase para la card activa (al hacer click) */
+
+/* Clase para la card activa (al hacer click) */
 .card.activa {
-    width: 95%;
+    position: absolute !important; /*Permite mover la card activa*/
+    left: 0;
+    display: flex;
+    width: 100%; /* Ajusta el ancho de la card activa */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    z-index: 2; /* Asegura que la card activa esté sobre las demás */
 }
 
 /* Transición para ocultar las cards inactivas */
@@ -66,7 +62,7 @@ html, body {
 
 #icon1, #icon2, #icon3, #icon4, #icon5 {
     background: transparent;
-    background-color:rgba(211, 211, 211,15%);
+    background-color: rgba(211, 211, 211, 15%);
     color: black;
     border-radius: 50%;
     width: 50px; 
@@ -91,7 +87,7 @@ html, body {
     opacity: 1; 
 }
 
-.pasoSelector{
+.pasoSelector {
     height: 7%;
     position: absolute;
     top: 14%;
@@ -99,11 +95,12 @@ html, body {
     transform: translate(-50%, -50%);
     text-align: center;    
 }
+
 .texto {
     display: flex;
     color: aqua;
     position: absolute;
-    transform: translate(0,65px);
+    transform: translate(0, 65px);
     text-align: center;
     background-color: red;
 }
@@ -113,8 +110,8 @@ html, body {
     display: none;
     position: relative;
 }
-    
-.elementos p:first-child{
+
+.elementos p:first-child {
     margin-bottom: 35%;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
@@ -130,11 +127,11 @@ html, body {
     overflow-y: auto;
 }
 
-.elementos-ingredientes::-webkit-scrollbar{
+.elementos-ingredientes::-webkit-scrollbar {
     width: 10px;
 }
 
-.elementos-ingredientes::-webkit-scrollbar-thumb{
+.elementos-ingredientes::-webkit-scrollbar-thumb {
     background-color: rgb(109, 109, 109);
     border-radius: 0 0 0 55px;
 }
@@ -148,20 +145,19 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .elementos-ingredientes p {
     text-transform: uppercase;
     margin-bottom: 35%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.elementos-ingredientes p:first-child{
+.elementos-ingredientes p:first-child {
     margin-bottom: 35%;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.elementos-ingredientes ul li:last-child{
+.elementos-ingredientes ul li:last-child {
     padding-bottom: 5%;
 }
 
@@ -202,13 +198,11 @@ input:checked + label .row .elementos-ingredientes {
     border-top-left-radius: 55px;
 }
 
-
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
-    /*Hay que arreglar la imagen por resolucion 720x1080*/
     background-image: url(../../Imagenes/Desayuno/Tortitas/Tortitas\ de\ avena\ con\ platanao\ y\ sirope\ .jpg);
     background-position: center;
-    background-size: clamp(85%,100%,100%) clamp(50%,100%,100%);
+    background-size: clamp(85%, 100%, 100%) clamp(50%, 100%, 100%);
     transition: background-image 3.5s ease;
 }
 
@@ -271,13 +265,13 @@ nav {
     height: 100px; /* Asegúrate de que coincida con el header */
 }
 
-
 .menu-container {
     display: flex;
     align-items: center; /* Centra verticalmente */
     justify-content: flex-start;
     height: 100%;
     position: relative;
+    width: 100%;
 }
 
 .lista {
@@ -324,26 +318,26 @@ button:hover div:nth-child(3) {
 }
 
 .desplegable {
-    display: none; /* Mantiene la lista oculta por defecto */
+    display: none;
     position: absolute;
-    left: 0;
     background-color: rgba(139, 139, 139);
-    min-width: 160px;
-    box-shadow: 1px 1px 3px; 
+    width: 900px;
+    max-width: calc(100vw - 150px);
+    box-shadow: 1px 1px 3px;
     list-style-type: none;
     margin-top: -62px;
-    margin-left: 55px;
+    margin-left: 110%;
     margin-bottom: 100px;
     border-radius: 10px;
-    max-width: 914px;
+    overflow-x: auto;
 }
+
 
 .desplegable li {
     padding: 12px;
     text-align: left;
     cursor: pointer;
 }
-
 
 .lista .desplegable a {
     text-decoration: none;
@@ -367,121 +361,4 @@ button:hover div:nth-child(3) {
 .desplegable li a:last-child {
     padding-right: 30px;
     margin-left: 10px;
-}
-
-
-/*Media controls para las diferentes resoluciones*/ 
-@media (max-width: 768px) {
-    *{
-        font-size: x-small;
-    }
-
-    .desplegable{
-        overflow: auto;
-        max-width: 100%;
-        top: 150%;
-    }
-    .container {
-      flex-direction: column;
-      height: auto; /* Permite que se ajuste al contenido */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 85%;
-    }
-    
-    .card {
-        height: 5%;
-        align-items: center;
-    }
-
-    .card.activa {
-        width:360px ;
-        margin-left: 2.5%;
-    }
-
-    .elementos,.elementos-ingredientes:checked{
-        position: relative;
-        margin-bottom: 0.8%;
-    }
-
-    .elementos,.elementos-ingredientes {
-        display: none; /* Ocultar por defecto */
-    }
-
-    .texto {
-        font-size: medium;
-        overflow: auto;
-        max-height: 150px;
-    }
-
-    .pasoSelector{
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        transform: scale(90%) translate(-55%, -50%);
-        height: 7%;
-        position: absolute;
-        top: 14%;
-        left: 47%;
-        text-align: center;
-    }
-
-    /* Imagen cuando el input está marcado */
-    input#c1:checked + label[for="c1"] {
-        /*Hay que arreglar la imagen por resolucion*/
-        background-image: url(../../Imagenes/Desayuno/Tortitas/pankake\ con\ platano\ horizontal.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
-        transition: background-image 1s ease;
-        height: 80vh;
-    }
-
-    input#c2:checked + label[for="c2"] {
-        background-image: url(../..//Imagenes/Desayuno//smoothie/smoothie\ fresa\ horizontal.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
-        transition: background-image 1s ease;
-        height: 80vh;
-    }
-
-    input#c3:checked + label[for="c3"] {
-        background-image: url();
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
-        transition: background-image 1s ease;
-        height: 80vh;
-    }
-
-    input#c4:checked + label[for="c4"] {
-        background-image: url();
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
-        transition: background-image 1s ease;
-        height: 80vh;
-    }
-
-    input#c5:checked + label[for="c5"] {
-        background-image: url();
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: clamp(150%,100%,100%) clamp(300px,100%,100%);
-        transition: background-image 1s ease;
-        height: 80vh;
-    }
-
-    input:checked + label {
-      margin-left: 0;
-      margin-top: 0;
-    }
-}
-
-
-.card.mobile-view {
-    width: 100% ;
-    margin: 10px 0 ;
 }
