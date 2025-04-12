@@ -88,22 +88,27 @@ html, body {
 }
 
 .pasoSelector {
-    height: 7%;
-    position: absolute;
-    top: 14%;
-    left: 47%;
-    transform: translate(-50%, -50%);
-    text-align: center;    
+position: absolute;
+top: 14%;
+left: 47%;
+transform: translate(-50%, -50%);
+text-align: center;
+width: 100%; 
+max-width: 150px;
+height: auto;
+padding: 8px;
+font-size: clamp(0.6rem, 2.5vw, 1rem);
 }
 
 .texto {
     display: flex;
     color: aqua;
     position: absolute;
-    transform: translate(0, 65px);
+    top: 20%;
     text-align: center;
     background-color: red;
 }
+
 
 .elementos {
     color: aqua;
@@ -116,7 +121,7 @@ html, body {
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 2.5%;
+    top: 5%;
     left: 47%;
     transform: translate(-50%, -50%);
 }
@@ -125,34 +130,45 @@ html, body {
     color: aqua;
     display: none;
     overflow-y: auto;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
+/*Scrollbar de el div de la derecha de ingredientes*/
+
 .elementos-ingredientes::-webkit-scrollbar {
-    width: 10px;
+    width: 15px;
+    background-color: transparent; /* Color de fondo del track */
+    border-radius: 0 10px 10px 0;
 }
 
 .elementos-ingredientes::-webkit-scrollbar-thumb {
-    background-color: rgb(109, 109, 109);
-    border-radius: 0 0 0 55px;
+    background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
+    border-radius: 10px;
+    border: 2px solid rgba(139, 139, 139);
 }
 
-.elementos-ingredientes ul {
-    margin-top: 5vh;
+.elementos-ingredientes::-webkit-scrollbar-track {
+    background: transparent; /* Color del track */
+    border-radius: 0 10px 10px 0;
+}
+
+.elementos-ingredientes ul li:first-child {
+    margin-top: 2.5%;
 }
 
 .elementos-ingredientes ul li {
-    margin-bottom: 5%; /* Ajusta el valor según el espacio que desees */
+    margin-bottom: 5%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .elementos-ingredientes p {
     text-transform: uppercase;
-    margin-bottom: 35%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .elementos-ingredientes p:first-child {
-    margin-bottom: 35%;
+    margin-top: 3.5%;
+    text-align: center;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -161,12 +177,18 @@ html, body {
     padding-bottom: 5%;
 }
 
-.description h4 {
-    color: white; /* Asegúrate de que el color del texto sea legible */
+.card .description h4 {
+    color: white !important;
     text-transform: uppercase;
-    margin: 0; /* Asegúrate de que no haya margen adicional */
+    margin: 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vh; /* Añadir tamaño para mejor visibilidad */
+    bottom: 0;
+}
+
+input:checked + label.card .description {
+    height: 4.8%;
 }
 
 input {
@@ -179,23 +201,28 @@ input:checked + label .description {
 
 input:checked + label .row .elementos {
     display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
-    position: absolute; /* Lo hace dependiente de la tarjeta */
-    top: 50%; 
+    position: absolute;
+    width: 45%; /* Ancho relativo */
+    height: 45vh; /* Altura relativa */
+    top: 38.8%;
     left: 0%;
-    right: 65%; 
-    bottom: 5.2%; 
     border-top-right-radius: 55px;
+    overflow-y: auto; /* Scroll interno si el contenido excede */
 }
 
 input:checked + label .row .elementos-ingredientes {
     display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
-    position: relative; /* Lo hace dependiente de la tarjeta */
-    margin-left: 66%;
-    margin-top: 17.9%;
-    height: 50%;
+    position: absolute;
+    width: 45%; /* Ancho relativo */
+    height: 45vh; /* Altura relativa */
+    top: 38.8%;
+    right: 0%;
     border-top-left-radius: 55px;
+    overflow-y: auto; /* Scroll interno si el contenido excede */
 }
 
 /* Imagen cuando el input NO está marcado */
@@ -361,4 +388,23 @@ button:hover div:nth-child(3) {
 .desplegable li a:last-child {
     padding-right: 30px;
     margin-left: 10px;
+}
+
+/*Scrollbar de la lista de desplegable*/
+
+.desplegable::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(139, 139, 139); /* Color de fondo del track */
+    border-radius: 0 10px 10px 0;
+}
+
+.desplegable::-webkit-scrollbar-thumb {
+    background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
+    border-radius: 10px;
+    border: 2px solid rgba(139, 139, 139);
+}
+
+.desplegable::-webkit-scrollbar-track {
+    background: rgba(139, 139, 139); /* Color del track */
+    border-radius: 0 10px 10px 0;
 }
