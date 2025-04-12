@@ -88,16 +88,17 @@ html, body {
 }
 
 .pasoSelector {
-position: absolute;
-top: 14%;
-left: 47%;
-transform: translate(-50%, -50%);
-text-align: center;
-width: 100%; 
-max-width: 150px;
-height: auto;
-padding: 8px;
-font-size: clamp(0.6rem, 2.5vw, 1rem);
+    position: absolute;
+    top: 14%;
+    left: 50%; /* Centrado */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 15em; /* Ancho relativo al tamaño de la letra */
+    max-width: 15em; /* Ancho máximo relativo al tamaño de la letra */
+    height: auto;
+    padding: 0.5em; /* Padding relativo al tamaño de la letra */
+    font-size: clamp(0.6rem, 2.5vw, 1rem);
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 .texto {
