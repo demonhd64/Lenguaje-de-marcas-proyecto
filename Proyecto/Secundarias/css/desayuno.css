@@ -43,7 +43,7 @@ html, body {
 /* Clase para la card activa (al hacer click) */
 .card.activa {
     position: absolute !important; /*Permite mover la card activa*/
-    left: 0;
+    left: 2.45px;
     display: flex;
     width: 100%; /* Ajusta el ancho de la card activa */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
