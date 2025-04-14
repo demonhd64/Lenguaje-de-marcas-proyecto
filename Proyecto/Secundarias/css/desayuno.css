@@ -2,8 +2,24 @@ html, body {
     height: 100%; /* Asegura que el body tome toda la altura */
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
     overflow-x: none;
+}
+
+body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Opera, Internet Explorer)*/
+    background-image: linear-gradient(-45deg, rgba(255, 102, 0, 0.4) 0%, rgba(0, 225, 255, 0.4) 25%, rgba(255, 53, 127, 0.4) 100%);
+    background-size: 200% 200%;
+    animation: AnimateBG 2s ease infinite;
+}  
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .wrapper {
@@ -32,7 +48,6 @@ html, body {
     flex-direction: column;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
     background-color: rgba(255, 255, 255, 0.8); 
-    box-shadow: 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Clase para cards en estado filtrado (o inactivo) */
@@ -56,6 +71,7 @@ html, body {
     transition: all 0.3s ease-in-out, opacity 0.2s linear;
     opacity: 1;
     visibility: visible;
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 .card > .row {
@@ -335,8 +351,7 @@ input#c5:checked + label[for="c5"] {
 }
 
 header {
-    background-color: rgba(134, 134, 134, 0.541);
-    border-radius: 9px;
+    background-color: rgb(134, 134, 134);
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -344,6 +359,8 @@ header {
     height: 120px; 
     padding: 0 20px; 
     width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
 nav {
