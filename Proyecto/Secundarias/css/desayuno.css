@@ -13,10 +13,12 @@ html, body {
 }
 
 .container-body {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
     height: auto; 
-    position: relative;
-    width: 100%;
-    gap: 20px;
+    width: 100%; 
 }
 
 .card {
