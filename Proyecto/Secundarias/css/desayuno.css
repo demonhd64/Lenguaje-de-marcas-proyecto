@@ -277,6 +277,24 @@ input:checked + label .row .elementos-ingredientes {
     transition: background-image 3.5s ease;
 }
 
+.card[for="c3"]:not(input:checked) {
+    background-image: url();
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c4"]:not(input:checked) {
+    background-image: url();
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c5"]:not(input:checked) {
+    background-image: url();
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
 /* Imagen cuando el input está marcado */
 input#c1:checked + label[for="c1"] {
     background-image: url(../../Imagenes/Desayuno/Tortitas/pankake\ con\ platano\ horizontal.jpg); 
