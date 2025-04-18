@@ -158,62 +158,119 @@ window.closeModal = function() {
     document.getElementById("login-modal").style.display = "none";
 };
 
+// Función de inicio de sesión con Google
 window.loginWithGoogle = function() {
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.setCustomParameters({
-      prompt: 'select_account',
+        prompt: 'select_account',
     });
 
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        // Guardar en localStorage el estado de autenticación
-        localStorage.setItem("isAuthenticated", "true");
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        // Cambiar la visibilidad de los botones
-        document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
-        document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
-        document.querySelectorAll(".card").forEach(card => {
-            card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
-        });
-        document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
-            card.style.pointerEvents = "auto"
-        });
-        
-        
-        // Cerrar el modal
-        closeModal();
-      })
-      .catch((error) => {
-        console.error("Error al iniciar sesión con Google:", error);
-        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
-      });
+    if (isMobile) {
+        // Usar signInWithRedirect para dispositivos móviles
+        auth.signInWithRedirect(provider)
+            .then(() => {
+                // Escuchar cuando el usuario regresa después del redireccionamiento
+                auth.getRedirectResult()
+                    .then((result) => {
+                        if (result.user) {
+                            // Guardar en localStorage el estado de autenticación
+                            localStorage.setItem("isAuthenticated", "true");
+                            
+                            // Actualizar la interfaz
+                            document.querySelector("button[onclick='showModal()']").style.display = "none";
+                            document.querySelector("button[onclick='logOut()']").style.display = "inline-block";
+                            document.querySelectorAll(".card").forEach(card => {
+                                card.style.filter = "none";
+                                card.style.pointerEvents = "auto";
+                            });
+                            
+                            closeModal();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error al redirigir después del inicio de sesión:", error);
+                        alert("Ha ocurrido un error durante el proceso de autenticación: " + error.message);
+                    });
+            })
+            .catch((error) => {
+                console.error("Error al iniciar sesión con Google:", error);
+                alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
+            });
+    } else {
+        // Mantener el comportamiento original para PC
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                localStorage.setItem("isAuthenticated", "true");
+                document.querySelector("button[onclick='showModal()']").style.display = "none";
+                document.querySelector("button[onclick='logOut()']").style.display = "inline-block";
+                document.querySelectorAll(".card").forEach(card => {
+                    card.style.filter = "none";
+                    card.style.pointerEvents = "auto";
+                });
+                closeModal();
+            })
+            .catch((error) => {
+                console.error("Error al iniciar sesión con Google:", error);
+                alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
+            });
+    }
 };
 
+// Función de inicio de sesión con GitHub
 window.loginWithGitHub = function() {
     const provider = new firebase.auth.GithubAuthProvider();
-  
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        // Guardar en localStorage el estado de autenticación
-        localStorage.setItem("isAuthenticated", "true");
-  
-        // Cambiar la visibilidad de los botones
-        document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
-        document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
-        document.querySelectorAll(".card").forEach(card => {
-            card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
-        });
-        document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
-            card.style.pointerEvents = "auto"
-        });       
-  
-        // Cerrar el modal
-        closeModal();
-      })
-      .catch(( error) => {
-        console.error("Error al iniciar sesión con GitHub:", error);
-        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
-      });
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Usar signInWithRedirect para dispositivos móviles
+        auth.signInWithRedirect(provider)
+            .then(() => {
+                // Escuchar cuando el usuario regresa después del redireccionamiento
+                auth.getRedirectResult()
+                    .then((result) => {
+                        if (result.user) {
+                            localStorage.setItem("isAuthenticated", "true");
+                            
+                            document.querySelector("button[onclick='showModal()']").style.display = "none";
+                            document.querySelector("button[onclick='logOut()']").style.display = "inline-block";
+                            document.querySelectorAll(".card").forEach(card => {
+                                card.style.filter = "none";
+                                card.style.pointerEvents = "auto";
+                            });
+                            
+                            closeModal();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error al redirigir después del inicio de sesión:", error);
+                        alert("Ha ocurrido un error durante el proceso de autenticación: " + error.message);
+                    });
+            })
+            .catch((error) => {
+                console.error("Error al iniciar sesión con GitHub:", error);
+                alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
+            });
+    } else {
+        // Mantener el comportamiento original para PC
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                localStorage.setItem("isAuthenticated", "true");
+                document.querySelector("button[onclick='showModal()']").style.display = "none";
+                document.querySelector("button[onclick='logOut()']").style.display = "inline-block";
+                document.querySelectorAll(".card").forEach(card => {
+                    card.style.filter = "none";
+                    card.style.pointerEvents = "auto";
+                });
+                closeModal();
+            })
+            .catch((error) => {
+                console.error("Error al iniciar sesión con GitHub:", error);
+                alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
+            });
+    }
 };
 
 window.logOut = function() {
@@ -254,8 +311,6 @@ window.logOut = function() {
         });
     }
 };
-  
-
 
 // Verificar si el usuario está autenticado al cargar la página
 window.onload = () => {
