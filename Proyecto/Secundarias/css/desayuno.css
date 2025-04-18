@@ -484,3 +484,15 @@ button:hover div:nth-child(3) {
     background: rgba(139, 139, 139); /* Color del track */
     border-radius: 0 10px 10px 0;
 }
+
+/*Necesario para que la agrupacion de las ultimas cards se vea bien*/
+/*Para el blur del necesita login, una vez hecho se podran ver más recetas*/
+
+#need-login{
+    display: contents;
+    pointer-events: none;
+}
+
+#need-login .card{
+    filter: blur(5px);
+}
