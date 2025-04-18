@@ -11,6 +11,37 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
+// Función para actualizar la interfaz cuando el usuario está autenticado
+function actualizarInterfazAutenticada() {
+    document.querySelector("button[onclick='showModal()']").style.display = "none";
+    document.querySelector("button[onclick='logOut()']").style.display = "inline-block";
+    document.querySelectorAll(".card").forEach(card => {
+        card.style.filter = "none";
+        card.style.pointerEvents = "auto";
+    });
+}
+
+// Función para actualizar la interfaz cuando el usuario no está autenticado
+function actualizarInterfazNoAutenticada() {
+    document.querySelector("button[onclick='showModal()']").style.display = "inline-block";
+    document.querySelector("button[onclick='logOut()']").style.display = "none";
+    document.querySelectorAll("#need-login .card").forEach(card => {
+        card.style.filter = "blur(5px)";
+        card.style.pointerEvents = "none";
+    });
+}
+
+// Verificar el estado de autenticación en cada carga de la página
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        localStorage.setItem("isAuthenticated", "true");
+        actualizarInterfazAutenticada();
+    } else {
+        localStorage.removeItem("isAuthenticated");
+        actualizarInterfazNoAutenticada();
+    }
+});
+
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -253,8 +284,7 @@ window.loginWithGitHub = function() {
                 console.error("Error al iniciar sesión con GitHub:", error);
                 alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
             });
-    } else {
-        // Mantener el comportamiento original para PC
+    } else { // Para Pc
         auth.signInWithPopup(provider)
             .then((result) => {
                 localStorage.setItem("isAuthenticated", "true");
