@@ -485,9 +485,6 @@ button:hover div:nth-child(3) {
     border-radius: 0 10px 10px 0;
 }
 
-/*Necesario para que la agrupacion de las ultimas cards se vea bien*/
-/*Para el blur del necesita login, una vez hecho se podran ver más recetas*/
-
 #need-login{
     display: contents;
     pointer-events: none;
@@ -496,3 +493,52 @@ button:hover div:nth-child(3) {
 #need-login .card{
     filter: blur(5px);
 }
+
+#Options-startUp{
+    position: absolute;
+    display: flex;
+    margin-left: 75%;
+    padding-left: 2%;
+    padding-right: 2%;
+    top: 40px;
+    background-color: red;
+    display: inline;
+}
+/* Modal (popup) styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    padding-top: 60px;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .modal-button {
+    background-color: #4285f4;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .modal-button:hover {
+    background-color: #357ae8;
+  }
