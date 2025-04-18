@@ -97,6 +97,7 @@ body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Oper
 
 #Patras{
     display: none;
+    pointer-events: auto;
 }
 
 input[type="checkbox"]:checked + label .row #Patras{
