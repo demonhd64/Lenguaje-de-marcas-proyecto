@@ -161,63 +161,61 @@ window.closeModal = function() {
 window.loginWithGoogle = function() {
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.setCustomParameters({
-        prompt: 'select_account',
+      prompt: 'select_account',
     });
 
-    auth.signInWithRedirect(provider);
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        // Guardar en localStorage el estado de autenticación
+        localStorage.setItem("isAuthenticated", "true");
 
-    // Manejar el resultado de la redirección
-    auth.getRedirectResult().then((result) => {
-        if (result.user) {
-            // Guardar en localStorage el estado de autenticación
-            localStorage.setItem("isAuthenticated", "true");
-
-            // Cambiar la visibilidad de los botones
-            document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
-            document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
-            document.querySelectorAll(".card").forEach(card => {
-                card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
-            });
-            document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
-                card.style.pointerEvents = "auto"
-            });
-
-            // Cerrar el modal
-            closeModal();
-        }
-    }).catch((error) => {
+        // Cambiar la visibilidad de los botones
+        document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
+        document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
+        document.querySelectorAll(".card").forEach(card => {
+            card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
+        });
+        document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
+            card.style.pointerEvents = "auto"
+        });
+        
+        
+        // Cerrar el modal
+        closeModal();
+      })
+      .catch((error) => {
         console.error("Error al iniciar sesión con Google:", error);
-    });
+        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
+      });
 };
 
 window.loginWithGitHub = function() {
     const provider = new firebase.auth.GithubAuthProvider();
-
-    auth.signInWithRedirect(provider);
-
-    // Manejar el resultado de la redirección
-    auth.getRedirectResult().then((result) => {
-        if (result.user) {
-            // Guardar en localStorage el estado de autenticación
-            localStorage.setItem("isAuthenticated", "true");
-
-            // Cambiar la visibilidad de los botones
-            document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
-            document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
-            document.querySelectorAll(".card").forEach(card => {
-                card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
-            });
-            document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
-                card.style.pointerEvents = "auto"
-            });
-
-            // Cerrar el modal
-            closeModal();
-        }
-    }).catch((error) => {
+  
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        // Guardar en localStorage el estado de autenticación
+        localStorage.setItem("isAuthenticated", "true");
+  
+        // Cambiar la visibilidad de los botones
+        document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
+        document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
+        document.querySelectorAll(".card").forEach(card => {
+            card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
+        });
+        document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
+            card.style.pointerEvents = "auto"
+        });       
+  
+        // Cerrar el modal
+        closeModal();
+      })
+      .catch(( error) => {
         console.error("Error al iniciar sesión con GitHub:", error);
-    });
+        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
+      });
 };
+
 window.logOut = function() {
     // Intentar eliminar la cuenta solo si el usuario está autenticado
     const currentUser = auth.currentUser;
@@ -240,6 +238,7 @@ window.logOut = function() {
         })
         .catch((error) => {
           console.error("Error al eliminar la cuenta:", error);
+          alert("Ha ocurrido un error al eliminar la cuenta: " + error.message);
         });
     } else {
       // Si el usuario no está autenticado, solo cerramos sesión
@@ -251,7 +250,7 @@ window.logOut = function() {
         })
         .catch((error) => {
           console.error("Error al cerrar sesión:", error);
-
+          alert("Ha ocurrido un error al cerrar sesión: " + error.message);
         });
     }
 };
