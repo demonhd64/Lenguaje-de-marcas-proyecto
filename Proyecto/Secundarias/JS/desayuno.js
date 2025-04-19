@@ -185,7 +185,6 @@ window.loginWithGoogle = function() {
       })
       .catch((error) => {
         console.error("Error al iniciar sesión con Google:", error);
-        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
       });
 };
 
@@ -212,7 +211,6 @@ window.loginWithGitHub = function() {
       })
       .catch(( error) => {
         console.error("Error al iniciar sesión con GitHub:", error);
-        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
       });
 };
 
@@ -238,7 +236,6 @@ window.logOut = function() {
         })
         .catch((error) => {
           console.error("Error al eliminar la cuenta:", error);
-          alert("Ha ocurrido un error al eliminar la cuenta: " + error.message);
         });
     } else {
       // Si el usuario no está autenticado, solo cerramos sesión
@@ -250,7 +247,7 @@ window.logOut = function() {
         })
         .catch((error) => {
           console.error("Error al cerrar sesión:", error);
-          alert("Ha ocurrido un error al cerrar sesión: " + error.message);
+
         });
     }
 };
