@@ -218,7 +218,6 @@ window.loginWithGitHub = function() {
         console.error("Error al iniciar sesión con GitHub:", error);
     });
 };
-
 window.logOut = function() {
     // Intentar eliminar la cuenta solo si el usuario está autenticado
     const currentUser = auth.currentUser;
