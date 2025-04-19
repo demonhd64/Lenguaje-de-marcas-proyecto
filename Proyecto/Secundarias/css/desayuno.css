@@ -503,6 +503,8 @@ button:hover div:nth-child(3) {
     padding-right: 2%;
     top: 40px;
     display: inline;
+    background-color: red;
+    backdrop-filter: blur(10px);
 }
 /* Modal (popup) styles */
 .modal {
