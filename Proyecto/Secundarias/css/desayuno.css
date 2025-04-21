@@ -440,6 +440,12 @@ label {
     overflow-x: auto;
 }
 
+@media screen and (min-width: 1024px) {
+    .desplegable {
+        max-width: fit-content;
+    }
+}
+
 
 .desplegable li {
     padding: 12px;
