@@ -508,6 +508,8 @@ label {
 }
 
 #btnIniciarSesion{
+    position: absolute;
+    right: 0;
     border: none;
     background-color: transparent;
 }
@@ -604,6 +606,8 @@ label {
 }
 
 #btnRegistro{
+    position: absolute;
+    right: 0;
     border: none;
     background-color: transparent;
 }
