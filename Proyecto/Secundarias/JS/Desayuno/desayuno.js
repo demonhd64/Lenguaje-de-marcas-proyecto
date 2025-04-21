@@ -239,6 +239,7 @@ const LogOut = document.getElementById("LogOut")
 const borroso = document.getElementById("need-login")
 const cardsborrosas = borroso.querySelectorAll(".card")
 const cursoreventLogNec = document.getElementById("need-login")
+const TextNeedLogIn = document.getElementById("Texto-need-logIn")
 
 onAuthStateChanged(auth, async (usuario) => {
     if (usuario){
@@ -247,6 +248,7 @@ onAuthStateChanged(auth, async (usuario) => {
         LogOut.style.display = "flex"
         cardsborrosas.forEach(card => card.style.filter = "none")
         cursoreventLogNec.style.pointerEvents = "auto"
+        TextNeedLogIn.style.display = "none"
 
     }else{
         BtnLogSign[0].style.display = "flex"
@@ -254,5 +256,6 @@ onAuthStateChanged(auth, async (usuario) => {
         LogOut.style.display = "none"
         cardsborrosas.forEach(card => card.style.filter = "blur(5px)")
         cursoreventLogNec.style.pointerEvents = "none"
+        TextNeedLogIn.style.display = "block"
     }
 })

@@ -160,6 +160,9 @@ input[type="checkbox"]:checked + label .row #Patras{
     background-color: red;
 }
 
+#Texto-need-logIn{
+    text-align: center;
+}
 
 .elementos {
     color: aqua;
