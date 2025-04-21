@@ -1,4 +1,7 @@
-import { ingredientesParaFiltro_export } from "../../Almacenamiento/datos.js";
+import { ingredientesParaFiltro_export } from "../../../Almacenamiento/datos.js"
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { auth } from "../Desayuno/Firebase.js";
+
 
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
@@ -227,3 +230,26 @@ function eyeRegistro() {
 // Asignar el evento a los íconos
 document.getElementById("eye-OpenRegistro").addEventListener('click', eyeRegistro);
 document.getElementById("eye-closedRegistro").addEventListener('click', eyeRegistro);
+
+
+//Cambio de botones:
+
+const BtnLogSign = document.getElementsByClassName("btnSign")
+const LogOut = document.getElementById("LogOut")
+const borroso = document.getElementById("need-login")
+const cardsborrosas = borroso.querySelectorAll(".card")
+
+onAuthStateChanged(auth, async (usuario) => {
+    if (usuario){
+        BtnLogSign[0].style.display = "none"
+        BtnLogSign[1].style.display = "none"
+        LogOut.style.display = "flex"
+        cardsborrosas.forEach(card => card.style.filter = "none")
+
+    }else{
+        BtnLogSign[0].style.display = "flex"
+        BtnLogSign[1].style.display = "flex"
+        LogOut.style.display = "none"
+        cardsborrosas.forEach(card => card.style.filter = "blur(5px)")
+    }
+})

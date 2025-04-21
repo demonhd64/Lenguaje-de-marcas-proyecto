@@ -7,8 +7,7 @@
     <title>Desayunos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
     <div class="row-header">
@@ -36,9 +35,8 @@
                         </div>
                     </div>
                     <div id="IniciarSesion" class="col-md-4">
-                        <button id="btnIniciarSesion">Iniciar sesión</button>
+                        <button id="btnIniciarSesion" class="btnSign">Iniciar sesión</button>
 
-                        <button onclick="logOut()" style="display:none;">Cerrar sesión</button>
                         <div id="login-modal" class="modal">
                             <div class="row">
                                 <div class="col-md-12">
@@ -49,13 +47,13 @@
                                                     <label for="email" class="emm"><p>Email:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="text" class="email-input" placeholder="Introduce tu email" required>
+                                                    <input type="email" id="LogIn email" class="email-input" placeholder="Introduce tu email" required>
                                                 </div>
                                                 <div class="row">
                                                     <label for="password" class="pass"><p>Contraseña:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="password" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                    <input type="password" id="LogIn passw" class="passw-input" placeholder="Introduce tu contraseña" required>
                                                 </div>
                                                     <label for="visibilidad" class="Visibilidad">
                                                     <i class="fa-regular fa-eye" id="eye-OpenLogin" style="display: none; cursor: pointer;"></i>
@@ -63,7 +61,7 @@
                                                 </label>
                                                 <button type="button" class="Signup-google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
                                                 <button type="button" class="Signup-github"><i class="fa-brands fa-github"></i>   Github</button>
-                                                <button id="Sign-up">Login</button>
+                                                <button type="submit" id="Sign-up">Login</button>
                                         </form>
                                     </div>
                                 </div>
@@ -72,9 +70,9 @@
                     </div>
 
                     <div id="Registro" class="col-md-4">
-                        <button id="btnRegistro">Registrate</button>
+                        <button id="btnRegistro" class="btnSign">Registrate</button>
 
-                        <button onclick="logOut()" style="display:none;">Cerrar sesión</button>
+                        <button style="display:none;" id="LogOut">Cerrar sesión</button>
                         <div id="registro-modal" class="modal">
                             <div class="row">
                                 <div class="col-md-12">
@@ -85,13 +83,13 @@
                                                     <label for="email" class="emm"><p>Email:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="text" class="email-input" placeholder="Introduce tu email" required>
+                                                    <input type="email" id="Registro email" class="email-input" placeholder="Introduce tu email" required>
                                                 </div>
                                                 <div class="row">
                                                     <label for="password" class="pass"><p>Contraseña:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="password" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                    <input type="password" id="Registro contraseña" class="passw-input" placeholder="Introduce tu contraseña" required>
                                                 </div>
                                                     <label for="visibilidad" class="Visibilidad">
                                                     <i class="fa-regular fa-eye" id="eye-OpenRegistro" style="display: none; cursor: pointer;"></i>
@@ -99,7 +97,7 @@
                                                 </label>
                                                 <button type="button" class="Signup-google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
                                                 <button type="button" class="Signup-github"><i class="fa-brands fa-github"></i>   Github</button>
-                                                <button id="Register">Registrate</button>
+                                                <button type="submit" id="Register">Registrate</button>
                                         </form>
                                     </div>
                                 </div>
@@ -330,8 +328,11 @@
             </div>
         </div>
     </div>
-    <script type="module" src="../JS/desayuno.js"></script>
-    <script type="module" src="../JS/Firebase.js"></script>
+    <script type="module" src="../JS///Desayuno/desayuno.js"></script>
+    <script type="module" src="../JS/Desayuno/Signup.js"></script>
+    <script type="module" src="../JS/Desayuno/LogIn.js"></script>
+    <script type="module" src="../JS/Desayuno/logOut.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
