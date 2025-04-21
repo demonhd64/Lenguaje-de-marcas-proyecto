@@ -238,6 +238,7 @@ const BtnLogSign = document.getElementsByClassName("btnSign")
 const LogOut = document.getElementById("LogOut")
 const borroso = document.getElementById("need-login")
 const cardsborrosas = borroso.querySelectorAll(".card")
+const cursoreventLogNec = document.getElementById("need-login")
 
 onAuthStateChanged(auth, async (usuario) => {
     if (usuario){
@@ -245,11 +246,13 @@ onAuthStateChanged(auth, async (usuario) => {
         BtnLogSign[1].style.display = "none"
         LogOut.style.display = "flex"
         cardsborrosas.forEach(card => card.style.filter = "none")
+        cursoreventLogNec.style.pointerEvents = "auto"
 
     }else{
         BtnLogSign[0].style.display = "flex"
         BtnLogSign[1].style.display = "flex"
         LogOut.style.display = "none"
         cardsborrosas.forEach(card => card.style.filter = "blur(5px)")
+        cursoreventLogNec.style.pointerEvents = "none"
     }
 })
