@@ -354,6 +354,10 @@ input#c5:checked + label[for="c5"] {
     height: 80vh;
 }
 
+#Texto-De-Opcion{
+    pointer-events: auto;
+}
+
 header {
     background-color: rgb(134, 134, 134);
     display: flex;
