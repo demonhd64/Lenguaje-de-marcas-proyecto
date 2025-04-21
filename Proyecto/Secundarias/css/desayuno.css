@@ -429,8 +429,8 @@ label {
     display: none;
     position: absolute;
     background-color: rgba(139, 139, 139);
-    width: 900px;
-    max-width: calc(100vw - 150px);
+    width: 100vw;
+    max-width: 70vw;
     box-shadow: 1px 1px 3px;
     list-style-type: none;
     margin-top: -62px;
@@ -620,4 +620,11 @@ label {
     display: block;
     margin-top: 20px;
     margin-left: 35%;
+}
+
+#LogOut{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    right: 0;
 }
