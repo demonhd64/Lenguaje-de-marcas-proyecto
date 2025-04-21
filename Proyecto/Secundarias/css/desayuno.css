@@ -182,7 +182,7 @@ input[type="checkbox"]:checked + label .row #Patras{
     display: none;
     overflow-y: auto;
     font-size: clamp(0.8rem, 2.5vw, 1rem);
-    pointer-events: none;
+    cursor:default;
 }
 
 /*Scrollbar de el div de la derecha de ingredientes*/
