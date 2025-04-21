@@ -1,16 +1,5 @@
 import { ingredientesParaFiltro_export } from "../../Almacenamiento/datos.js";
 
-// Configuración de Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyDX7IW42ZKxsQoHsqPAgMtdIEMcyaILbNg",
-    authDomain: "lenguaje-de-marcas-d778e.firebaseapp.com",
-    projectId: "lenguaje-de-marcas-d778e",
-};
-
-// Inicializar Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -149,127 +138,92 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Funciones de inicio de sesión
-window.showModal = function() {
-    document.getElementById("login-modal").style.display = "block";
-};
+// Log in
 
-window.closeModal = function() {
-    document.getElementById("login-modal").style.display = "none";
-};
+function showModal() {
+    const modal = document.getElementsByClassName("modal");
+    modal[0].style.display = "flex"
+}
 
-window.loginWithGoogle = function() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.setCustomParameters({
-      prompt: 'select_account',
-    });
+document.getElementById("btnIniciarSesion").addEventListener('click', showModal)
 
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        // Guardar en localStorage el estado de autenticación
-        localStorage.setItem("isAuthenticated", "true");
+// Control cerrar modal
 
-        // Cambiar la visibilidad de los botones
-        document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
-        document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
-        document.querySelectorAll(".card").forEach(card => {
-            card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
-        });
-        document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
-            card.style.pointerEvents = "auto"
-        });
-        
-        
-        // Cerrar el modal
-        closeModal();
-      })
-      .catch((error) => {
-        console.error("Error al iniciar sesión con Google:", error);
-        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
-      });
-};
+function CerrarModal(){
+    const modal = document.getElementsByClassName("modal");
+    modal[0].style.display = "none"
+}
 
-window.loginWithGitHub = function() {
-    const provider = new firebase.auth.GithubAuthProvider();
-  
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        // Guardar en localStorage el estado de autenticación
-        localStorage.setItem("isAuthenticated", "true");
-  
-        // Cambiar la visibilidad de los botones
-        document.querySelector("button[onclick='showModal()']").style.display = "none";  // Ocultar el botón de login
-        document.querySelector("button[onclick='logOut()']").style.display = "inline-block";  // Mostrar el botón de logout
-        document.querySelectorAll(".card").forEach(card => {
-            card.style.filter = "none";  // Eliminar cualquier filtro de desenfoque
-        });
-        document.querySelectorAll(".card").forEach(card => { //Permite hacer click en las cards
-            card.style.pointerEvents = "auto"
-        });       
-  
-        // Cerrar el modal
-        closeModal();
-      })
-      .catch(( error) => {
-        console.error("Error al iniciar sesión con GitHub:", error);
-        alert("Ha ocurrido un error durante el inicio de sesión: " + error.message);
-      });
-};
+document.getElementById("CerrarModalLogIn").addEventListener('click', CerrarModal)
 
-window.logOut = function() {
-    // Intentar eliminar la cuenta solo si el usuario está autenticado
-    const currentUser = auth.currentUser;
-    if (currentUser) {
-      currentUser.delete()
-        .then(() => {
-          console.log("Cuenta eliminada correctamente");
-          // Luego de eliminar la cuenta, proceder a cerrar sesión
-          return auth.signOut();
-        })
-        .then(() => {
-          // Limpiar la interfaz y los botones como antes
-          localStorage.removeItem("isAuthenticated");
-          document.querySelector("button[onclick='showModal()']").style.display = "inline-block";  // Mostrar el botón de login
-          document.querySelector("button[onclick='logOut()']").style.display = "none";  // Ocultar el botón de logout
-          document.querySelectorAll("#need-login .card").forEach(card => {
-            card.style.filter = "blur(5px)";  // Eliminar cualquier filtro de desenfoque
-            card.style.pointerEvents = "none"
-        });
-        })
-        .catch((error) => {
-          console.error("Error al eliminar la cuenta:", error);
-          alert("Ha ocurrido un error al eliminar la cuenta: " + error.message);
-        });
+//Visibilidad contraseña
+let ConstraseñaVisible = false; // Variable para controlar la visibilidad
+
+function eyeLogin() {
+    const eyeOpen = document.getElementById("eye-OpenLogin");
+    const eyeClosed = document.getElementById("eye-closedLogin");
+    const passwInput = document.getElementsByClassName("passw-input")[0];
+
+    // Alternar la visibilidad de la contraseña
+    ConstraseñaVisible = !ConstraseñaVisible;
+
+    if (ConstraseñaVisible) {
+        passwInput.type = "text"; // Cambia el tipo a texto
+        eyeClosed.style.display = "none"; // Oculta el ícono de ojo cerrado
+        eyeOpen.style.display = "inline"; // Muestra el ícono de ojo abierto
     } else {
-      // Si el usuario no está autenticado, solo cerramos sesión
-      auth.signOut()
-        .then(() => {
-          localStorage.removeItem("isAuthenticated");
-          document.querySelector("button[onclick='showModal()']").style.display = "inline-block";
-          document.querySelector("button[onclick='logOut()']").style.display = "none";
-        })
-        .catch((error) => {
-          console.error("Error al cerrar sesión:", error);
-          alert("Ha ocurrido un error al cerrar sesión: " + error.message);
-        });
+        passwInput.type = "password"; // Cambia el tipo a password
+        eyeClosed.style.display = "inline"; // Muestra el ícono de ojo cerrado
+        eyeOpen.style.display = "none"; // Oculta el ícono de ojo abierto
     }
-};
-  
+}
+
+// Asignar el evento a los íconos
+document.getElementById("eye-OpenLogin").addEventListener('click', eyeLogin);
+document.getElementById("eye-closedLogin").addEventListener('click', eyeLogin);
 
 
-// Verificar si el usuario está autenticado al cargar la página
-window.onload = () => {
-    const isAuthenticated = localStorage.getItem("isAuthenticated");
 
-    if (isAuthenticated === "true") {
-        auth.onAuthStateChanged((user) => {
-            if (user) {
-                document.querySelector("button[onclick='showModal()']").style.display = "none";
-                document.querySelector("button[onclick='logOut()']").style.display = "inline-block";
-            }
-        });
+// Registro
+
+function showModalRegistro() {
+    const modal = document.getElementsByClassName("modal");
+    modal[1].style.display = "flex"
+}
+
+document.getElementById("btnRegistro").addEventListener('click', showModalRegistro)
+
+// Control cerrar modal
+
+function CerrarModalRegistro(){
+    const modal = document.getElementsByClassName("modal");
+    modal[1].style.display = "none"
+}
+
+document.getElementById("CerrarModalRegistro").addEventListener('click', CerrarModalRegistro)
+
+//Visibilidad contraseña
+let ConstraseñaVisibleRegistro = false; // Variable para controlar la visibilidad
+
+function eyeRegistro() {
+    const eyeOpen = document.getElementById("eye-OpenRegistro");
+    const eyeClosed = document.getElementById("eye-closedRegistro");
+    const passwInput = document.getElementsByClassName("passw-input")[1];
+
+    // Alternar la visibilidad de la contraseña
+    ConstraseñaVisibleRegistro = !ConstraseñaVisibleRegistro;
+
+    if (ConstraseñaVisibleRegistro) {
+        passwInput.type = "text"; // Cambia el tipo a texto
+        eyeClosed.style.display = "none"; // Oculta el ícono de ojo cerrado
+        eyeOpen.style.display = "inline"; // Muestra el ícono de ojo abierto
     } else {
-        document.querySelector("button[onclick='showModal()']").style.display = "inline-block";
-        document.querySelector("button[onclick='logOut()']").style.display = "none"; // Ocultar el botón de logout
+        passwInput.type = "password"; // Cambia el tipo a password
+        eyeClosed.style.display = "inline"; // Muestra el ícono de ojo cerrado
+        eyeOpen.style.display = "none"; // Oculta el ícono de ojo abierto
     }
-};
+}
+
+// Asignar el evento a los íconos
+document.getElementById("eye-OpenRegistro").addEventListener('click', eyeRegistro);
+document.getElementById("eye-closedRegistro").addEventListener('click', eyeRegistro);

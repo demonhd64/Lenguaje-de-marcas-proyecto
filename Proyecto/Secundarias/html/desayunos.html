@@ -19,7 +19,7 @@
                         <div class="lista">
                             <input type="checkbox" id="activo"/>
                             <label for="activo">
-                                <button>
+                                <button id="Barras">
                                     <div></div>
                                     <div></div>
                                     <div></div>
@@ -35,19 +35,78 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="Options-startUp" class="col-md-2">
-                        <button onclick="showModal()">Iniciar sesión</button>
+                    <div id="IniciarSesion" class="col-md-4">
+                        <button id="btnIniciarSesion">Iniciar sesión</button>
 
                         <button onclick="logOut()" style="display:none;">Cerrar sesión</button>
                         <div id="login-modal" class="modal">
-                            <div class="modal-content">
-                              <h2>Selecciona un método de inicio de sesión</h2>
-                              <button class="modal-button" onclick="loginWithGoogle()">Iniciar sesión con Google</button>
-                              <button class="modal-button" onclick="loginWithGitHub()">Iniciar sesión con GitHub</button>
-                              <button class="Cerrar-modal" onclick="closeModal()">x</button>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="modal-content">
+                                        <button id="CerrarModalLogIn" class="CerrarModal">x</button>
+                                        <form id="Sing in">
+                                                <div class="row">
+                                                    <label for="email" class="emm"><p>Email:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="text" class="email-input" placeholder="Introduce tu email" required>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="password" class="pass"><p>Contraseña:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="password" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                </div>
+                                                    <label for="visibilidad" class="Visibilidad">
+                                                    <i class="fa-regular fa-eye" id="eye-OpenLogin" style="display: none; cursor: pointer;"></i>
+                                                    <i class="fa-regular fa-eye-slash" id="eye-closedLogin" style="cursor: pointer;"></i>
+                                                </label>
+                                                <button type="button" class="Signup-google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
+                                                <button type="button" class="Signup-github"><i class="fa-brands fa-github"></i>   Github</button>
+                                                <button id="Sign-up">Login</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                     </div>
+
+                    <div id="Registro" class="col-md-4">
+                        <button id="btnRegistro">Registrate</button>
+
+                        <button onclick="logOut()" style="display:none;">Cerrar sesión</button>
+                        <div id="registro-modal" class="modal">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="modal-content">
+                                        <button id="CerrarModalRegistro" class="CerrarModal">x</button>
+                                        <form id="Registrarse">
+                                                <div class="row">
+                                                    <label for="email" class="emm"><p>Email:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="text" class="email-input" placeholder="Introduce tu email" required>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="password" class="pass"><p>Contraseña:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="password" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                </div>
+                                                    <label for="visibilidad" class="Visibilidad">
+                                                    <i class="fa-regular fa-eye" id="eye-OpenRegistro" style="display: none; cursor: pointer;"></i>
+                                                    <i class="fa-regular fa-eye-slash" id="eye-closedRegistro" style="cursor: pointer;"></i>
+                                                </label>
+                                                <button type="button" class="Signup-google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
+                                                <button type="button" class="Signup-github"><i class="fa-brands fa-github"></i>   Github</button>
+                                                <button id="Register">Registrate</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+
                 </nav>
             </header>
         </div>
@@ -272,6 +331,7 @@
         </div>
     </div>
     <script type="module" src="../JS/desayuno.js"></script>
+    <script type="module" src="../JS/Firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

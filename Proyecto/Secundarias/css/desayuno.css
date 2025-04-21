@@ -2,7 +2,7 @@ html, body {
     height: 100%; /* Asegura que el body tome toda la altura */
     margin: 0;
     padding: 0;
-    overflow-x: none;
+    overflow-x: hidden;
 }
 
 body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Opera, Internet Explorer)*/
@@ -20,6 +20,10 @@ body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Oper
     100% {
         background-position: 0% 50%;
     }
+}
+
+input{
+    text-align: center;
 }
 
 .wrapper {
@@ -97,7 +101,6 @@ body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Oper
 
 #Patras{
     display: none;
-    pointer-events: auto;
 }
 
 input[type="checkbox"]:checked + label .row #Patras{
@@ -382,13 +385,14 @@ nav {
     margin-left: 40px;
     position: relative;
     transform: translateY(5px);
+    z-index: 150;
 }
 
 label {
     cursor: default; /* Cambia el cursor al pasar sobre el label */
 }
 
-button {
+#Barras {
     display: flex;
     flex-direction: column;
     width: 3rem;
@@ -400,7 +404,7 @@ button {
     cursor: pointer;
 }
 
-button > div {
+#Barras > div {
     background: black;
     height: 2px;
     width: 100%;
@@ -409,15 +413,15 @@ button > div {
     transform-origin: left;
 }
 
-button:hover div:first-child {
+#Barras:hover div:first-child {
     transform: rotate(45deg);
 }
 
-button:hover div:nth-child(2) {
+#Barras:hover div:nth-child(2) {
     opacity: 0;
 }
 
-button:hover div:nth-child(3) {
+#Barras:hover div:nth-child(3) {
     transform: rotate(-45deg);
 }
 
@@ -495,55 +499,125 @@ button:hover div:nth-child(3) {
     filter: blur(5px);
 }
 
-#Options-startUp{
+#IniciarSesion{
     position: absolute;
     display: flex;
-    margin-left: 75%;
-    padding-left: 2%;
-    padding-right: 2%;
+    right: 15vw;
     top: 40px;
-    display: inline;
+    display: flex;
+}
+
+#btnIniciarSesion{
+    border: none;
+    background-color: transparent;
 }
 /* Modal (popup) styles */
 .modal {
-    display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
     width: 100%;
-    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    overflow: auto;
-    padding-top: 60px;
-}
-.modal-content {
-  background-color: #fff;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 10px;
-  text-align: center;
-}
-.modal-button {
-  background-color: #4285f4;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  margin-top: 10px;
-  width: 100%;
-}
-.modal-button:hover {
-  background-color: #357ae8;
 }
 
-.Cerrar-modal{
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: x-large;
+.modal-content {
+    background-color: black;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    transform: translateY(10%) translateX(-17%);
+    min-width: 150%;
+    margin: 0;
 }
-  
+
+@media (max-width: 768px){
+    #IniciarSesion{
+        right: 30vw;
+    }
+    .modal-content{
+        min-width: none;
+        transform: translateY(25%) translateX(-17%);
+    }
+}
+
+.modal-content button:nth-child(1){
+    position: absolute;
+    scale: 150%;
+    right: 15px;
+    top: 0px;
+    height: 5px;
+    width: 5px;
+}
+
+.email-input, .passw-input{
+    display: flex;
+}
+
+.emm, .pass{
+    margin-bottom: -5px;
+}
+
+.Visibilidad{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    right: 15px;
+    top: 44%;
+}
+
+.Signup-google, .Signup-github{
+    display: inline-block;
+    border: none;
+    margin-top: 20px;
+    padding: 5%;
+}
+
+.Signup-github{
+    background-color: black;
+    color: white;
+    margin-left: 15px;
+}
+
+
+.CerrarModal{
+    border: none;
+    background-color: transparent;
+}
+
+#Sign-up{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+#Registro{
+    position: absolute;
+    display: flex;
+    right: 5%;
+    top: 40px;
+    display: flex;
+}
+
+#btnRegistro{
+    border: none;
+    background-color: transparent;
+}
+
+
+@media (max-width: 768px){
+    #Registro{
+        right: 5vw;
+    }
+}
+
+#Register{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    margin-left: 40%;
+}
