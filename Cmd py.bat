@@ -58,7 +58,7 @@ if not exist "C:\Lenguaje-de-marcas-proyecto" (
 C:
 
 :: Cambiar al directorio donde está el archivo index.html
-cd C:\Lenguaje-de-marcas-proyecto\Proyecto\Principal
+cd C:\Lenguaje-de-marcas-proyecto\Proyecto
 
 :: Iniciar el servidor HTTP
 start cmd /k "python -m http.server %puerto%"
