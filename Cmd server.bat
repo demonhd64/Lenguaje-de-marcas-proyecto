@@ -72,4 +72,3 @@ timeout /t 5
 :: Abrir el archivo index.html en el navegador
 start http://localhost:%puerto%/index.html
 
-goto menu
