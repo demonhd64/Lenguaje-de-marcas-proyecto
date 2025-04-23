@@ -49,10 +49,9 @@ goto menu
 :: Establecer el puerto
 set puerto=8000
 
-:: Clonar el repositorio si no existe
-if not exist "C:\Lenguaje-de-marcas-proyecto" (
+:: Clonar el repositorio siempre para poderlo actualizar.
     git clone https://github.com/demonhd64/Lenguaje-de-marcas-proyecto.git C:\Lenguaje-de-marcas-proyecto
-)
+
 
 :: Asegurarse de moverse a C:
 C:
