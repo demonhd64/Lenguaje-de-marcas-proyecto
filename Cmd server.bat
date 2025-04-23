@@ -49,18 +49,21 @@ goto menu
 :: Establecer el puerto
 set puerto=8000
 
-:: Ruta al directorio donde se almacenará el repositorio
-set repo_dir=C:\Lenguaje-de-marcas-proyecto
+:: Determinar la ruta al directorio de GitHub en Documentos o Documentos
+set repo_dir="%USERPROFILE%\Documents\GitHub\Lenguaje-de-marcas-proyecto"
+if not exist %repo_dir% (
+    set repo_dir="%USERPROFILE%\Documentos\GitHub\Lenguaje-de-marcas-proyecto"
+)
 
 :: Verificar si el directorio ya existe
-if exist "%repo_dir%" (
+if exist %repo_dir% (
     echo El repositorio ya existe. Actualizando con los últimos cambios...
-    cd "%repo_dir%\Proyecto"
+    cd %repo_dir%\Proyecto
     git pull origin main
 ) else (
     echo Clonando el repositorio desde GitHub...
-    git clone https://github.com/demonhd64/Lenguaje-de-marcas-proyecto.git "%repo_dir%"
-    cd "%repo_dir%\Proyecto"
+    git clone https://github.com/demonhd64/Lenguaje-de-marcas-proyecto.git %repo_dir%
+    cd %repo_dir%\Proyecto
 )
 
 :: Iniciar el servidor HTTP en una nueva ventana de cmd
@@ -71,4 +74,3 @@ timeout /t 5
 
 :: Abrir el archivo index.html en el navegador
 start http://localhost:%puerto%/index.html
-
