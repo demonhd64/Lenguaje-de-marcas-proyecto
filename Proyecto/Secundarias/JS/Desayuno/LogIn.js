@@ -17,7 +17,7 @@ formSignIn.addEventListener('submit', async (e) => {
 
         modalRegistro.style.display = "none"
         
-        mensajes("Usuario " + credenciales.user.email + "acceso permitido")
+        mensajes("Usuario " + credenciales.user.email + " acceso permitido")
 
         
     } catch (error) {
