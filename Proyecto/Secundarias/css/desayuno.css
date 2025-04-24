@@ -99,11 +99,11 @@ input{
     font-size: x-large;
 }
 
-#Patras{
+.Patras{
     display: none;
 }
 
-input[type="checkbox"]:checked + label .row #Patras{
+input[type="checkbox"]:checked + label .row .Patras{
     display: flex;
     background: transparent;
     position: absolute;
