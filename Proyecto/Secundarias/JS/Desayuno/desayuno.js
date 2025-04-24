@@ -40,16 +40,20 @@ function MirarSiActivo(container) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
 
+    const TextoLog = document.querySelector('#Texto-need-logIn');
+
     if (container.checked) {
         cards.forEach(function(card) {
             card.style.display = 'none';
             card.classList.remove("activa");
+            TextoLog.style.display = "none"
         });
         container.nextElementSibling.style.display = 'flex';
         container.nextElementSibling.classList.add("activa");
     } else {
         const pasoSelector = container.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = container.nextElementSibling.querySelector('.texto');
+        TextoLog.style.display = "block"
 
         if (pasoSelector) {
             pasoSelector.value = "";
