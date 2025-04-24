@@ -357,7 +357,7 @@ input#c5:checked + label[for="c5"] {
     height: 80vh;
 }
 
-#Texto-De-Opcion{
+#Texto-De-Opcion, #Texto-De-Opcion2, #Texto-De-Opcion3, #Texto-De-Opcion4, #Texto-De-Opcion5 {
     pointer-events: auto;
 }
 
