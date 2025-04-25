@@ -39,8 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function MirarSiActivo(container) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
-
-
+    
     if (container.checked) {
         cards.forEach(function(card) {
             card.style.display = 'none';
@@ -52,6 +51,7 @@ function MirarSiActivo(container) {
     } else {
         const pasoSelector = container.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = container.nextElementSibling.querySelector('.texto');
+
 
         if (pasoSelector) {
             pasoSelector.value = "";
@@ -71,6 +71,7 @@ function MirarSiActivo(container) {
         }
         aplicarFiltros();
     }
+    TextoAyuda();
 }
 
 window.MirarSiActivo = MirarSiActivo;
@@ -241,16 +242,18 @@ const LogOut = document.getElementById("LogOut")
 const borroso = document.getElementById("need-login")
 const cardsborrosas = borroso.querySelectorAll(".card")
 const cursoreventLogNec = document.getElementById("need-login")
-const TextNeedLogIn = document.getElementById("Texto-need-logIn")
+
 
 onAuthStateChanged(auth, async (usuario) => {
+    const textoNeedLogIn = document.getElementById("Texto-need-logIn")
+
     if (usuario){
         BtnLogSign[0].style.display = "none"
         BtnLogSign[1].style.display = "none"
         LogOut.style.display = "flex"
         cardsborrosas.forEach(card => card.style.filter = "none")
         cursoreventLogNec.style.pointerEvents = "auto"
-        TextNeedLogIn.style.display = "none"
+        textoNeedLogIn.style.display = "none"
 
     }else{
         BtnLogSign[0].style.display = "flex"
@@ -258,6 +261,24 @@ onAuthStateChanged(auth, async (usuario) => {
         LogOut.style.display = "none"
         cardsborrosas.forEach(card => card.style.filter = "blur(5px)")
         cursoreventLogNec.style.pointerEvents = "none"
-        TextNeedLogIn.style.display = "block"
+        textoNeedLogIn.style.display = "block"
     }
 })
+
+//Control de textos para cards activas o no:
+
+function TextoAyuda(){
+    const Ayuda = document.getElementById("Ayuda")
+    const textoNeedLogIn = document.getElementById("Texto-need-logIn")
+    const cardsChecked = document.querySelectorAll(".opcionCheck:checked")
+
+    if(cardsChecked.length > 0){
+        Ayuda.style.display = "none"
+        textoNeedLogIn.style.display = "none"
+    } else{
+        Ayuda.style.display = "block"
+        textoNeedLogIn.style.display = "block"
+    }
+
+}
+

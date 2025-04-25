@@ -9,7 +9,23 @@ body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Oper
     background-image: linear-gradient(-45deg, rgba(255, 102, 0, 0.4) 0%, rgba(0, 225, 255, 0.4) 25%, rgba(255, 53, 127, 0.4) 100%);
     background-size: 200% 200%;
     animation: AnimateBG 2s ease infinite;
+    
 }  
+
+body::-webkit-scrollbar {
+    width: 15px;
+    background: transparent !important; /* Color de fondo del track */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
+    border: 2px solid rgba(139, 139, 139);
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Color del track */
+}
+
 @keyframes AnimateBG {
     0% {
         background-position: 0% 50%;
