@@ -3,6 +3,7 @@ import { auth } from "../Desayuno/Firebase.js";
 import { mensajes } from "../Desayuno/Tostify.js"
 
 const formSignIn = document.getElementById("Sing in")
+var userCredentialsEmailLogIn = null
 
 formSignIn.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ formSignIn.addEventListener('submit', async (e) => {
         
         mensajes("Usuario " + credenciales.user.email + " acceso permitido")
 
+        userCredentialsEmailLogIn = credenciales.user.email
         
     } catch (error) {
         console.log(error.code)
@@ -29,3 +31,5 @@ formSignIn.addEventListener('submit', async (e) => {
         }
     }
 })
+
+export {userCredentialsEmailLogIn}

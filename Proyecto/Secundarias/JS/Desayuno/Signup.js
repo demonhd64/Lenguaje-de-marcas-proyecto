@@ -4,6 +4,8 @@ import {} from "../Desayuno/Firebase.js"
 import { mensajes } from "../Desayuno/Tostify.js"
 
 const SignupForm = document.querySelector("#Registrarse")
+var userCredentialsEmailRegister = null
+
 
 SignupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ SignupForm.addEventListener('submit', async (e) => {
         modalRegistro.style.display = "none"
 
         mensajes("Usuario " + credenciales.user.email + " creado correctamente")
+        userCredentialsEmailRegister = credenciales.user.email
 
     } catch (error) {
         console.log(error.code)
@@ -36,3 +39,5 @@ SignupForm.addEventListener('submit', async (e) => {
 
 
 })
+
+export {userCredentialsEmailRegister}
