@@ -13,13 +13,13 @@ body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Oper
 }  
 
 body::-webkit-scrollbar {
-    width: 15px;
-    background: transparent !important; /* Color de fondo del track */
+    background: rgb(134, 134, 134); /* Color de fondo del track */
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
-    border: 2px solid rgba(139, 139, 139);
+    background-color: rgb(170, 169, 169); /* Color verde del thumb */
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 50px;
 }
 
 body::-webkit-scrollbar-track {
