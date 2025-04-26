@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
-import { auth, db } from "../../Desayuno/Firebase.js"
+import { auth, db } from "../../../Firebase.js"
 import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js" //funciones para modificar la base de datos de firebase
-import { mensajes } from "../../Desayuno/Tostify.js"
+import { mensajes } from ""
 import { signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 
 const googleboton = document.querySelector("#Signup-google")

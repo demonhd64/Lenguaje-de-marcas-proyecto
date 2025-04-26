@@ -1,10 +1,11 @@
 import { createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
-import { auth } from "../Desayuno/Firebase.js";
-import {} from "../Desayuno/Firebase.js"
-import { mensajes } from "../Desayuno/Tostify.js"
+import { } from "../Firebase.js";
+import { mensajes } from "../Tostify.js"
 
 const SignupForm = document.querySelector("#Registrarse")
-var userCredentialsEmailRegister = null
+var userCredentialsEmailRegister = {
+    user : null
+}
 
 
 SignupForm.addEventListener('submit', async (e) => {
@@ -22,7 +23,8 @@ SignupForm.addEventListener('submit', async (e) => {
         modalRegistro.style.display = "none"
 
         mensajes("Usuario " + credenciales.user.email + " creado correctamente")
-        userCredentialsEmailRegister = credenciales.user.email
+
+        userCredentialsEmailRegister.user = credenciales.user.email
 
     } catch (error) {
         console.log(error.code)

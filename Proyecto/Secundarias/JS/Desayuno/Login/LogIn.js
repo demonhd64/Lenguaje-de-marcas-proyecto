@@ -1,9 +1,11 @@
 import { signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
-import { auth } from "../Desayuno/Firebase.js";
-import { mensajes } from "../Desayuno/Tostify.js"
+import { auth } from "../Firebase.js";
+import { mensajes } from "../Tostify.js"
 
 const formSignIn = document.getElementById("Sing in")
-var userCredentialsEmailLogIn = null
+var userCredentialsEmailLogIn = {
+    user : null
+}
 
 formSignIn.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -20,8 +22,9 @@ formSignIn.addEventListener('submit', async (e) => {
         
         mensajes("Usuario " + credenciales.user.email + " acceso permitido")
 
-        userCredentialsEmailLogIn = credenciales.user.email
+        userCredentialsEmailLogIn.user = credenciales.user.email
         
+        console.log(credenciales)
     } catch (error) {
         console.log(error.code)
         if(error.code === 'auth/invalid-credential'){

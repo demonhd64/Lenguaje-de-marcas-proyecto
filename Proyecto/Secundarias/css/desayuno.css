@@ -601,14 +601,14 @@ label {
     top: 44%;
 }
 
-.Signup-google, .Signup-github{
+.google, .github{
     display: inline-block;
     border: none;
     margin-top: 20px;
     padding: 5%;
 }
 
-.Signup-github{
+.github{
     background-color: black;
     color: white;
     margin-left: 15px;
