@@ -3,7 +3,7 @@ export function mensajes(mensaje, type = "success", foto = null) {
 
   if (foto) {
     contenido = `
-      <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+      <div style="display: flex; align-items: center; gap: 10px; width: 100%;left: 0; right: 0">
         <div style="display: inline-flex; align-items: center; gap: 10px;">
           <img src="${foto}" alt="Foto" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover ;margin: 0; padding: 0;">
           <span style="margin: 0; padding: 0;">${mensaje}</span>
@@ -13,7 +13,7 @@ export function mensajes(mensaje, type = "success", foto = null) {
     `;
   } else {
     contenido = `
-      <div style="display: flex; align-items: center; width: 100%">
+      <div style="display: flex; align-items: center; width: 100%; left:0; right: 0">
         <span style="margin: 0; padding: 0;">${mensaje}</span>
         <i class="material-icons close-btn" style="cursor: pointer;">delete_outline</i>
       </div>
@@ -34,6 +34,8 @@ export function mensajes(mensaje, type = "success", foto = null) {
       display: "flex",
       alignItems: "center",
       color: "white",
+      width:"fit-content",
+      maxWidth: "100%"
     },
     escapeMarkup: false,
     onClick: function () {}
