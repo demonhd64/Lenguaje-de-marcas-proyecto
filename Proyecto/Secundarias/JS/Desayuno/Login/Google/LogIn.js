@@ -25,6 +25,7 @@ googleLoginBtn.addEventListener("click", async () => {
   try {
         const credenciales = await signInWithPopup(auth, provedor);
         const usuario = credenciales.user
+        const usuarioCorto = usuario.email.split('@')[0]
         fotoUserLoginGOogle.foto = usuario.photoURL
 
 
@@ -39,7 +40,7 @@ googleLoginBtn.addEventListener("click", async () => {
         } else{
             await deleteUser(usuario)
             await signOut(auth)
-            mensajes(`El usuario ${usuario.email} no está registrado. Regístrate primero.`, "error", fotoUserLoginGOogle.foto)
+            mensajes(`El usuario ${usuarioCorto} no está registrado. Regístrate primero.`, "error", fotoUserLoginGOogle.foto)
         }
 } catch(error){
     console.log(error)

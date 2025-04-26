@@ -24,6 +24,7 @@ googleboton.addEventListener('click', async () => {
     try {
         const credenciales = await signInWithPopup(auth, provedor);
         const usuario = credenciales.user
+        const usuarioCorto = usuario.email.split('@')[0]
         fotoUserSignUpGOogle.foto = usuario.photoURL
 
         console.log(usuario)
@@ -34,7 +35,7 @@ googleboton.addEventListener('click', async () => {
 
         if(docSnap.exists()){
             await signOut(auth)
-            mensajes(`El email ${fotoUserSignUpGOogle.foto} ${usuario.email} ya está registrado`,"error")
+            mensajes(`El email ${usuarioCorto} ya está registrado`,"error", fotoUserSignUpGOogle.foto)
         } else{
             await setDoc(doc(db, "usuariosRegistrados", usuario.uid), {
                 email: usuario.email,
