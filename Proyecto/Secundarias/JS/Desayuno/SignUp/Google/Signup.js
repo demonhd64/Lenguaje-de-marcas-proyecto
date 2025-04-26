@@ -24,11 +24,6 @@ googleboton.addEventListener('click', async () => {
         const docReference = doc(db, "usuariosRegistrados", usuario.uid)
         const docSnap = await getDoc(docReference)
         
-        console.log(credenciales)
-        console.log(usuario)
-        console.log(docReference)
-        console.log(docSnap)
-        
 
         if(docSnap.exists()){
             await signOut(auth)
