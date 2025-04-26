@@ -3,3 +3,8 @@ Tienes que instalar Python en la Microsoft store.
 Normalmente en C:\Users\Nombre de usuario\documentos\GitHub\Selecciona el archivo
 
 lueo pon Python -m http.server 8000
+
+Opcion para ver la consola de un móvil:
+chrome://inspect/#devices
+Se had e conectar el móvil al oredenador por cabel.
+Si no lo detecta, desenchufa y vuelve a enchufarlo con la pantalla encendida y la pagina abierta, aceptar debuging option y hablitarlas.
