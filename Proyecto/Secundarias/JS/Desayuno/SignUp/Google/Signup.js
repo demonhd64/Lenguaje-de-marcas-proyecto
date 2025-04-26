@@ -34,8 +34,6 @@ googleboton.addEventListener('click', async () => {
                 displayName: usuario.displayName
             })
             credentialsNameRegister.user = usuario.displayName
-
-            console.log(credenciales)
     
             const modalRegistro = document.getElementsByClassName('modal')[1]
     
