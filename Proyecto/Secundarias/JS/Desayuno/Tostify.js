@@ -34,6 +34,7 @@ export function mensajes(mensaje, type = "success", foto = null) {
       display: "flex",
       alignItems: "center",
       color: "white",
+      //Necesario para que no se rompa en movil
       width:"fit-content",
       maxWidth: "100%"
     },
