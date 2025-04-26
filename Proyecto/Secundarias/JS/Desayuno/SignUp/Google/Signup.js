@@ -9,6 +9,10 @@ var credentialsNameRegister = {
     user : null
 }
 
+var fotoUserSignUpGOogle = {
+    foto : null
+}
+
 googleboton.addEventListener('click', async () => {
 
     const provedor = new GoogleAuthProvider();
@@ -20,6 +24,9 @@ googleboton.addEventListener('click', async () => {
     try {
         const credenciales = await signInWithPopup(auth, provedor);
         const usuario = credenciales.user
+        fotoUserSignUpGOogle.foto = usuario.photoURL
+
+        console.log(usuario)
 
         const docReference = doc(db, "usuariosRegistrados", usuario.uid)
         const docSnap = await getDoc(docReference)
@@ -27,7 +34,7 @@ googleboton.addEventListener('click', async () => {
 
         if(docSnap.exists()){
             await signOut(auth)
-            mensajes(`El email ${usuario.email} ya está registrado`,"error")
+            mensajes(`El email ${fotoUserSignUpGOogle.foto} ${usuario.email} ya está registrado`,"error")
         } else{
             await setDoc(doc(db, "usuariosRegistrados", usuario.uid), {
                 email: usuario.email,
@@ -39,7 +46,7 @@ googleboton.addEventListener('click', async () => {
     
             modalRegistro.style.display = "none";
     
-            mensajes(`Usuario ${usuario.displayName} permitido`, "success")
+            mensajes(`Usuario ${usuario.displayName} permitido`, "success", fotoUserSignUpGOogle.foto)
         }
     } catch (error) {
         console.log(error)
@@ -47,6 +54,6 @@ googleboton.addEventListener('click', async () => {
 
 })
 
-export {credentialsNameRegister}
+export {credentialsNameRegister, fotoUserSignUpGOogle}
 
 

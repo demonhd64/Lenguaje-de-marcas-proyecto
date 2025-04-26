@@ -10,6 +10,10 @@ var credentialsNameLogIn = {
     user : null
 }
 
+var fotoUserLoginGOogle = {
+    foto : null
+}
+
 googleLoginBtn.addEventListener("click", async () => {
 
     const provedor = new GoogleAuthProvider();
@@ -21,23 +25,25 @@ googleLoginBtn.addEventListener("click", async () => {
   try {
         const credenciales = await signInWithPopup(auth, provedor);
         const usuario = credenciales.user
+        fotoUserLoginGOogle.foto = usuario.photoURL
+
 
         const docReference = doc(db, "usuariosRegistrados", usuario.uid)
         const docSnap = await getDoc(docReference)
         const modalLogIn = document.getElementsByClassName('modal')[0]
 
         if(docSnap.exists()){
-            mensajes(`Bienvenido ${usuario.displayName}`)
+            mensajes(`Bienvenido ${usuario.displayName}`, "success", fotoUserLoginGOogle.foto)
             modalLogIn.style.display = "none"
             credentialsNameLogIn.user = usuario.displayName
         } else{
             await deleteUser(usuario)
             await signOut(auth)
-            mensajes(`El usuario ${usuario.email} no está registrado. Regístrate primero.`, "error")
+            mensajes(`El usuario ${usuario.email} no está registrado. Regístrate primero.`, "error", fotoUserLoginGOogle.foto)
         }
 } catch(error){
     console.log(error)
     }
 })
 
-export {credentialsNameLogIn}
+export {credentialsNameLogIn, fotoUserLoginGOogle}
