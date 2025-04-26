@@ -174,13 +174,13 @@ function eyeLogin() {
     ConstraseñaVisible = !ConstraseñaVisible;
 
     if (ConstraseñaVisible) {
-        passwInput.type = "text"; // Cambia el tipo a texto
-        eyeClosed.style.display = "none"; // Oculta el ícono de ojo cerrado
-        eyeOpen.style.display = "inline"; // Muestra el ícono de ojo abierto
+        passwInput.type = "text"; 
+        eyeClosed.style.display = "none"; 
+        eyeOpen.style.display = "inline"; 
     } else {
-        passwInput.type = "password"; // Cambia el tipo a password
-        eyeClosed.style.display = "inline"; // Muestra el ícono de ojo cerrado
-        eyeOpen.style.display = "none"; // Oculta el ícono de ojo abierto
+        passwInput.type = "password"; 
+        eyeClosed.style.display = "inline"; 
+        eyeOpen.style.display = "none";
     }
 }
 
@@ -220,13 +220,13 @@ function eyeRegistro() {
     ConstraseñaVisibleRegistro = !ConstraseñaVisibleRegistro;
 
     if (ConstraseñaVisibleRegistro) {
-        passwInput.type = "text"; // Cambia el tipo a texto
-        eyeClosed.style.display = "none"; // Oculta el ícono de ojo cerrado
-        eyeOpen.style.display = "inline"; // Muestra el ícono de ojo abierto
+        passwInput.type = "text"; 
+        eyeClosed.style.display = "none"; 
+        eyeOpen.style.display = "inline"; 
     } else {
-        passwInput.type = "password"; // Cambia el tipo a password
-        eyeClosed.style.display = "inline"; // Muestra el ícono de ojo cerrado
-        eyeOpen.style.display = "none"; // Oculta el ícono de ojo abierto
+        passwInput.type = "password"; 
+        eyeClosed.style.display = "inline";
+        eyeOpen.style.display = "none";
     }
 }
 
