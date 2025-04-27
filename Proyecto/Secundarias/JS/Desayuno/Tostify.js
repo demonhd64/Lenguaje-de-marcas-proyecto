@@ -55,7 +55,7 @@ export function mensajes(mensaje, type = "success", foto = null) {
   let width = 100;
   const duration = 3000; // Duración total en milisegundos
   const interval = 10; // Intervalo de actualización en milisegundos
-  const step = (interval / duration) * 100; // Porcentaje de progreso por intervalo
+  const step = (interval / duration) * 100; //Velocidad a la que se tiene que reducir para dar el parecido de que se reduce smooth
 
   const progressInterval = setInterval(() => {
     width -= step;
