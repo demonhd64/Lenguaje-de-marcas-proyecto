@@ -38,8 +38,8 @@ export function mensajes(mensaje, type = "success", foto = null) {
       background: type === "success" ? "green" : "red",
       cursor: "default",
       display: "flex",
-      flexDirection: "column", // Asegura que el contenido se apile verticalmente
-      alignItems: "flex-start", // Alinea el contenido a la izquierda
+      flexDirection: "column",
+      alignItems: "flex-start",
       color: "white",
       width: "fit-content",
       maxWidth: "100%"
@@ -50,16 +50,19 @@ export function mensajes(mensaje, type = "success", foto = null) {
 
   toast.showToast();
 
+  // Ajustar la duración y el intervalo según el tamaño de la pantalla
+  const isMobile = window.innerWidth <= 768; // Puedes ajustar este valor según tus necesidades
+  const duration = 3000; // Duración total en milisegundos
+  const interval = isMobile ? 20 : 10; // Intervalo de actualización en milisegundos
+  const step = (interval / duration) * 100; // Velocidad de reducción
+
   // Animar la barra de progreso
   const progressBar = toast.toastElement.querySelector('.progress');
   let width = 100;
-  const duration = 3000; // Duración total en milisegundos
-  const interval = 10; // Intervalo de actualización en milisegundos
-  const step = (interval / duration) * 100; //Velocidad a la que se tiene que reducir para dar el parecido de que se reduce smooth
 
   const progressInterval = setInterval(() => {
     width -= step;
-    if (width >= 100) {
+    if (width <= 0) {
       width = 0;
       clearInterval(progressInterval);
     }
