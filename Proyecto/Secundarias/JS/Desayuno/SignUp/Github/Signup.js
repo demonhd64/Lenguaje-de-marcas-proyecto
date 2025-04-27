@@ -38,11 +38,13 @@ Githubboton.addEventListener('click', async () => {
         if(docSnap.exists()){
             await signOut(auth)
             mensajes(`El email ${usuarioCorto} ya está registrado`,"error", fotoUserSignUpGithub.foto)
+            console.log(usuario)
         } else{
             await setDoc(doc(db, "usuariosRegistradosConGithub", usuario.email), {
                 email: usuario.email,
                 displayName: usuario.displayName,
-                UID: usuario.uid
+                UID: usuario.uid,
+                fotoUser: usuario.photoURL
             })
     
             const modalRegistro = document.getElementsByClassName('modal')[1]

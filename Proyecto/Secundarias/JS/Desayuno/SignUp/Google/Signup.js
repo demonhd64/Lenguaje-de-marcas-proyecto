@@ -9,7 +9,7 @@ const googleboton = document.querySelector("#Signup-google")
 var credentialsNameRegisterGoogle = {
     user : null,
     credenciales : null,
-    UID :null
+    UID :null,
 }
 
 var fotoUserSignUpGOogle = {
@@ -38,11 +38,13 @@ googleboton.addEventListener('click', async () => {
         if(docSnap.exists()){
             await signOut(auth)
             mensajes(`El email ${usuarioCorto} ya está registrado`,"error", fotoUserSignUpGOogle.foto)
+            console.log(usuario)
         } else{
             await setDoc(doc(db, "usuariosRegistradosConGoogle", usuario.email), {
                 email: usuario.email,
                 displayName: usuario.displayName,
-                UID: usuario.uid
+                UID: usuario.uid,
+                fotoUser: usuario.photoURL
             })
             
             credentialsNameRegisterGoogle.user = usuario.displayName

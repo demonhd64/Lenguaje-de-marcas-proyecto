@@ -13,9 +13,11 @@ const LogOut = document.getElementById("LogOut")
 
 LogOut.addEventListener('click', async ()=>{
     const email = userCredentialsEmailLogIn.user || userCredentialsEmailRegister.user || credentialsNameRegisterGoogle.user || credentialsNameLogInGoogle.user ||credentialsNameRegisterGithub.user || credentialsNameRegisterGithub.email || credentialsNameLogInGithub.user || credentialsNameLogInGithub.email
-    const credenciales = userCredentialsEmailLogIn.user || userCredentialsEmailRegister.user || credentialsNameRegisterGoogle.credenciales || credentialsNameLogInGoogle.credenciales ||credentialsNameRegisterGithub.credenciales || credentialsNameLogInGithub.credenciales
+    const credenciales = credentialsNameRegisterGoogle.credenciales || credentialsNameLogInGoogle.credenciales ||credentialsNameRegisterGithub.credenciales || credentialsNameLogInGithub.credenciales
     const fotosUsers = fotoUserSignUpGOogle.foto || fotoUserLoginGOogle.foto || fotoUserSignUpGithub.foto ||  fotoUserLoginGithub.foto
     mensajes(`Se ha cerrado la sesión del usuario ${ email }`, "success", fotosUsers);
-    deleteUser(credenciales)
+    if(credenciales){
+        deleteUser(credenciales)
+    }
     await signOut(auth)
 })
