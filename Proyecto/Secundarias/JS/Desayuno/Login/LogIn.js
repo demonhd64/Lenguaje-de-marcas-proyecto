@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
+import { signInWithEmailAndPassword, fetchSignInMethodsForEmail   } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 import { auth, db } from "../Firebase.js";
 import { mensajes } from "../Tostify.js"
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
@@ -34,26 +34,34 @@ formSignIn.addEventListener('submit', async (e) => {
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con github, por favor use el boton de login de Github`, "error", fetchdocGithub.data().fotoUser)
     }else{
-            try {
-                const credenciales = await signInWithEmailAndPassword(auth, emailRegistro, conRegistro)
-                const modalRegistro = document.getElementsByClassName('modal')[0]
+        try {
+            // Verificar si el correo está registrado con el método de email/password
+            const signInMethods = await fetchSignInMethodsForEmail(auth, emailRegistro);
 
+            if (signInMethods.length === 0) {
+                // Si el correo no está registrado con ningún método de autenticación
+                formSignIn['LogIn email'].value = '';
+                formSignIn['LogIn passw'].value = '';
+                mensajes(`El email ${emailRegistro} no está registrado. Por favor, regístrate primero.`, "error");
+            } else {
+                // Si el correo está registrado con el método de email/password
+                const credenciales = await signInWithEmailAndPassword(auth, emailRegistro, conRegistro);
+                const modalRegistro = document.getElementsByClassName('modal')[0];
+                modalRegistro.style.display = "none";
 
-                modalRegistro.style.display = "none"
-                
-                mensajes("Usuario " + credenciales.user.email + " acceso permitido")
-
-                userCredentialsEmailLogIn.user = credenciales.user.email
-                
-                console.log(credenciales)
-            } catch (error) {
-                console.log(error.code)
-                if(error.code === 'auth/invalid-credential'){
-                    mensajes("Contraseña o correo incorrecto", 'error')
-                }else{
-                    mensajes(error.message,'error')
-                }
-            }}
-})
+                mensajes("Usuario " + credenciales.user.email + " acceso permitido");
+                userCredentialsEmailLogIn.user = credenciales.user.email;
+                console.log(credenciales);
+            }
+        } catch (error) {
+            console.log(error.code);
+            if (error.code === 'auth/invalid-credential') {
+                mensajes("Contraseña o correo incorrecto", 'error');
+            } else {
+                mensajes(error.message, 'error');
+            }
+        }
+    }
+});
 
 export {userCredentialsEmailLogIn}
