@@ -37,7 +37,6 @@ formSignIn.addEventListener('submit', async (e) => {
         try {
             // Verificar si el correo está registrado con el método de email/password
             const signInMethods = await fetchSignInMethodsForEmail(auth, emailRegistro);
-
             if (signInMethods.length === 0) {
                 // Si el correo no está registrado con ningún método de autenticación
                 formSignIn['LogIn email'].value = '';
