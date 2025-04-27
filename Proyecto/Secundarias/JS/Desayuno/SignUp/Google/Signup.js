@@ -1,20 +1,24 @@
 import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 import { auth, db } from "../../Firebase.js"
-import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js" //funciones para modificar la base de datos de firebase
+import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js" 
 import { mensajes } from "../../Tostify.js"
 import { signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 
 const googleboton = document.querySelector("#Signup-google")
-var credentialsNameRegister = {
-    user : null
+
+var credentialsNameRegisterGoogle = {
+    user : null,
+    credenciales : null,
+    UID :null
 }
 
 var fotoUserSignUpGOogle = {
     foto : null
 }
 
-googleboton.addEventListener('click', async () => {
 
+
+googleboton.addEventListener('click', async () => {
     const provedor = new GoogleAuthProvider();
 
     provedor.setCustomParameters({
@@ -27,9 +31,7 @@ googleboton.addEventListener('click', async () => {
         const usuarioCorto = usuario.email.split('@')[0]
         fotoUserSignUpGOogle.foto = usuario.photoURL
 
-        console.log(usuario)
-
-        const docReference = doc(db, "usuariosRegistradosConGoogle", usuario.uid)
+        const docReference = doc(db, "usuariosRegistradosConGoogle", usuario.email)
         const docSnap = await getDoc(docReference)
         
 
@@ -37,14 +39,19 @@ googleboton.addEventListener('click', async () => {
             await signOut(auth)
             mensajes(`El email ${usuarioCorto} ya está registrado`,"error", fotoUserSignUpGOogle.foto)
         } else{
-            await setDoc(doc(db, "usuariosRegistrados", usuario.uid), {
+            await setDoc(doc(db, "usuariosRegistradosConGoogle", usuario.email), {
                 email: usuario.email,
-                displayName: usuario.displayName
+                displayName: usuario.displayName,
+                UID: usuario.uid
             })
-            credentialsNameRegister.user = usuario.displayName
+            
+            credentialsNameRegisterGoogle.user = usuario.displayName
+            credentialsNameRegisterGoogle.credenciales = usuario
+            credentialsNameRegisterGoogle.UID = usuario.uid
+
+            console.log(credentialsNameRegisterGoogle)
     
             const modalRegistro = document.getElementsByClassName('modal')[1]
-    
             modalRegistro.style.display = "none";
     
             mensajes(`Usuario ${usuario.displayName} permitido`, "success", fotoUserSignUpGOogle.foto)
@@ -55,6 +62,5 @@ googleboton.addEventListener('click', async () => {
 
 })
 
-export {credentialsNameRegister, fotoUserSignUpGOogle}
 
-
+export {credentialsNameRegisterGoogle, fotoUserSignUpGOogle}

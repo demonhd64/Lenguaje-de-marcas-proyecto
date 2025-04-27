@@ -4,47 +4,46 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-
 import { mensajes } from "../../Tostify.js"
 import { signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 
+
 const googleLoginBtn = document.querySelector("#Login-google")
 
-var credentialsNameLogIn = {
-    user : null
+var credentialsNameLogInGoogle = {
+    user : null,
+    credenciales : null
 }
 
 var fotoUserLoginGOogle = {
     foto : null
 }
 
+
+
 googleLoginBtn.addEventListener("click", async () => {
-
     const provedor = new GoogleAuthProvider();
-
-    provedor.setCustomParameters({
-        prompt: "select_account"
-    })
-
-  try {
+    provedor.setCustomParameters({ prompt: "select_account" });
+    try {
         const credenciales = await signInWithPopup(auth, provedor);
-        const usuario = credenciales.user
-        const usuarioCorto = usuario.email.split('@')[0]
-        fotoUserLoginGOogle.foto = usuario.photoURL
+        const usuario = credenciales.user;
+        const usuarioCorto = usuario.email.split('@')[0];
+        fotoUserLoginGOogle.foto = usuario.photoURL;
+        const docReference = doc(db, "usuariosRegistradosConGoogle", usuario.email);
+        const docSnap = await getDoc(docReference);
 
+        const modalLogIn = document.getElementsByClassName('modal')[0];
 
-        const docReference = doc(db, "usuariosRegistrados", usuario.uid)
-        const docSnap = await getDoc(docReference)
-        const modalLogIn = document.getElementsByClassName('modal')[0]
-
-        if(docSnap.exists()){
-            mensajes(`Bienvenido ${usuario.displayName}`, "success", fotoUserLoginGOogle.foto)
-            modalLogIn.style.display = "none"
-            credentialsNameLogIn.user = usuario.displayName
-        } else{
-            await deleteUser(usuario)
-            await signOut(auth)
-            mensajes(`El usuario ${usuarioCorto} no está registrado. Regístrate primero.`, "error", fotoUserLoginGOogle.foto)
+        if (docSnap.exists()) {
+            mensajes(`Bienvenido ${usuario.displayName}`, "success", fotoUserLoginGOogle.foto);
+            modalLogIn.style.display = "none";
+            credentialsNameLogInGoogle.user = usuario.displayName;
+            credentialsNameLogInGoogle.credenciales = usuario;
+        } else {
+            await deleteUser(usuario);  // Eliminar usuario si no está registrado
+            await signOut(auth);        // Desconectar al usuario
+            mensajes(`El usuario ${usuarioCorto} no está registrado. Regístrate primero.`, "error", fotoUserLoginGOogle.foto);
         }
-} catch(error){
-    console.log(error)
+    } catch (error) {
+        console.log(error);
     }
-})
+});
 
-export {credentialsNameLogIn, fotoUserLoginGOogle}
+export {credentialsNameLogInGoogle, fotoUserLoginGOogle}
