@@ -24,18 +24,15 @@ formSignIn.addEventListener('submit', async (e) => {
         formSignIn['LogIn email'].value = '';
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con Google y Github, por favor use el boton de login de Google o el de Github`, "error", fetchdocGoogle.data().fotoUser)
-        userCredentialsEmailLogIn.user = credenciales.user.email
         
     }else if(fetchdocGoogle.exists() && fetchdocGoogle.data().fotoUser.includes("google")){
         formSignIn['LogIn email'].value = '';
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con Google, por favor use el boton de login de Google`, "error", fetchdocGoogle.data().fotoUser)
-        userCredentialsEmailLogIn.user = credenciales.user.email
     }else if(fetchdocGithub.exists() && fetchdocGithub.data().fotoUser.includes("github")){
         formSignIn['LogIn email'].value = '';
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con github, por favor use el boton de login de Github`, "error", fetchdocGithub.data().fotoUser)
-        userCredentialsEmailLogIn.user = credenciales.user.email
     }else{
             try {
                 const credenciales = await signInWithEmailAndPassword(auth, emailRegistro, conRegistro)
