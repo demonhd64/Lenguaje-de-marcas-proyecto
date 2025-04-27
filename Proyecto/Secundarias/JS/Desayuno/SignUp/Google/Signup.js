@@ -29,7 +29,7 @@ googleboton.addEventListener('click', async () => {
 
         console.log(usuario)
 
-        const docReference = doc(db, "usuariosRegistrados", usuario.uid)
+        const docReference = doc(db, "usuariosRegistradosConGoogle", usuario.uid)
         const docSnap = await getDoc(docReference)
         
 
