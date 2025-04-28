@@ -560,7 +560,7 @@ label {
     border: 1px solid #888;
     border-radius: 10px;
     text-align: center;
-    display: block;
+    display: flex;
     transform: translateY(10%) translateX(-17%);
     min-width: 150%;
     margin: 0;
@@ -598,7 +598,7 @@ label {
     display: flex;
     justify-content: end;
     right: 15px;
-    top: 44%;
+    top: 43.8%;
 }
 
 .google, .github{
@@ -624,7 +624,7 @@ label {
     position: relative;
     display: block;
     margin-top: 20px;
-    margin-left: 40%;
+    left: 40%;
 }
 
 #Registro{
@@ -665,4 +665,12 @@ label {
 
 #Ayuda{
     text-align: center;
+}
+
+#Forgotpassw{
+    margin: fit-content;
+    padding: fit-content;
+    height: -15px;
+    width: fit-content;
+    max-width: fit-content;
 }

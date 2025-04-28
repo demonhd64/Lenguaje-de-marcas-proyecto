@@ -4,6 +4,9 @@ import { mensajes } from "../Tostify.js"
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 const formSignIn = document.getElementById("Sing in")
+const ContadorErrores = {
+    count: 0
+} 
 var userCredentialsEmailLogIn = {
     user : null
 }
@@ -34,33 +37,51 @@ formSignIn.addEventListener('submit', async (e) => {
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con github, por favor use el boton de login de Github`, "error", fetchdocGithub.data().fotoUser)
     }else{
-        try {
-            // Verificar si el correo está registrado con el método de email/password
-            const signInMethods = await fetchSignInMethodsForEmail(auth, emailRegistro);
-            if (signInMethods.length === 0) {
-                // Si el correo no está registrado con ningún método de autenticación
-                formSignIn['LogIn email'].value = '';
-                formSignIn['LogIn passw'].value = '';
-                mensajes(`El email ${emailRegistro} no está registrado. Por favor, regístrate primero.`, "error");
-            } else {
+        // Verificar si el correo está registrado con el método de email/password
+        const signInMethods = await fetchSignInMethodsForEmail(auth, emailRegistro);
+        if (signInMethods.length === 0) {
+            // Si el correo no está registrado con ningún método de autenticación
+            formSignIn['LogIn passw'].value = '';
+            mensajes(`El email ${emailRegistro} no está registrado. Por favor, regístrate primero.`, "error");
+        } else {
+            try {
                 // Si el correo está registrado con el método de email/password
                 const credenciales = await signInWithEmailAndPassword(auth, emailRegistro, conRegistro);
                 const modalRegistro = document.getElementsByClassName('modal')[0];
+                const ForgotPasww = document.getElementById("Forgotpassw")                        
+                ForgotPasww.style.display = "none"
                 modalRegistro.style.display = "none";
-
                 mensajes("Usuario " + credenciales.user.email + " acceso permitido");
                 userCredentialsEmailLogIn.user = credenciales.user.email;
                 console.log(credenciales);
-            }
-        } catch (error) {
-            console.log(error.code);
-            if (error.code === 'auth/invalid-credential') {
-                mensajes("Contraseña o correo incorrecto", 'error');
-            } else {
-                mensajes(error.message, 'error');
+            } catch (error) {
+                if(error.code === "auth/wrong-password"){
+                    formSignIn['LogIn passw'].value = '';
+                    mensajes("Contraseña incorrecta", "error")
+                    ContadorErrores.count++
+                    console.log(ContadorErrores)
+                    if(ContadorErrores.count >= 3){
+                        
+                        const ForgotPasww = document.getElementById("Forgotpassw")       
+                        const loginButton = document.getElementById("Sign-up")
+                        const ojos = document.getElementsByClassName("Visibilidad")
+                        ForgotPasww.style.display = "block"                 
+                        for (let i = 0; i < ojos.length; i++) {
+                            ojos[i].style.top = "35%"
+                        }
+                    }
+                }else if(error.code === "auth/too-many-requests"){
+                    mensajes("Demasiados intentos de inicio de sesión fallidos. Por favor, inténtelo de nuevo más tarde.", "error")
+                    const ForgotPasww = document.getElementById("Forgotpassw")       
+                    const ojos = document.getElementsByClassName("Visibilidad")
+                    ForgotPasww.style.display = "block"                 
+                    for (let i = 0; i < ojos.length; i++) {
+                        ojos[i].style.top = "35%"
+                    }
+                }
             }
         }
     }
 });
 
-export {userCredentialsEmailLogIn}
+export {userCredentialsEmailLogIn, ContadorErrores}
