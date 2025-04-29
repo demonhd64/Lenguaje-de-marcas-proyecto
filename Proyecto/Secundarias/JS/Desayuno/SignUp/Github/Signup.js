@@ -8,7 +8,6 @@ const Githubboton = document.querySelector("#Signup-github")
 var credentialsNameRegisterGithub = {
     user : null,
     email : null,
-    credenciales: null,
     UID: null
 }
 
@@ -54,7 +53,6 @@ Githubboton.addEventListener('click', async () => {
             if(usuario.displayName === null){
                 UsuariValido = usuarioCorto
                 credentialsNameRegisterGithub.email = usuarioCorto
-                credentialsNameRegisterGithub.credenciales = usuario
                 credentialsNameRegisterGithub.UID = usuario.uid
             } else{
                 UsuariValido = usuario.displayName

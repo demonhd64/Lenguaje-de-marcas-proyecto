@@ -8,7 +8,6 @@ const firebaseConfig = {
     apiKey: "AIzaSyDX7IW42ZKxsQoHsqPAgMtdIEMcyaILbNg",
     authDomain: "lenguaje-de-marcas-d778e.firebaseapp.com",
     projectId: "lenguaje-de-marcas-d778e",
-    storageBucket: "TU_STORAGE_BUCKET",
 };
 
 // Inicializar Firebase

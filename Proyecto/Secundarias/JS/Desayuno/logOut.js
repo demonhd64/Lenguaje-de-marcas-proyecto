@@ -10,19 +10,12 @@ import {credentialsNameRegisterGithub, fotoUserSignUpGithub} from "./SignUp/Gith
 
 
 const LogOut = document.getElementById("LogOut")
-const Ojos = document.getElementsByClassName("Visibilidad")
 
 LogOut.addEventListener('click', async ()=>{
     const email = userCredentialsEmailLogIn.user || userCredentialsEmailRegister.user || credentialsNameRegisterGoogle.user || credentialsNameLogInGoogle.user ||credentialsNameRegisterGithub.user || credentialsNameRegisterGithub.email || credentialsNameLogInGithub.user || credentialsNameLogInGithub.email
-    const credenciales = credentialsNameRegisterGoogle.credenciales || credentialsNameLogInGoogle.credenciales ||credentialsNameRegisterGithub.credenciales || credentialsNameLogInGithub.credenciales
     const fotosUsers = fotoUserSignUpGOogle.foto || fotoUserLoginGOogle.foto || fotoUserSignUpGithub.foto ||  fotoUserLoginGithub.foto
     ContadorErrores.count = 0
-    for (let i = 0; i < ojos.length; i++) {
-        ojos[i].style.top = "43.8%"
-    }
     mensajes(`Se ha cerrado la sesión del usuario ${ email }`, "success", fotosUsers);
-    if(credenciales){
-        deleteUser(credenciales)
-    }
+
     await signOut(auth)
 })

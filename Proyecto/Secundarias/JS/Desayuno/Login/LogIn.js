@@ -15,7 +15,7 @@ formSignIn.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     
-    var emailRegistro = formSignIn['LogIn email'].value
+    var emailRegistro = formSignIn['LogIn_email'].value
     var conRegistro = formSignIn['LogIn passw'].value
 
     const ReferenceDocGoogle = doc(db, "usuariosRegistradosConGoogle", emailRegistro)
@@ -24,16 +24,16 @@ formSignIn.addEventListener('submit', async (e) => {
     const ReferenceDocGithub = doc(db, "usuariosRegistradosConGithub", emailRegistro)
     const fetchdocGithub = await getDoc(ReferenceDocGithub)
     if(fetchdocGithub.exists() && fetchdocGithub.data().fotoUser.includes("github") && fetchdocGoogle.exists() && fetchdocGoogle.data().fotoUser.includes("google")){
-        formSignIn['LogIn email'].value = '';
+        formSignIn['LogIn_email'].value = '';
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con Google y Github, por favor use el boton de login de Google o el de Github`, "error", fetchdocGoogle.data().fotoUser)
         
     }else if(fetchdocGoogle.exists() && fetchdocGoogle.data().fotoUser.includes("google")){
-        formSignIn['LogIn email'].value = '';
+        formSignIn['LogIn_email'].value = '';
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con Google, por favor use el boton de login de Google`, "error", fetchdocGoogle.data().fotoUser)
     }else if(fetchdocGithub.exists() && fetchdocGithub.data().fotoUser.includes("github")){
-        formSignIn['LogIn email'].value = '';
+        formSignIn['LogIn_email'].value = '';
         formSignIn['LogIn passw'].value = '';
         mensajes(`El email ${emailRegistro} está registrado con github, por favor use el boton de login de Github`, "error", fetchdocGithub.data().fotoUser)
     }else{
@@ -61,27 +61,17 @@ formSignIn.addEventListener('submit', async (e) => {
                     ContadorErrores.count++
                     console.log(ContadorErrores)
                     if(ContadorErrores.count >= 3){
-                        
                         const ForgotPasww = document.getElementById("Forgotpassw")       
-                        const loginButton = document.getElementById("Sign-up")
-                        const ojos = document.getElementsByClassName("Visibilidad")
                         ForgotPasww.style.display = "block"                 
-                        for (let i = 0; i < ojos.length; i++) {
-                            ojos[i].style.top = "35%"
-                        }
                     }
                 }else if(error.code === "auth/too-many-requests"){
-                    mensajes("Demasiados intentos de inicio de sesión fallidos. Por favor, inténtelo de nuevo más tarde.", "error")
-                    const ForgotPasww = document.getElementById("Forgotpassw")       
-                    const ojos = document.getElementsByClassName("Visibilidad")
-                    ForgotPasww.style.display = "block"                 
-                    for (let i = 0; i < ojos.length; i++) {
-                        ojos[i].style.top = "35%"
-                    }
+                    mensajes("Demasiados intentos de inicio de sesión fallidos. Por favor, inténtelo de nuevo más tarde.", "error")                
                 }
             }
         }
     }
 });
+
+
 
 export {userCredentialsEmailLogIn, ContadorErrores}

@@ -8,7 +8,6 @@ const googleboton = document.querySelector("#Signup-google")
 
 var credentialsNameRegisterGoogle = {
     user : null,
-    credenciales : null,
     UID :null,
 }
 
@@ -48,7 +47,6 @@ googleboton.addEventListener('click', async () => {
             })
             
             credentialsNameRegisterGoogle.user = usuario.displayName
-            credentialsNameRegisterGoogle.credenciales = usuario
             credentialsNameRegisterGoogle.UID = usuario.uid
 
             console.log(credentialsNameRegisterGoogle)

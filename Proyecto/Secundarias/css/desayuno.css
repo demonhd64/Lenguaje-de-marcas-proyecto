@@ -550,7 +550,7 @@ label {
     align-items: center;
     display: none;
     width: 100%;
-    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -561,7 +561,8 @@ label {
     border-radius: 10px;
     text-align: center;
     display: flex;
-    transform: translateY(10%) translateX(-17%);
+    transform: translateX(-17%);
+    height: 115%;
     min-width: 150%;
     margin: 0;
 }
@@ -598,13 +599,21 @@ label {
     display: flex;
     justify-content: end;
     right: 15px;
-    top: 43.8%;
+    top: 33.5%;
+}
+
+#login-modal .Visibilidad{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    right: 15px;
+    top: 40%;
 }
 
 .google, .github{
     display: inline-block;
     border: none;
-    margin-top: 20px;
+    margin-top: 55px;
     padding: 5%;
 }
 
@@ -621,10 +630,10 @@ label {
 }
 
 #Sign-up{
-    position: relative;
+    position: absolute;
     display: block;
     margin-top: 20px;
-    left: 40%;
+    left: 42%;
 }
 
 #Registro{
@@ -647,6 +656,20 @@ label {
     #Registro{
         right: 5vw;
     }
+    .Visibilidad{
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        right: 15px;
+        top: 33%;
+    }
+    #login-modal .Visibilidad{
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        right: 15px;
+        top: 39%;
+    }
 }
 
 #Register{
@@ -668,9 +691,12 @@ label {
 }
 
 #Forgotpassw{
-    margin: fit-content;
-    padding: fit-content;
-    height: -15px;
+    position: absolute ;
+    margin: 0;
+    padding: 0;
     width: fit-content;
     max-width: fit-content;
+    margin-top: 4%;
+    right: 5%;
+    color: rgb(74, 74, 255);
 }
