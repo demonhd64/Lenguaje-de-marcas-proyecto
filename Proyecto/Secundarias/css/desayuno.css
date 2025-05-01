@@ -700,3 +700,23 @@ label {
     right: 5%;
     color: rgb(74, 74, 255);
 }
+
+#SolicitarPassw-modal-content{
+    margin-bottom: 30%;
+}
+
+#SolicitarPassw-modal{
+    margin: 0;
+    padding: 0;
+}
+
+#AceptarSolicitarContraseña{
+    position: absolute;
+    bottom: 25%;
+    left: 40%;
+    
+}
+
+#VisibilidadSolicitarPassw{
+    top: 31%;
+}

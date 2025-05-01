@@ -208,6 +208,14 @@ function CerrarModalRegistro(){
 
 document.getElementById("CerrarModalRegistro").addEventListener('click', CerrarModalRegistro)
 
+// Contorl de cerrar modal de Soliticitud de contraseña
+function CerrarModalSolicitarPassw(){
+    const modal = document.getElementsByClassName("modal");
+    modal[2].style.display = "none"
+}
+
+document.getElementById("CerrarModalSolicitarPassw").addEventListener('click', CerrarModalSolicitarPassw)
+
 //Visibilidad contraseña
 let ConstraseñaVisibleRegistro = false; // Variable para controlar la visibilidad
 
