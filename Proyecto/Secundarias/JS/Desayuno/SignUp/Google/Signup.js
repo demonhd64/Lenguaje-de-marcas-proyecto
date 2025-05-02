@@ -1,9 +1,6 @@
-import { auth } from "../../Firebase.js";
-import {
-    GoogleAuthProvider,
-    signInWithPopup,
-    fetchSignInMethodsForEmail
-} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { auth, db } from "../../Firebase.js";
+import {GoogleAuthProvider, signInWithPopup, signOut} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { collection, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 import { mensajes } from "../../Tostify.js";
 
 const BtnGoogleRegister = document.querySelector("#Signup-google");
@@ -14,38 +11,33 @@ BtnGoogleRegister.addEventListener("click", async (e) => {
     const provider = new GoogleAuthProvider();
 
     try {
+        
         const resultado = await signInWithPopup(auth, provider);
         const user = resultado.user;
         const nombre = user.displayName || user.email;
         const photoURL = user.photoURL;
 
-        mensajes(`El usuario ${nombre} se ha registrado con éxito`, "success", photoURL);
-        ModalRegistro.style.display = "none";
-
+        const docRef = doc(collection(db, "UsuariosAutenticadosConGoogle"), user.email);
+        const docSnap = await getDoc(docRef);
+        if(!docSnap.exists()){
+            await setDoc(docRef, {
+                DisplayName : user.displayName,
+                Email : user.email,
+                PhotoURL : user.photoURL
+            })
+            mensajes(`El usuario ${nombre} se ha registrado con éxito`, "success", photoURL);
+            ModalRegistro.style.display = "none";
+        } else{
+            mensajes(`El usuario ${nombre} ya está registrado`, "error", photoURL);
+            await signOut(auth) // Para que si da error de que ya este registrado no inicie sesión
+            ModalRegistro.style.display = "none";
+        }
     } catch (error) {
         console.error("Error:", error);
-
-        if (error.code === "auth/account-exists-with-different-credential") {
-            const email = error.customData?.email;
-
-            if (email) {
-                const methods = await fetchSignInMethodsForEmail(auth, email);
-
-                if (methods.includes("github.com")) {
-                    mensajes("Ya tienes una cuenta con GitHub. Por favor, inicia sesión con GitHub.", "error");
-                } else {
-                    mensajes("La cuenta ya existe con otro proveedor. Por favor, usa el proveedor original para iniciar sesión.", "error");
-                }
-            } else {
-                mensajes("La cuenta ya existe con otro proveedor.", "error");
-            }
-
             ModalRegistro.style.display = "none";
-
-        } else if (error.code === "auth/popup-closed-by-user") {
+        } if (error.code === "auth/popup-closed-by-user") {
             mensajes("El registro con Google fue cancelado", "error");
         } else {
             mensajes("Error al registrar con Google", "error");
         }
-    }
-});
+    });

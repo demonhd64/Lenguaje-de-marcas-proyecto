@@ -9,7 +9,8 @@ const modalOlvidarPassw = document.querySelector("#OlvidarPassw-modal")
 const modalLogin = document.querySelector("#login-modal")
 const AceptarBtn = document.querySelector("#btnAceptarOlvidarPassw")
 
-forgotpassword.addEventListener("click", function (){
+forgotpassword.addEventListener("click", function (e){
+    e.preventDefault();
     modalLogin.style.display = "none"
     modalOlvidarPassw.style.display = "flex"
     AceptarBtn.addEventListener("click", function (){
