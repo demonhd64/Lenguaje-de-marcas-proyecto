@@ -13,12 +13,12 @@ BtnGoogleLogin.addEventListener("click", async (e) => {
         const resultado = await signInWithPopup(auth, provider);
         
         const user = resultado.user;
-        const email = user.email;
+        const displayName = user.displayName;
         const photoURL = user.photoURL;
 
         ModalLogin.style.display = "none";
 
-        mensajes(`El email ${email} se ha registrado con éxito`, "success", photoURL);
+        mensajes(`El usuario ${displayName} se ha registrado con éxito`, "success", photoURL);
 
     } catch (error) {
         console.log(error)
