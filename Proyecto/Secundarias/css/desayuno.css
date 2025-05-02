@@ -673,10 +673,19 @@ label {
 }
 
 #Register{
-    position: relative;
+    position: absolute;
     display: block;
     margin-top: 20px;
-    margin-left: 35%;
+    bottom: 5px;
+    margin-left: 32%;
+}
+
+#VisibilidadRegistro{
+    top: 45%;
+}
+
+#Signup-google, #Signup-github{
+    margin-top: 20px;
 }
 
 #LogOut{
@@ -705,18 +714,18 @@ label {
     margin-bottom: 30%;
 }
 
-#SolicitarPassw-modal{
+#OlvidarPassw-modal{
     margin: 0;
     padding: 0;
 }
 
-#AceptarSolicitarContraseña{
+#btnAceptarOlvidarPassw{
     position: absolute;
-    bottom: 25%;
+    bottom: 10%;
     left: 40%;
     
 }
 
 #VisibilidadSolicitarPassw{
-    top: 31%;
+    top: 32%;
 }

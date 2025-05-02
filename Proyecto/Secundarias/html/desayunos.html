@@ -46,10 +46,10 @@
                                         <button id="CerrarModalLogIn" class="CerrarModal">x</button>
                                         <form id="Sing in">
                                                 <div class="row">
-                                                    <label for="email" class="emm"><p>Email:</p></label>
+                                                    <label for="text" class="emm"><p>Usuario:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="email" id="LogIn_email" class="email-input" placeholder="Introduce tu email" required>
+                                                    <input type="text" id="LogIn_email" class="email-input" placeholder="Introduce tu email" required>
                                                 </div>
                                                 <div class="row">
                                                     <label for="password" class="pass"><p>Contraseña:</p></label>
@@ -83,10 +83,10 @@
                                         <button id="CerrarModalRegistro" class="CerrarModal">x</button>
                                         <form id="Registrarse">
                                                 <div class="row">
-                                                    <label for="email" class="emm"><p>Email:</p></label>
+                                                    <label for="text" class="emm"><p>Usuario:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="email" id="Registro_email" class="email-input" placeholder="Introduce tu email" required>
+                                                    <input type="text" id="Registro_email" class="email-input" placeholder="Introduce tu usuario" required>
                                                 </div>
                                                 <div class="row">
                                                     <label for="password" class="pass"><p>Contraseña:</p></label>
@@ -94,7 +94,7 @@
                                                 <div class="row">
                                                     <input type="password" id="Registro_contraseña" class="passw-input" placeholder="Introduce tu contraseña" required>
                                                 </div>
-                                                    <label for="visibilidad" class="Visibilidad">
+                                                    <label for="visibilidad" class="Visibilidad" id="VisibilidadRegistro">
                                                     <i class="fa-regular fa-eye" id="eye-OpenRegistro" style="display: none; cursor: pointer;"></i>
                                                     <i class="fa-regular fa-eye-slash" id="eye-closedRegistro" style="cursor: pointer;"></i>
                                                 </label>
@@ -107,30 +107,32 @@
                             </div>
                           </div>
                     </div>
-                    <div id="SolicitarPassw" class="col-md-4">
-                        <div id="SolicitarPassw-modal" class="modal">
+
+                    <div id="OlvidarPassw" class="col-md-4">
+                        <div id="OlvidarPassw-modal" class="modal">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="modal-content" id="SolicitarPassw-modal-content">
-                                        <button id="CerrarModalSolicitarPassw" class="CerrarModal">x</button>
-                                        <form id="SolicitarPasswfom">
+                                        <button id="CerrarModalOlvidarPassw" class="CerrarModal">x</button>
+                                        <form id="OlvidarPasswform">
                                                 <div class="row">
-                                                    <label for="password" class="pass"><p>Escoja su contraseña:</p></label>
+                                                    <label for="text" class="emm"><p>Dime tu email:</p></label>
                                                 </div>
                                                 <div class="row">
-                                                    <input type="password" id="SolicitarPassw_contraseña" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                    <input type="email" id="OlvidarPassw_email" class="email-input" placeholder="Introduce tu email" required>
                                                 </div>
                                                     <label for="visibilidad" class="Visibilidad" id="VisibilidadSolicitarPassw">
-                                                    <i class="fa-regular fa-eye" id="eye-OpenSolicitarPassw" style="display: none; cursor: pointer;"></i>
-                                                    <i class="fa-regular fa-eye-slash" id="eye-closedSolicitarPassw" style="cursor: pointer;"></i>
+                                                    <i class="fa-regular fa-eye" id="eye-OpenOlvidarPassw" style="display: none; cursor: pointer;"></i>
+                                                    <i class="fa-regular fa-eye-slash" id="eye-closedOlvidarPassw" style="cursor: pointer;"></i>
                                                 </label>
-                                                <button type="submit" id="AceptarSolicitarContraseña">Aceptar</button>
+                                                <button type="submit" id="btnAceptarOlvidarPassw">Aceptar</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                           </div>
                     </div>
+
                 </nav>
             </header>
         </div>
@@ -365,6 +367,7 @@
     <script type="module" src="../JS/Desayuno/Login/Google/LogIn.js"></script>
     <script type="module" src="../JS/Desayuno/SignUp/Google/Signup.js"></script>
     <script type="module" src="../JS/Desayuno/SignUp/Github/Signup.js"></script>
+    <script type="module" src="../JS/Desayuno/Login/Github/LogIn.js"></script>
     <script type="module" src="../JS/Desayuno/logOut.js"></script>
     <script type="module" src="../JS/Desayuno/Forgot passw/forgotpassw.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
