@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function showModal() {
     const modal = document.getElementsByClassName("modal");
     modal[0].style.display = "flex"
+
 }
 
 document.getElementById("btnIniciarSesion").addEventListener('click', showModal)
@@ -281,4 +282,3 @@ function TextoAyuda(){
     }
 
 }
-
