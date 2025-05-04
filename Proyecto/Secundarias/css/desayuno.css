@@ -716,22 +716,44 @@ label {
     color: rgb(74, 74, 255);
 }
 
-#SolicitarPassw-modal-content{
-    margin-bottom: 30%;
+
+#SolicitarPassw-modal-content {
+    margin-bottom: 20%;
 }
 
-#OlvidarPassw-modal{
+/* Olvidar Password */
+#OlvidarPassw-modal {
     margin: 0;
     padding: 0;
 }
 
-#btnAceptarOlvidarPassw{
+#btnAceptarOlvidarPassw {
     position: absolute;
     bottom: 10%;
     left: 40%;
-    
 }
 
-#VisibilidadSolicitarPassw{
-    top: 32%;
+#VisibilidadSolicitarPassw {
+    top: 35.5%;
+}
+
+/*Asociar Email*/
+
+#AsociarEmailLabel{
+    display: inline;
+}
+
+#AsociarEmail-modal-content{
+    text-wrap: normal;
+    width: 210px;
+}
+
+#VisibilidadAsociarEmail{
+    top: 57%;
+}
+
+#btnAceptarAsociarEmail{
+    position: absolute;
+    bottom: 5px;
+    left: 40%;
 }

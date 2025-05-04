@@ -192,10 +192,9 @@ document.getElementById("eye-closedLogin").addEventListener('click', eyeLogin);
 
 
 // Registro
-
 function showModalRegistro() {
     const modal = document.getElementsByClassName("modal");
-    modal[1].style.display = "flex"
+    modal[1].style.display = "flex" 
 }
 
 document.getElementById("btnRegistro").addEventListener('click', showModalRegistro)

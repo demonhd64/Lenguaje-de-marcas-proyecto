@@ -11,7 +11,6 @@ const OlivdarCon = document.querySelector("#Forgotpassw");
 
 const errores = {
     ContadorErrores: 0,
-    Name: null
 }
 BotonRegistro.addEventListener("click", async (e) => {
     e.preventDefault();
