@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/ForgotPassw.css">
-    <title>Olvidaste tu contraseña</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../css/ForgotPassw.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <title>Olvidaste tu contraseña</title>
 </head>
 <body>
-    <div>
-        <form>
-            <label for="password"><p>Elige tu nueva contraseña</p></label>
-            <input type="password" placeholder="Introduce tu nueva contraseña" autofocus>
-            <button type="button">Aceptar</button>
-        </form>
-    </div>
-
-    <script type="module" src="../JS/Desayuno/Forgot passw/Forgotpassword_obt_passw.js"></script>
+  <div>
+    <form>
+      <label for="password"><p>Elige tu nueva contraseña</p></label>
+      <div class="input-container">
+        <input id="password" type="password" placeholder="Introduce tu nueva contraseña" autofocus />
+        <label for="password" id="visibilidad">
+          <i class="fa-regular fa-eye" id="eye-OpenRegistro" style="cursor: pointer; display: none;"></i>
+          <i class="fa-regular fa-eye-slash" id="eye-closedRegistro" style="cursor: pointer;"></i>
+        </label>
+      </div>
+      <button type="button" id="Aceptar">Aceptar</button>
+    </form>
+  </div>
 </body>
+<script type="module" src="../JS/Desayuno/Forgot_passw/Forgotpassword_obt_passw.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>
