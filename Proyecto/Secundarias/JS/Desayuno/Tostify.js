@@ -45,18 +45,24 @@ export function mensajes(mensaje, type = "success", foto = null) {
       maxWidth: "100%"
     },
     escapeMarkup: false,
-    onClick: function () {}
+    onClick: function () {} // vacío o elimínalo si no lo usas
   });
 
   toast.showToast();
 
-  // Ajustar la duración y el intervalo según el tamaño de la pantalla
-  const isMobile = window.innerWidth <= 768; // Puedes ajustar este valor según tus necesidades
-  const duration = 3000; // Duración total en milisegundos
-  const interval = isMobile ? 20 : 10; // Intervalo de actualización en milisegundos
-  const step = (interval / duration) * 100; // Velocidad de reducción
+  // 💡 Aquí agregamos el listener inmediatamente después de mostrar el toast
+  toast.toastElement.addEventListener("click", (e) => {
+    if (e.target.classList.contains("close-btn")) {
+      toast.toastElement.remove();
+    }
+  });
 
-  // Animar la barra de progreso
+  // Progreso animado
+  const isMobile = window.innerWidth <= 768;
+  const duration = 3000;
+  const interval = isMobile ? 20 : 10;
+  const step = (interval / duration) * 100;
+
   const progressBar = toast.toastElement.querySelector('.progress');
   let width = 100;
 
@@ -68,14 +74,4 @@ export function mensajes(mensaje, type = "success", foto = null) {
     }
     progressBar.style.width = width + '%';
   }, interval);
-
-  // Detectar y cerrar cuando se pulse el botón de la papelera
-  setTimeout(() => {
-    const closeBtn = document.querySelector('.toastify .close-btn');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        closeBtn.closest('.toastify').remove();
-      });
-    }
-  }, 100);
 }

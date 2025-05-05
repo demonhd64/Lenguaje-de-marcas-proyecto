@@ -43,7 +43,6 @@ BotonLogin.addEventListener("click", async (e) => {
                     errores.ContadorErrores ++
                     if(errores.ContadorErrores >= 3){
                         OlivdarCon.style.display = "flex"
-                        console.log(Usuario)
                     }
                 }
             }

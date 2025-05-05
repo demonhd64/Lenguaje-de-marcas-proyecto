@@ -52,6 +52,11 @@ form {
   line-height: 1;
 }
 
+#CambioRealizado {
+  font-size: xx-large;
+  color: white;
+}
+
 p {
   margin: 0 0 5px;
 }
