@@ -1,5 +1,5 @@
 html, body {
-    height: 100%; /* Asegura que el body tome toda la altura */
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -9,6 +9,8 @@ body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Oper
     background-image: linear-gradient(-45deg, rgba(255, 102, 0, 0.4) 0%, rgba(0, 225, 255, 0.4) 25%, rgba(255, 53, 127, 0.4) 100%);
     background-size: 200% 200%;
     animation: AnimateBG 2s ease infinite;
+    display: flex;
+    flex-direction: column;
     
 }  
 
@@ -42,10 +44,20 @@ input{
     text-align: center;
 }
 
-.wrapper {
-    position: absolute;
+footer {
+    position: relative; /* Cambiado de fixed a relative */
+    background-color: rgb(134, 134, 134);
+    text-align: center;
     width: 100%;
-    align-items: center;
+    padding: 10px 0; /* Añadir un poco de padding para el footer */
+}
+
+.wrapper {
+    flex: 1;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .container-body {
@@ -78,7 +90,7 @@ input{
 
 /* Clase para la card activa (al hacer click) */
 .card.activa {
-    position: absolute !important; /*Permite mover la card activa*/
+    position: absolute; /*Permite mover la card activa*/
     left: 2.45px;
     display: flex;
     width: 100%; /* Ajusta el ancho de la card activa */
@@ -97,7 +109,7 @@ input{
 .card > .row {
     color: white;
     display: flex; 
-    width: 100%; 
+    width: 100%;
 }
 
 #icon1, #icon2, #icon3, #icon4, #icon5 {

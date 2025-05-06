@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function MirarSiActivo(container) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
+    const footer = document.querySelector("footer")
     
     if (container.checked) {
         cards.forEach(function(card) {
@@ -48,6 +49,8 @@ function MirarSiActivo(container) {
         });
         container.nextElementSibling.style.display = 'flex';
         container.nextElementSibling.classList.add("activa");
+        footer.style.position = "absolute"
+        footer.style.bottom = "0"
     } else {
         const pasoSelector = container.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = container.nextElementSibling.querySelector('.texto');
@@ -67,6 +70,7 @@ function MirarSiActivo(container) {
                 card.classList.remove("activa");
                 card.classList.add("limite");
                 card.style.width = "";
+                footer.style.position = "relative"
             });
         }
         aplicarFiltros();
