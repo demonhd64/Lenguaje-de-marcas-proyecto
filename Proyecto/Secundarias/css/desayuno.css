@@ -45,11 +45,11 @@ input{
 }
 
 footer {
-    position: relative; /* Cambiado de fixed a relative */
+    position: relative;
     background-color: rgb(134, 134, 134);
     text-align: center;
-    width: 100%;
-    padding: 10px 0; /* Añadir un poco de padding para el footer */
+    width: 100dvw;
+    padding: 10px 0;
 }
 
 .wrapper {
@@ -71,14 +71,14 @@ footer {
 
 .card {
     position: relative;
-    width: 100%; /* Mantener el ancho al 100% */
-    height: 80vh; /* Altura de las cards */
+    width: 100%;
+    height: 80vh;
     background-size: cover;
     cursor: pointer;
-    margin: 10px;
+/*     margin: 10px; */
     display: flex;
     flex-direction: column;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba(255, 255, 255, 0.8); 
 }
 
@@ -91,9 +91,10 @@ footer {
 /* Clase para la card activa (al hacer click) */
 .card.activa {
     position: absolute; /*Permite mover la card activa*/
-    left: 2.45px;
+    margin: 10px;
+    left: -10px;
     display: flex;
-    width: 100%; /* Ajusta el ancho de la card activa */
+    width: 100%;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
     pointer-events: none;
 }
