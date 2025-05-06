@@ -1,3 +1,53 @@
-body {
-    background-color:rgb(253, 201, 128) ;
+html {
+    background-color:rgb(217,217,217);
+    overflow-x: hidden;
+}
+
+.cuadro_formulario {
+    width:60vw ;
+    height: 80vw;
+    background-color:whitesmoke ;
+    margin-left: 19vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    box-shadow:1px 5px 15px rgb(97, 96, 96);;
+    border-radius: 15px;
+}
+
+.titulo {
+    display: inline-block;
+    transform: translate(10vw, 1vw);
+    font-family:Arial, Helvetica, sans-serif ;
+    font-size:3.5vw;
+    color: rgb(72, 75, 75);
+}
+
+.subtitulos {
+    font-family:Arial, Helvetica, sans-serif ;
+    font-size:1.5vw;
+    margin-left: 6vw;
+    margin-top: 15vw;
+    color: rgb(72, 75, 75);
+}
+
+#primera {
+    margin-top: 5vw;
+}
+
+#lol {
+    display: flex;
+    align-items: center;
+}
+
+.cuando {
+    display: none;
+    margin-left: 6vw;
+}
+
+.label-radios {
+
+}
+
+footer {
+
 }
