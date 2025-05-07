@@ -3,6 +3,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/fi
 import { auth } from "../Desayuno/Firebase.js";
 
 
+
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -39,22 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
 function MirarSiActivo(container) {
     const listaDeChecks = document.getElementsByClassName("opcionCheck");
     const cards = document.querySelectorAll('.card');
-    const footer = document.querySelector("footer")
-    
+    const footer = document.querySelector("footer");
     if (container.checked) {
         cards.forEach(function(card) {
             card.style.display = 'none';
             card.classList.remove("activa");
-
         });
         container.nextElementSibling.style.display = 'flex';
         container.nextElementSibling.classList.add("activa");
-        footer.style.position = "absolute"
-        footer.style.bottom = "0"
+        footer.style.display = "none"
     } else {
         const pasoSelector = container.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = container.nextElementSibling.querySelector('.texto');
-
+        footer.style.display = "flex"
 
         if (pasoSelector) {
             pasoSelector.value = "";
@@ -70,13 +68,14 @@ function MirarSiActivo(container) {
                 card.classList.remove("activa");
                 card.classList.add("limite");
                 card.style.width = "";
-                footer.style.position = "relative"
             });
         }
         aplicarFiltros();
     }
     TextoAyuda();
 }
+
+
 
 window.MirarSiActivo = MirarSiActivo;
 

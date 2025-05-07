@@ -46,11 +46,16 @@ input{
 
 footer {
     position: relative;
-    background-color: rgb(134, 134, 134);
+    background-color: rgb(134, 134, 134); /* Usamos esta si es la que prefieres */
     text-align: center;
     width: 100dvw;
-    padding: 10px 0;
+    padding: 12px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: auto;
 }
+
 
 .wrapper {
     flex: 1;
@@ -75,7 +80,7 @@ footer {
     height: 80vh;
     background-size: cover;
     cursor: pointer;
-/*     margin: 10px; */
+    margin: 10px;
     display: flex;
     flex-direction: column;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -101,6 +106,7 @@ footer {
 
 /* Transición para ocultar las cards inactivas */
 .card:not(.activa) {
+    display: flex;
     transition: all 0.3s ease-in-out, opacity 0.2s linear;
     opacity: 1;
     visibility: visible;
@@ -769,4 +775,18 @@ label {
     position: absolute;
     bottom: 5px;
     left: 40%;
+}
+
+/*Footer*/
+
+#logo {
+    border-radius: 5px;
+}
+
+.enlace a {
+    color: #333;
+    font-weight: bolder;
+    text-decoration:none ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large
 }
