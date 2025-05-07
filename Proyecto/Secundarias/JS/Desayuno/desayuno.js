@@ -52,6 +52,7 @@ function MirarSiActivo(container) {
     } else {
         const pasoSelector = container.nextElementSibling.querySelector('.pasoSelector');
         const textoPaso = container.nextElementSibling.querySelector('.texto');
+        footer.style.display = "flex"
 
         if (pasoSelector) {
             pasoSelector.value = "";
@@ -66,7 +67,6 @@ function MirarSiActivo(container) {
                 card.style.display = 'flex';
                 card.classList.remove("activa");
                 card.classList.add("limite");
-                footer.style.display = "flex"
                 card.style.width = "";
             });
         }
