@@ -112,6 +112,7 @@ button:hover div:nth-child(3) {
 
 #recetario-magico {
     font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
     font-weight: bold;
     text-align: center;
@@ -136,15 +137,17 @@ button:hover div:nth-child(3) {
     transform: translate(10vw, 1vw);
     font-family:Arial, Helvetica, sans-serif ;
     font-size:3.5vw;
-    color: rgb(72, 75, 75);
+    font-weight: bolder;
+    color: #333;
 }
 
 .subtitulos {
     font-family:Arial, Helvetica, sans-serif ;
-    font-size:1.5vw;
+    font-size:2vw;
+    font-weight: bolder;
     margin-left: 6vw;
     margin-top: 15vw;
-    color: rgb(72, 75, 75);
+    color: #333;
 }
 
 #primera {
@@ -179,6 +182,7 @@ button:hover div:nth-child(3) {
     width:8vw ;
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
     border: 2px solid rgb(72, 75, 75);
 }
 
@@ -221,6 +225,7 @@ button:hover div:nth-child(3) {
     width:8vw ;
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
     border: 2px solid rgb(72, 75, 75);
 }
 
@@ -363,6 +368,7 @@ button:hover div:nth-child(3) {
     width:4.vw ;
     font-size:1vw;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
     border: 2px solid rgb(72, 75, 75);
     transform: translate(100px);
 }
@@ -406,6 +412,37 @@ button:hover div:nth-child(3) {
     margin-right: 10px;
 }
 
+#div-botón {
+    cursor: pointer;
+    margin-left: 530px;
+    transform: translateY(270px);
+    background-color: rgb(139, 139, 139);
+    height: 2vw;
+    width: 8vw;
+    border-radius: 5px;
+}
+
+#label-envío {
+    align-items: center;
+    height: 2vw;
+    width: 7vw;
+}
+
+#label-envío p {
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 15px;
+    padding-top: 8px;
+}
+
+#botón {
+    display:none;
+    cursor: pointer;
+    height: 2vw;
+    width: 7vw;
+}
+
 footer {
     margin-top: 0px;
     background-color: rgb(139, 139, 139);
@@ -413,7 +450,7 @@ footer {
     border-radius: 9px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-evenly;
     box-shadow: 1px 1px 10px;
     height: 7vw;
     margin-top: -4.7vw;
@@ -423,4 +460,13 @@ footer {
     opacity: 0.9;
     border-radius: 5px;
     box-shadow: 1px 1px 5px ;
+    margin-left: -13vw
+}
+
+.enlace a {
+    color: #333;
+    font-weight: bolder;
+    text-decoration:none ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large
 }
