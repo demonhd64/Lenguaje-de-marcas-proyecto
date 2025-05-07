@@ -123,25 +123,25 @@ html {
     margin-right: -30px;
 }
 
-#comida {
+#Comida {
     display: block;
     margin-left: 10px;
     margin-bottom: 50px;
-    margin-right: -30px;
+    margin-right: -10px;
 }
 
-#merienda {
+#Merienda {
     display: block;
     margin-left: 10px;
     margin-bottom: 50px;
-    margin-right: -30px;
+    margin-right: -20px;
 }
 
-#cena {
+#Cena {
     display: block;
     margin-left: 10px;
     margin-bottom: 70px;
-    margin-right: -10px;
+    margin-right: 25px;
 }
 
 #cuadro-desayunos {
@@ -165,7 +165,7 @@ html {
 #cuadro-desayunos-4 {
     display: block;
     margin-top: 100px;
-    margin-left: -80px;
+    margin-left: -115px;
 }
 
 footer {
