@@ -120,8 +120,8 @@ button:hover div:nth-child(3) {
 
 #prin {
     background-color: whitesmoke;
-    height: 700px;
-    width: 80%;
+    width:60vw ;
+    height: 80vw;
     margin:0 auto;
     border-radius: 5px;
     box-shadow: 0.3px 1px 3px;
@@ -129,7 +129,7 @@ button:hover div:nth-child(3) {
 }
 
 #Receta_adecuada {
-    margin-left: 1200px;
+    margin-left: 45vw;
     margin-top:-14px;
     padding-top: 0px;
     background-color:darkgrey;
