@@ -66,9 +66,8 @@ html {
 }
 
 .cuando:checked + .label-radios {
-    background-color: rgb(72, 75, 75);
-    color: white;
-    border-color: rgb(72, 75, 75);
+    background-color: rgb(138, 141, 141);
+    border-color: rgb(138, 141, 141);
 }
 
 .label-radios:hover {
@@ -109,14 +108,28 @@ html {
 }
 
 .cuando-2:checked + .label-radios-2 {
-    background-color: rgb(72, 75, 75);
-    color: white;
-    border-color: rgb(72, 75, 75);
+    background-color: rgb(138, 141, 141);
+    border-color: rgb(138, 141, 141);
 }
 
 .label-radios-2:hover {
     background-color: rgb(138, 141, 141);
 }
+
+#cruasan {
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    margin-right: -30px;
+}
+
+#cuadro-desayunos {
+    display: block;
+    margin-top: 100px;
+    margin-left: -90px;
+}
+
+
 
 footer {
 
