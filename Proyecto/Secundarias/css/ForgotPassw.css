@@ -29,7 +29,7 @@ form {
     margin: 10px auto;
 }
 
-.input-container input[type="password"] {
+.input-container input[type="password"], .input-container input[type="text"] {
   width: 300px;
   padding: 10px;
   text-align: center;

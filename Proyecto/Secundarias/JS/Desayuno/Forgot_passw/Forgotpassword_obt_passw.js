@@ -59,4 +59,29 @@ window.addEventListener("DOMContentLoaded", async function (e) {
             }
         }
     });
+    let ConstraseñaVisibleRegistro = false; // Variable para controlar la visibilidad
+
+    function eyeRegistro() {
+        const eyeOpen = document.getElementById("eye-OpenRegistro");
+        const eyeClosed = document.getElementById("eye-closedRegistro");
+        const passwInput = document.getElementById("password");
+    
+        // Alternar la visibilidad de la contraseña
+        ConstraseñaVisibleRegistro = !ConstraseñaVisibleRegistro;
+    
+        if (ConstraseñaVisibleRegistro) {
+            passwInput.type = "text"; 
+            eyeClosed.style.display = "none"; 
+            eyeOpen.style.display = "inline"; 
+        } else {
+            passwInput.type = "password"; 
+            eyeClosed.style.display = "inline";
+            eyeOpen.style.display = "none";
+        }
+    }
+    
+    // Asignar el evento a los íconos
+    document.getElementById("eye-OpenRegistro").addEventListener('click', eyeRegistro);
+    document.getElementById("eye-closedRegistro").addEventListener('click', eyeRegistro);
+    
 });
