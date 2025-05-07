@@ -46,11 +46,15 @@ input{
 
 footer {
     position: relative;
-    background-color: rgb(134, 134, 134);
+    background-color: rgb(134, 134, 134); /* Usamos esta si es la que prefieres */
     text-align: center;
     width: 100dvw;
-    padding: 10px 0;
+    padding: 12px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
+
 
 .wrapper {
     flex: 1;
@@ -769,4 +773,18 @@ label {
     position: absolute;
     bottom: 5px;
     left: 40%;
+}
+
+/*Footer*/
+
+#logo {
+    border-radius: 5px;
+}
+
+.enlace a {
+    color: #333;
+    font-weight: bolder;
+    text-decoration:none ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large
 }
