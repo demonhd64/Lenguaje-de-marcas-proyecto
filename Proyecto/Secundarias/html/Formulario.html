@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Formulario.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>TU RECETA IDEAL</title>
 </head>
 <body>
     <header>
+        <nav>
+            <div class="lista">
+                <label>
+                    <button>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </button>
+                </label>
+                <ul class="desplegable">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../html/desayunos.html">Desayunos</a></li>
+                    <li><a href="#">Comidas</a></li>
+                    <li><a href="#">Cenas</a></li>
+                    <li><a href="#">Carnes</a></li>
+                    <li><a href="#">Pescados</a></li>
+                    <li><a href="#">Recetas Veganas</a></li>
+                    <li><a href="#">Postres</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="recetario-magico">
+            <p>Recetario Mágico</p>
+        </div>
     </header>
     <main>
         <div class="cuadro_formulario">
@@ -18,48 +41,75 @@
                 <div id="contenedor-radius">
                         <div>
                             <input type="radio" class="cuando" id="1" name="¿Cuándo planeas disfrutarla?">
-                            <label for="1" class="label-radios"><img src="../../Imagenes/imagenes_formulario/croissant_french_pastry_buttery_icon_260715 (1).png" alt="" id="cruasan"><p id="cuadro-desayunos">Desayunos</p></label>
+                            <label for="1" class="label-radios"><img src="../../Imagenes/imagenes_formulario/croissant_french_pastry_buttery_icon_260715 (1).png" alt="" id="cruasan" height="80px" width="80px"><p id="cuadro-desayunos">Desayuno</p></label>
                         </div>
                         <div>
                             <input type="radio" class="cuando" id="2" name="¿Cuándo planeas disfrutarla?">
-                            <label for="2" class="label-radios"><img src="../../Imagenes/imagenes_formulario/self_protection_lunch_food_healthcare_medical_covid_icon_140744.png" alt="" id="Comida"><p id="cuadro-desayunos-2">Comida</p></label>
+                            <label for="2" class="label-radios"><img src="../../Imagenes/imagenes_formulario/self_protection_lunch_food_healthcare_medical_covid_icon_140744.png" alt="" id="Comida" height="80px" width="80px"><p id="cuadro-desayunos-2">Comida</p></label>
                         </div>
                         <div>
                             <input type="radio" class="cuando" id="3" name="¿Cuándo planeas disfrutarla?">
-                            <label for="3" class="label-radios"><img src="../../Imagenes/imagenes_formulario/cinema_snack_film_movie_popcorn_icon_209545.png" alt="" id="Merienda"><p id="cuadro-desayunos-3">Merienda</p></label>
+                            <label for="3" class="label-radios"><img src="../../Imagenes/imagenes_formulario/cinema_snack_film_movie_popcorn_icon_209545.png" alt="" id="Merienda" height="80px" width="80px"><p id="cuadro-desayunos-3">Merienda</p></label>
                         </div>
                         <div>
                             <input type="radio" class="cuando" id="4" name="¿Cuándo planeas disfrutarla?">
-                            <label for="4" class="label-radios"><img src="../../Imagenes/imagenes_formulario/cooked_food_meal_cooking_cuisine_dinner_healthy_meat_icon_140888.png" alt="" id="Cena"><p id="cuadro-desayunos-4">Cena</p></label>
+                            <label for="4" class="label-radios"><img src="../../Imagenes/imagenes_formulario/cooked_food_meal_cooking_cuisine_dinner_healthy_meat_icon_140888.png" alt="" id="Cena" height="80px" width="80px"><p id="cuadro-desayunos-4">Cena</p></label>
                         </div>
                 </div>
                 <p class="subtitulos">Tipo de plato</p>
                 <div id="contenedor-radius-2">
                     <div>
                         <input type="radio" class="cuando-2" id="1-2" name="Tipo de plato">
-                        <label for="1-2" class="label-radios-2">Carnes</label>
+                        <label for="1-2" class="label-radios-2"><img src="../../Imagenes/imagenes_formulario/steak_meat_beefsteak_chop_food_icon_207918.png" alt="" id="Carnes" height="80px" width="80px"><p id="cuadro-desayunos-5">Carnes</p></label>
                     </div>
                     <div>
                         <input type="radio" class="cuando-2" id="2-2" name="Tipo de plato">
-                        <label for="2-2" class="label-radios-2">Pescados</label>
+                        <label for="2-2" class="label-radios-2"><img src="../../Imagenes/imagenes_formulario/fish_icon_126050.png" alt="" id="Pescados" height="100px" width="100px"><p id="cuadro-desayunos-6">Pescados</p></label>
                     </div>
                     <div>
                         <input type="radio" class="cuando-2" id="3-2" name="Tipo de plato">
-                        <label for="3-2" class="label-radios-2">Vegano</label>
-                    </div>
+                        <label for="3-2" class="label-radios-2"><img src="../../Imagenes/imagenes_formulario/salad_bowl_food_vegetables_vegan_healthy_food_icon_207921.png" alt="" id="Vegano"  height="80px" width="80px"><p id="cuadro-desayunos-7">Vegano</p></label>                    </div>
                     <div>
                         <input type="radio" class="cuando-2" id="4-2" name="Tipo de plato">
-                        <label for="4-2" class="label-radios-2">Postres</label>
+                        <label for="4-2" class="label-radios-2"><img src="../../Imagenes/imagenes_formulario/cake_slice_dessert_food_icon_263291.png" alt="" id="Postres"  height="120px" width="120px"><p id="cuadro-desayunos-8">Postres</p></label>
                     </div>
             </div>
                 <p class="subtitulos">Ingredientes</p>
 
                 <p class="subtitulos">Tiempo de elaboración</p>
+                <div id="contenedor-radius-3">
+                    <div id="min-1">
+                        <input type="radio" class="cuando-3" id="1-3" name="Tiempo de elaboración">
+                        <label for="1-3" class="label-radios-3"><img src="../../Imagenes/imagenes_formulario/timeclock_tiemp_3924.png" alt="" id="reloj" height="25px"><p id="tiempo">15 min</p></label>
+                    </div>
+                    <div id="min-2">
+                        <input type="radio" class="cuando-3" id="2-3" name="Tiempo de elaboración">
+                        <label for="2-3" class="label-radios-3"><img src="../../Imagenes/imagenes_formulario/timeclock_tiemp_3924.png" alt="" id="reloj-1" height="25px"><p id="tiempo-1">30 min</p></label>
+                    </div>
+                    <div id="min-3">
+                        <input type="radio" class="cuando-3" id="3-3" name="Tiempo de elaboración">
+                        <label for="3-3" class="label-radios-3"><img src="../../Imagenes/imagenes_formulario/timeclock_tiemp_3924.png" alt="" id="reloj-2" height="25px"><p id="tiempo-2">45 min</p></label>
+                    </div>
+                    <div id="min-4">
+                        <input type="radio" class="cuando-3" id="4-3" name="Tiempo de elaboración">
+                        <label for="4-3" class="label-radios-3"><img src="../../Imagenes/imagenes_formulario/timeclock_tiemp_3924.png" alt="" id="reloj-3" height="25px"><p id="tiempo-3">60 min</p></label>
+                    </div>
+                    <div id="min-5">
+                        <input type="radio" class="cuando-3" id="5-3" name="Tiempo de elaboración">
+                        <label for="5-3" class="label-radios-3"><img src="../../Imagenes/imagenes_formulario/timeclock_tiemp_3924.png" alt="" id="reloj-4" height="25px"><p id="tiempo-4">90 min</p></label>
+                    </div>
+                    <div id="min-6">
+                        <input type="radio" class="cuando-3" id="6-3" name="Tiempo de elaboración">
+                        <label for="6-3" class="label-radios-3"><img src="../../Imagenes/imagenes_formulario/timeclock_tiemp_3924.png" alt="" id="reloj-5" height="25px"><p id="tiempo-5">120 min</p></label>
+                    </div>
+                </div>
             </form>
         </div>
     </main>
     <footer>
-
+        <div id="footer-div">
+            <img src="../../Imagenes/logo/IMG-20250506-WA0001.jpg" alt="" id="logo" height="130px">
+        </div>
     </footer>
     <script src="../JS/Desayuno/Formulario.js"></script>
 </body>
