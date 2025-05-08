@@ -134,12 +134,11 @@ button:hover div:nth-child(3) {
     margin-top:-14px;
     padding-top: 0px;
     background-color:darkgrey;
-    transform: translate(50%, 50%);
     width: 160px;
     height: 50px;
     border-radius: 10%;
     box-shadow: 0.3px 1px 3px ;
-    transform: translateY(150vw);
+    transform: translateY(120vw);
 }
 
 #Receta_adecuada button {
@@ -197,6 +196,32 @@ button:hover div:nth-child(3) {
     box-shadow: 1px 1px 5px;
     border: solid black;  
 }
+
+.horizantal {
+    margin-top: -8vw;
+    width: 50vw;
+}
+
+.vertical {
+    transform: rotate(90deg) translateX(-180px);
+    width: 20vw;
+    margin-top: -60vw;
+    display: inline-block;
+}
+
+.noticias {
+    height:20vw ;
+    width: 13.3vw;
+    display: inline-block;
+    margin-right: -10vw;
+    margin-left: -10vw;
+}
+
+#primera-noticia {
+    margin-left: 3vw;
+}
+
+
 
 @media (max-width: 769px) {
     html {
