@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(230, 230, 230);
-    background-image: url(Imagenes/imagenes_formulario/ChatGPT\ Image\ 7\ may\ 2025\,\ 14_00_01.png);
 }
 
 header {
@@ -201,11 +200,11 @@ button:hover div:nth-child(3) {
 }
 
 .horizantal {
-    width: 50vw;
+    width: 56vw;
 }
 
 .vertical {
-    transform: rotate(90deg) translateX(130px);
+    transform: rotate(90deg) translateX(-75px);
     width: 20vw;
     margin-top: -60vw;
     display: inline-block;
@@ -221,6 +220,54 @@ button:hover div:nth-child(3) {
 
 #primera-noticia {
     margin-left: 3vw;
+}
+
+#primera-noticia-texto {
+    transform:translateY(230px);
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+#segunda-noticia-texto {
+    transform:translateY(230px);
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+#tercera-noticia-texto {
+    transform:translateY(210px);
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+#cuarta-noticia-texto {
+    transform:translateY(210px);
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.imagen-noticia {
+    transform: translateY(-80px);
 }
 
 @media (max-width: 769px) {
