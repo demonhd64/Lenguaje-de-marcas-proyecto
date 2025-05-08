@@ -133,8 +133,13 @@ button:hover div:nth-child(3) {
 
 #Cont-Img {
     display: flex;
+    flex-direction: column;
     justify-content: center; /* centra horizontalmente */
     align-items: center;     /* centra verticalmente */
+}
+
+#Cont-Img p{
+    margin-top: 15px;
 }
 
 #Cont-Info{
