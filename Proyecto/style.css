@@ -159,7 +159,7 @@ button:hover div:nth-child(3) {
 #avena {
     align-items: center;
     width: 60vw;
-    transform: translateY(-10vw);
+    padding-top: -1000px;
 }
 
 #avena-texto {
@@ -170,7 +170,7 @@ button:hover div:nth-child(3) {
     background-color:whitesmoke;
     z-index: 1;
     margin-left: 120px;
-    transform: translateY(33vw);
+    transform: translateY(290px);
     width: 27vw;
     border-radius: 10px;
     box-shadow: 1px 1px 5px;
@@ -194,11 +194,12 @@ button:hover div:nth-child(3) {
     z-index: 0;
     border-radius: 10px;
     box-shadow: 1px 1px 5px;
-    border: solid black;  
+    border: solid black;
+    margin-top: -140px;
+    width: 700px;
 }
 
 .horizantal {
-    margin-top: -8vw;
     width: 50vw;
 }
 
