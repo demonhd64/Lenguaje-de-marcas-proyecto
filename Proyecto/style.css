@@ -109,19 +109,20 @@ button:hover div:nth-child(3) {
 }
 
 #recetario-magico {
-    font-size: 2.5rem;
+    font-size: 3vw;
     color: #333;
     font-weight: bold;
     text-align: center;
     flex-grow: 1; /* Permite que el div ocupe el espacio disponible */
     display: flex; 
-    justify-content: center; 
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #prin {
     background-color: whitesmoke;
     width:60vw ;
-    height: 80vw;
+    height: 200vw;
     margin:0 auto;
     border-radius: 5px;
     box-shadow: 0.3px 1px 3px;
@@ -138,6 +139,7 @@ button:hover div:nth-child(3) {
     height: 50px;
     border-radius: 10%;
     box-shadow: 0.3px 1px 3px ;
+    transform: translateY(150vw);
 }
 
 #Receta_adecuada button {
@@ -153,6 +155,47 @@ button:hover div:nth-child(3) {
     font-size:larger;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
+}
+
+#avena {
+    align-items: center;
+    width: 60vw;
+    transform: translateY(-10vw);
+}
+
+#avena-texto {
+    align-items: center;
+    width: 60vw;
+    transform: translateY(-10vw);
+    position: relative;
+    background-color:whitesmoke;
+    z-index: 1;
+    margin-left: 120px;
+    transform: translateY(33vw);
+    width: 27vw;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    padding: 1vw;
+    border: solid black;
+    opacity: 0.8
+}
+
+#avena-enlace {
+    font-size: 3vw;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#avena-foto {
+    position: relative;
+    transform: translateX(3.8vw);
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    border: solid black;  
 }
 
 @media (max-width: 769px) {
