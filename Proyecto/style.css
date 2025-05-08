@@ -201,6 +201,7 @@ button:hover div:nth-child(3) {
 
 .horizantal {
     width: 56vw;
+    margin-top: 5%;
 }
 
 .vertical {
@@ -231,6 +232,7 @@ button:hover div:nth-child(3) {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     font-weight: bold;
+    margin-bottom: 5%;
 }
 
 #segunda-noticia-texto {
@@ -242,6 +244,7 @@ button:hover div:nth-child(3) {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     font-weight: bold;
+    margin-bottom: 5%;
 }
 
 #tercera-noticia-texto {
@@ -253,6 +256,7 @@ button:hover div:nth-child(3) {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     font-weight: bold;
+    margin-bottom: 5%;
 }
 
 #cuarta-noticia-texto {
@@ -264,10 +268,55 @@ button:hover div:nth-child(3) {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     font-weight: bold;
+    margin-bottom: 5%;
 }
 
 .imagen-noticia {
     transform: translateY(-80px);
+}
+
+#atún {
+    align-items: center;
+    width: 60vw;
+}
+
+#atún-texto {
+    align-items: center;
+    width: 60vw;
+    position: relative;
+    background-color:whitesmoke;
+    z-index: 1;
+    margin-left: 120px;
+    transform: translateY(500px);
+    width: 22vw;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    padding: 1vw;
+    border: solid black;
+    opacity: 0.8
+}
+
+#atún-enlace {
+    font-size: 2vw;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 50vw;
+    height: 35vw;
+}
+
+#atún-foto {
+    position: relative;
+    transform: translateX(3.8vw);
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    border: solid black;
+    margin-top: -140px;
+    width: 50vw;
+    height: 35vw;
 }
 
 @media (max-width: 769px) {
