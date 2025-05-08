@@ -16,6 +16,7 @@ header {
     justify-content: space-between; /* Espacia los elementos */
     box-shadow: 1px 1px 10px;
     width: 100vw;
+    height: 7vw;
 }
 
 .lista {
@@ -149,19 +150,32 @@ button:hover div:nth-child(3) {
 }
 
 footer {
-    margin-top: auto;
-    margin-bottom: 0;
-    padding: 0;
-    bottom: 0;
-    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    margin-top: 0px;
     background-color: rgb(139, 139, 139);
+    padding: 12px 20px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    box-shadow: 1px 1px 10px;
+    height: 7vw;
 }
 
+#logo {
+    opacity: 0.9;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px ;
+    margin-left: -13vw
+}
 
-footer a{
+.enlace a {
     color: #333;
     font-weight: bolder;
     text-decoration:none ;
     font-family: Arial, Helvetica, sans-serif;
     font-size: xx-large
+}
+
+main  {
+    height: 40vw;
 }
