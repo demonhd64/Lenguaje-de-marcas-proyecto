@@ -14,3 +14,14 @@ LogOut.addEventListener('click', async ()=>{
     forgotpassw.style.display = "none" //Ocultar el botón de restablecimiento de contraseña al cerrar sesión
     await deleteUser(auth.currentUser) //Eliminar el usuario de la autenticación Ademas esto cierra sesion
 })
+
+window.addEventListener('beforeunload',function (e) {
+    e.preventDefault();
+    if(auth.currentUser){
+         // La mayoría de los navegadores ignoran el texto personalizado en event.returnValue
+        const mensaje = 'Se va ha cerrar la sesión, ¿estás seguro?';
+        e.returnValue = mensaje; // Para navegadores más antigüos
+        deleteUser(auth.currentUser)
+        return mensaje; // Algunos navegadores lo usan para mostrar diálogo   
+    } else{}
+});
