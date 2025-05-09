@@ -5,38 +5,30 @@ html, body {
     overflow-x: hidden;
 }
 
-body { /* FOndo animado solo compatible con (Chrome, Firefox, Safari, Edge, Opera, Internet Explorer)*/
-    background-image: linear-gradient(-45deg, rgba(255, 102, 0, 0.4) 0%, rgba(0, 225, 255, 0.4) 25%, rgba(255, 53, 127, 0.4) 100%);
-    background-size: 200% 200%;
-    animation: AnimateBG 2s ease infinite;
+body { /* Fondo animado solo compatible con (Chrome, Firefox, Safari, Edge, Opera, Internet Explorer) */
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.651) 0%, rgba(209, 209, 209, 0.651) 50%, rgba(255, 255, 255, 0.651) 100%);
+    background-size: 400% 400%;
+    animation: AnimateBG 5s ease infinite;
     display: flex;
     flex-direction: column;
-    
 }  
-
 body::-webkit-scrollbar {
     background: rgb(134, 134, 134); /* Color de fondo del track */
 }
-
 body::-webkit-scrollbar-thumb {
-    background-color: rgb(170, 169, 169); /* Color verde del thumb */
+    background-color: rgb(170, 169, 169); /* Color del thumb */
     border: 2px solid rgb(139, 139, 139);
     border-radius: 50px;
 }
-
 body::-webkit-scrollbar-track {
     background: transparent; /* Color del track */
 }
-
 @keyframes AnimateBG {
     0% {
         background-position: 0% 50%;
     }
-    50% {
-        background-position: 100% 50%;
-    }
     100% {
-        background-position: 0% 50%;
+        background-position: 100% 50%;
     }
 }
 
