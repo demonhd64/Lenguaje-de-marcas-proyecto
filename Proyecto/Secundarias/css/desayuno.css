@@ -621,6 +621,14 @@ label {
     top: 40%;
 }
 
+#login-modalEnCasoDeError .Visibilidad{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    right: 15px;
+    top: 40%;
+}
+
 .google, .github{
     display: inline-block;
     border: none;
