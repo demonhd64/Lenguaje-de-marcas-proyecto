@@ -1,4 +1,4 @@
-import { signOut, deleteUser } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
+import { deleteUser } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
 import { auth } from "../Desayuno/Firebase.js";
 import { mensajes } from "../Desayuno/Tostify.js"
 import { errores } from "../Desayuno/Login/LogIn.js"
