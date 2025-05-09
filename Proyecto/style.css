@@ -137,7 +137,7 @@ button:hover div:nth-child(3) {
     height: 50px;
     border-radius: 10%;
     box-shadow: 0.3px 1px 3px ;
-    transform: translateY(120vw);
+    transform: translateY(80vw);
 }
 
 #Receta_adecuada button {
