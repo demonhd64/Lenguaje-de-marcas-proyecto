@@ -324,7 +324,7 @@ button:hover div:nth-child(3) {
 }
 
 #quinta-noticia-texto {
-    transform:translateY(230px);
+    transform:translateY(190px);
     position: relative;
     z-index: 1;
     text-decoration: none;
@@ -336,7 +336,7 @@ button:hover div:nth-child(3) {
 }
 
 #sexta-noticia-texto {
-    transform:translateY(230px);
+    transform:translateY(190px);
     position: relative;
     z-index: 1;
     text-decoration: none;
@@ -348,7 +348,7 @@ button:hover div:nth-child(3) {
 }
 
 #septima-noticia-texto {
-    transform:translateY(210px);
+    transform:translateY(190px);
     position: relative;
     z-index: 1;
     text-decoration: none;
