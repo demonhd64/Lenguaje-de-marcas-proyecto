@@ -137,7 +137,7 @@ button:hover div:nth-child(3) {
     height: 50px;
     border-radius: 10%;
     box-shadow: 0.3px 1px 3px ;
-    transform: translateY(80vw);
+    transform: translateY(60vw);
 }
 
 #Receta_adecuada button {
@@ -369,6 +369,39 @@ button:hover div:nth-child(3) {
     font-size: large;
     font-weight: bold;
     margin-bottom: 5%;
+}
+
+#carrusel-presentación {
+    text-align: center;
+    width: 60vw;
+}
+
+#carrusel-presentación p {
+    color: black;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+section {
+    display: flex;
+    width: 50vw;
+    height: 40vw;
+    margin-left: 5vw;
+}
+
+section img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s ease;
+}
+
+section img:hover {
+    cursor: pointer;
+    width: 30vw;
+    opacity: 1;
+    filter: contrast(120%);
 }
 
 @media (max-width: 769px) {
