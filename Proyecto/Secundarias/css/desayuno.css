@@ -661,6 +661,13 @@ label {
     left: 42%;
 }
 
+#Sign-upEnCasoDeError{
+    position: absolute;
+    display: block;
+    margin-top: 20px;
+    left: 42%;
+}
+
 #Registro{
     position: absolute;
     display: flex;
