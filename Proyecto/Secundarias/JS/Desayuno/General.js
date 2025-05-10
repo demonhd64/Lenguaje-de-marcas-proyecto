@@ -2,35 +2,46 @@ import { ingredientesParaFiltro_export } from "../../../Almacenamiento/datos.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { auth } from "./Firebase.js";
 
-
+console.log(ingredientesParaFiltro_export)
 
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
     let NumeroVisible = 0; // Contador para las tarjetas visibles
+    // Verificar si hay ingredientes seleccionados
+    const hayIngredientesSeleccionados = ingredientesParaFiltro_export.length > 0;
+    // Variable para saber si hay coincidencias
+    let hayCoincidencias = false;
     cards.forEach((card, index) => {
         const ingredientesCard = Array.from(card.querySelectorAll(".elementos-ingredientes ul li"))
             .map(li => li.textContent.toLowerCase());
-
-        const mostrarPorIngredientes = ingredientesParaFiltro_export.length > 0 && ingredientesParaFiltro_export.some(filtro =>
+        // Comprobar si la tarjeta contiene algún ingrediente seleccionado
+        const mostrarPorIngredientes = hayIngredientesSeleccionados && ingredientesParaFiltro_export.some(filtro =>
             ingredientesCard.some(ingrediente => ingrediente.includes(filtro.toLowerCase()))
         );
-
-        if (mostrarPorIngredientes || ingredientesParaFiltro_export.length === 0) {
+        // Si hay ingredientes seleccionados y hay coincidencias, se muestra la tarjeta
+        if (mostrarPorIngredientes) {
             card.style.display = "flex";
             card.classList.add("limite");
             NumeroVisible++;
+            hayCoincidencias = true; // Hay al menos una coincidencia
         } else {
-            card.style.display = "none";
-            card.classList.remove("limite");
+            // Si no hay ingredientes seleccionados o no hay coincidencias, se muestran todas las tarjetas
+            if (!hayIngredientesSeleccionados || !hayCoincidencias) {
+                card.style.display = "flex";
+                card.classList.add("limite");
+                NumeroVisible++;
+            } else {
+                card.style.display = "none";
+                card.classList.remove("limite");
+            }
         }
-
         const iconElement = document.querySelector(`#icon${index + 1}`);
         if (iconElement) {
-            iconElement.textContent = mostrarPorIngredientes || ingredientesParaFiltro_export.length === 0 ? NumeroVisible : '';
+            iconElement.textContent = hayCoincidencias || !hayIngredientesSeleccionados ? NumeroVisible : '';
         }
-    });
-}
+    })
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     aplicarFiltros();

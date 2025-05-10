@@ -1,7 +1,8 @@
-//Ejemplos de cada dato sacado.
+// Recuperamos los ingredientes guardados en localStorage
+const ingredientesGuardados = JSON.parse(localStorage.getItem("ingredientesSeleccionados")) || [];
 
-let ingredientesParaFiltro = []
+// Si quieres hacer algo con los ingredientes, como pasarlos a otro archivo
+let ingredientesParaFiltro_export = ingredientesGuardados.map(ingrediente => ingrediente.toLowerCase());
 
-let ingredientesParaFiltro_export = ingredientesParaFiltro.map(ingrediente => ingrediente.toLowerCase())
 
-export {ingredientesParaFiltro_export};
+export {ingredientesParaFiltro_export}
