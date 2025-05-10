@@ -52,7 +52,8 @@ BotonRegistro.addEventListener("click", async (e) => {
 
                 // Guarda en Firestore
                 await setDoc(userRef, {
-                    Password: password
+                    Password: password,
+                    Email: NombreConEmail
                 });
 
                 mensajes(`El usuario ${Name} se ha registrado con éxito`, "success");

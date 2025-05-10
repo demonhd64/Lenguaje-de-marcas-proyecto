@@ -33,7 +33,7 @@ BtnGoogleRegister.addEventListener("click", async (e) => {
             ModalRegistro.style.display = "none";
         }
     } catch (error) {
-            console.error("Error:", error);
+            console.log("Error:", error);
             ModalRegistro.style.display = "none";
             } if (error.code === "auth/popup-closed-by-user") {
                 mensajes("El registro con Github fue cancelado", "error");
