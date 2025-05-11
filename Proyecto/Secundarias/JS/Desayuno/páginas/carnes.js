@@ -1,8 +1,6 @@
-import { ingredientesParaFiltro_export } from "../../../Almacenamiento/datos.js"
+import { ingredientesParaFiltro_export } from "../../../../Almacenamiento/datos.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-import { auth } from "./Firebase.js";
-
-console.log(ingredientesParaFiltro_export)
+import { auth } from "../Firebase.js";
 
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {

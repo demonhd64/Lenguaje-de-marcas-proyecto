@@ -487,3 +487,13 @@ footer {
 #Cuarta {
     transform:translateY(-250px)
 }
+
+#error {
+    display: flex;
+    transform: translateY(-1000%);
+    position: absolute;
+    margin-left: 45%;
+    background-color: red;
+    color: #ffffff;
+    scale: 150%;
+}
