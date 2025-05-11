@@ -319,14 +319,14 @@ input:checked + label .row .elementos-ingredientes {
 
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
-    background-image: url(../../Imagenes/Desayuno/Tortitas/Tortitas\ de\ avena\ con\ platanao\ y\ sirope.jpg);
+    background-image: url(../../../Imagenes/Desayuno/Tortitas/Tortitas\ de\ avena\ con\ platanao\ y\ sirope.jpg);
     background-position: center;
     background-size: clamp(85%, 100%, 100%) clamp(50%, 100%, 100%);
     transition: background-image 3.5s ease;
 }
 
 .card[for="c2"]:not(input:checked) {
-    background-image: url(../../Imagenes/Desayuno/smoothie/smoothie-de-acai_00000000_230215171429_720x1080.jpg); /*720 x 1080*/
+    background-image: url(../../../Imagenes/Desayuno/smoothie/smoothie-de-acai_00000000_230215171429_720x1080.jpg); /*720 x 1080*/
     background-position: center;
     transition: background-image 3.5s ease;
 }
@@ -351,14 +351,14 @@ input:checked + label .row .elementos-ingredientes {
 
 /* Imagen cuando el input está marcado */
 input#c1:checked + label[for="c1"] {
-    background-image: url(../../Imagenes/Desayuno/Tortitas/pankake\ con\ platano\ horizontal.jpg); 
+    background-image: url(../../../Imagenes/Desayuno/Tortitas/pankake\ con\ platano\ horizontal.jpg); 
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c2:checked + label[for="c2"] {
-    background-image: url(../..//Imagenes/Desayuno/smoothie/smoothie\ fresa\ horizontal.jpg); /*1792 x 1024*/
+    background-image: url(../../../Imagenes/Desayuno/smoothie/smoothie\ fresa\ horizontal.jpg); /*1792 x 1024*/
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
