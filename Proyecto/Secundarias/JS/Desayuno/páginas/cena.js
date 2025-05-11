@@ -2,6 +2,8 @@ import { ingredientesParaFiltro_export } from "../../../../Almacenamiento/datos.
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { auth } from "../Firebase.js";
 
+console.log(ingredientesParaFiltro_export)
+
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -108,53 +110,52 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Manejo de pasos
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const textosPasos = {
+        pasoSelector1: {
+            1: 'Cocina la pechuga a la plancha con sal y pimienta.',
+            2: 'En un bol mezcla la quinoa, vegetales y el pollo cocido.',
+            3: 'Aliña con limón, aceite, sal y pimienta. Sirve tibio o frío.'
+        },
+        pasoSelector2: {
+            1: 'Coloca el salmón en una bandeja con las verduras alrededor.',
+            2: 'Añade limón, aceite, sal, pimienta y eneldo.',
+            3: 'Hornea a 180°C por 20 minutos. Sirve caliente.',
+        },
+        pasoSelector3: {
+            1: 'Cocina la pasta según las instrucciones.',
+            2: 'Sofríe el ajo y los champiñones, añade las espinacas al final.',
+            3: 'Mezcla con la pasta, salpimienta y espolvorea queso.'
+        },
+        pasoSelector4: {
+            1: 'Bate los huevos con sal y pimienta.',
+            2: 'En una sartén, saltea las espinacas y añade los huevos.',
+            3: 'Cocina a fuego medio y agrega el queso antes de doblar la tortilla.',
+        },
+        pasoSelector5: {
+            1: 'Sofríe ajo, cebolla y zanahoria en una olla.',
+            2: 'Añade las lentejas y el caldo, condimenta al gusto.',
+            3: 'Cocina 15 minutos y tritura si deseas textura cremosa.',
+        }
+    };
+
     const selectores = document.getElementsByClassName('pasoSelector');
 
-    for (let i =  0; i < selectores.length; i++) {
-        selectores[i].addEventListener('change', function() {
-            const pasoSeleccionado = this.value;
+    for (let i = 0; i < selectores.length; i++) {
+        selectores[i].addEventListener('change', function () {
             const idSelector = this.id;
-            const textoPaso = document.getElementById(idSelector === 'pasoSelector1' ? 'Texto-De-Opcion' : 'Texto-De-Opcion2');
+            const pasoSeleccionado = this.value;
+            const textoPaso = document.getElementById('Texto-De-Opcion' + idSelector.replace('pasoSelector', ''));
 
-            if (idSelector === 'pasoSelector1') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Ponemos el puré de plátano en un bol y le añadimos 1 huevo, media cucharadita de canela en polvo, una pizca de sal y 10 g de impulsor químico. Vertemos también 50 ml de leche de avena sin azúcar y mezclamos todo muy bien.';
-                        break;
-                    case '3':
-                        textoPaso.textContent = 'Con la masa anterior bien mezclada, añadimos 100 g de harina de avena y volvemos a mezclar.';
-                        break;
-                    case '4':
-                        textoPaso.textContent = 'Preparamos una sartén plana con un poco de aceite que podremos untar con una brocha o un trozo de papel (añadir aceite es opcional, las tortitas pueden hacerse sin aceite). Llevamos la sartén al fuego y esperamos hasta que esté caliente. Vertemos una cuchara grande de la masa.';
-                        break;
-                    case '5':
-                        textoPaso.textContent = 'Dejamos que se haga la tortita por un lado durante unos segundos, el fuego no debe estar muy alto o se nos quemarán. Sabremos que están bien hechas por el lado en que las cocinamos primero, cuando veamos salir burbujas de la masa. Entonces le damos la vuelta y dejamos que se cocine por el otro lado. Seguimos haciendo más tortitas.';
-                        break;
-                    case '6':
-                        textoPaso.textContent = 'Servimos las tortitas recién hechas con plátano en rodajas y sirope de agave. También podemos guardarlas en la nevera durante un par de días y calentarlas un poco en el microondas o el horno antes de comerlas.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            } else if (idSelector === 'pasoSelector2') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = '';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            }
+            if (!textoPaso) return;
+
+            // Buscamos el texto correspondiente al paso y lo mostramos
+            const texto = textosPasos[idSelector]?.[pasoSeleccionado] || '';
+            textoPaso.textContent = texto;
         });
     }
 });
+
 
 // Log in
 
