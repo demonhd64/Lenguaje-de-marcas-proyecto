@@ -332,19 +332,19 @@ input:checked + label .row .elementos-ingredientes {
 }
 
 .card[for="c3"]:not(input:checked) {
-    background-image: url();
+    background-image: url(../../../Imagenes/Comidas/croquetas-de-queso-y-calabacin_00000000_230821131907_600x802.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c4"]:not(input:checked) {
-    background-image: url();
+    background-image: url(../../../Imagenes/Comidas/crema-de-zanahoria_00000000_230821132429_600x800.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c5"]:not(input:checked) {
-    background-image: url();
+    background-image: url(../../../Imagenes/Comidas/patatas-rellenas-de-carne-picada-con-portobellos-y-queso_00000000_230821132020_826x1200.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
@@ -365,21 +365,21 @@ input#c2:checked + label[for="c2"] {
 }
 
 input#c3:checked + label[for="c3"] {
-    background-image: url();
+    background-image: url(../../../Imagenes/Comidas/croquetas-de-queso-y-calabacin_00000000_230821131907_600x802.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c4:checked + label[for="c4"] {
-    background-image: url();
+    background-image: url(../../../Imagenes/Comidas/crema-de-zanahoria_00000000_230821132429_600x800.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c5:checked + label[for="c5"] {
-    background-image: url();
+    background-image: url(../../../Imagenes/Comidas/patatas-rellenas-de-carne-picada-con-portobellos-y-queso_00000000_230821132020_826x1200.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
