@@ -184,7 +184,6 @@ input[type="checkbox"]:checked + label .row .Patras{
     position: absolute;
     top: 20%;
     text-align: center;
-    background-color: red;
     cursor: default;
 }
 
