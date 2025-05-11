@@ -1,5 +1,5 @@
 import { deleteUser, reauthenticateWithCredential, EmailAuthProvider, GoogleAuthProvider, GithubAuthProvider, reauthenticateWithPopup  } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
-import { auth, db } from "../Desayuno/Firebase.js";
+import { auth, db } from "../../../Firebase.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 import { mensajes } from "../Desayuno/Tostify.js"
 import { errores } from "../Desayuno/Login/LogIn.js"

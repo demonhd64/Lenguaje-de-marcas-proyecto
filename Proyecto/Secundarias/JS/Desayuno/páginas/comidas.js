@@ -1,6 +1,6 @@
 import { ingredientesParaFiltro_export } from "../../../../Almacenamiento/datos.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-import { auth } from "../Firebase.js";
+import { auth } from "../../../../Firebase.js";
 
 console.log(ingredientesParaFiltro_export)
 

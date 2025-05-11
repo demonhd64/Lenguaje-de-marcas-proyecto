@@ -1,4 +1,4 @@
-import { db } from "../Firebase.js";
+import { db } from "../../../../Firebase.js";
 import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 import { mensajes } from "../Tostify.js";
 

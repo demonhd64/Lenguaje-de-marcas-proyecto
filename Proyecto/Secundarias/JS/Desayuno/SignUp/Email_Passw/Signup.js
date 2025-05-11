@@ -1,4 +1,4 @@
-import { auth, db } from "../../Firebase.js";
+import { auth, db } from "../../../../../Firebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { collection, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 import { mensajes } from "../../Tostify.js";
