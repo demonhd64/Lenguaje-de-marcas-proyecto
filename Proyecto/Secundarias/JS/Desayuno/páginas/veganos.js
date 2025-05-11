@@ -2,6 +2,8 @@ import { ingredientesParaFiltro_export } from "../../../../Almacenamiento/datos.
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { auth } from "../Firebase.js";
 
+console.log(ingredientesParaFiltro_export)
+
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -108,53 +110,56 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Manejo de pasos
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const textosPasos = {
+        pasoSelector1: {
+            1: 'Salpimenta los filetes de pescado.',
+            2: 'En una sartén, derrite la mantequilla y sofríe el ajo hasta dorar.',
+            3: 'Agrega el jugo de limón y mezcla.',
+            4: 'Incorpora los filetes y cocina 4-5 minutos por cada lado.',
+            5: 'Sirve con arroz o ensalada, espolvoreando perejil.',
+        },
+        pasoSelector2: {
+            1: 'Marina el pescado en el jugo de limón por 30-40 minutos hasta que se cueza.',
+            2: 'Escurre un poco y mezcla con los demás ingredientes.',
+            3: 'Salpimenta al gusto y sirve frío con tostadas o galletas saladas.',
+        },
+        pasoSelector3: {
+            1: 'Coloca cada filete en un trozo de papel aluminio.',
+            2: 'Cubre con las verduras, sazona y añade jugo de limón.',
+            3: 'Cierra bien formando un sobre.',
+            4: 'Hornea a 180°C por 25-30 minutos o cocina sobre comal tapado.',
+            5: 'Sirve directo en el papel.',
+        },
+        pasoSelector4: {
+            1: 'Mezcla la harina, huevo, cerveza y especias hasta formar una mezcla para empanizar.',
+            2: 'Pasa el pescado por la mezcla y fríe hasta dorar.',
+            3: 'Sirve en tortillas con col, crema y salsa al gusto.',
+        },
+        pasoSelector5: {
+            1: 'Sazona el salmón con sal, pimienta, eneldo y jugo de limón.',
+            2: 'Calienta una sartén con aceite y cocina el salmón, primero del lado de la piel (4-5 min), luego voltea y cocina 2-3 minutos más.',
+            3: 'Sirve con arroz, quinoa o verduras salteadas.',
+        }
+    };
+
     const selectores = document.getElementsByClassName('pasoSelector');
 
-    for (let i =  0; i < selectores.length; i++) {
-        selectores[i].addEventListener('change', function() {
-            const pasoSeleccionado = this.value;
+    for (let i = 0; i < selectores.length; i++) {
+        selectores[i].addEventListener('change', function () {
             const idSelector = this.id;
-            const textoPaso = document.getElementById(idSelector === 'pasoSelector1' ? 'Texto-De-Opcion' : 'Texto-De-Opcion2');
+            const pasoSeleccionado = this.value;
+            const textoPaso = document.getElementById('Texto-De-Opcion' + idSelector.replace('pasoSelector', ''));
 
-            if (idSelector === 'pasoSelector1') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Ponemos el puré de plátano en un bol y le añadimos 1 huevo, media cucharadita de canela en polvo, una pizca de sal y 10 g de impulsor químico. Vertemos también 50 ml de leche de avena sin azúcar y mezclamos todo muy bien.';
-                        break;
-                    case '3':
-                        textoPaso.textContent = 'Con la masa anterior bien mezclada, añadimos 100 g de harina de avena y volvemos a mezclar.';
-                        break;
-                    case '4':
-                        textoPaso.textContent = 'Preparamos una sartén plana con un poco de aceite que podremos untar con una brocha o un trozo de papel (añadir aceite es opcional, las tortitas pueden hacerse sin aceite). Llevamos la sartén al fuego y esperamos hasta que esté caliente. Vertemos una cuchara grande de la masa.';
-                        break;
-                    case '5':
-                        textoPaso.textContent = 'Dejamos que se haga la tortita por un lado durante unos segundos, el fuego no debe estar muy alto o se nos quemarán. Sabremos que están bien hechas por el lado en que las cocinamos primero, cuando veamos salir burbujas de la masa. Entonces le damos la vuelta y dejamos que se cocine por el otro lado. Seguimos haciendo más tortitas.';
-                        break;
-                    case '6':
-                        textoPaso.textContent = 'Servimos las tortitas recién hechas con plátano en rodajas y sirope de agave. También podemos guardarlas en la nevera durante un par de días y calentarlas un poco en el microondas o el horno antes de comerlas.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            } else if (idSelector === 'pasoSelector2') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = '';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            }
+            if (!textoPaso) return;
+
+            // Buscamos el texto correspondiente al paso y lo mostramos
+            const texto = textosPasos[idSelector]?.[pasoSeleccionado] || '';
+            textoPaso.textContent = texto;
         });
     }
 });
+
 
 // Log in
 

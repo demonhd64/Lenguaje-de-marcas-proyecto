@@ -1,0 +1,799 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body { /* Fondo animado solo compatible con (Chrome, Firefox, Safari, Edge, Opera, Internet Explorer) */
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.651) 0%, rgba(209, 209, 209, 0.651) 50%, rgba(255, 255, 255, 0.651) 100%);
+    background-size: 400% 400%;
+    animation: AnimateBG 5s ease infinite;
+    display: flex;
+    flex-direction: column;
+}  
+body::-webkit-scrollbar {
+    background: rgb(134, 134, 134); /* Color de fondo del track */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(170, 169, 169); /* Color del thumb */
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 50px;
+}
+body::-webkit-scrollbar-track {
+    background: transparent; /* Color del track */
+}
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+input{
+    text-align: center;
+}
+
+footer {
+    position: relative;
+    background-color: rgb(134, 134, 134); /* Usamos esta si es la que prefieres */
+    text-align: center;
+    width: 100dvw;
+    padding: 12px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
+
+
+.wrapper {
+    flex: 1;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.container-body {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    height: auto; 
+    width: 100%; 
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    cursor: pointer;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+/* Clase para cards en estado filtrado (o inactivo) */
+.card.limite {
+    width: 100%;
+    height: 80vh;
+}
+
+/* Clase para la card activa (al hacer click) */
+.card.activa {
+    position: absolute; /*Permite mover la card activa*/
+    margin: 10px;
+    left: -10px;
+    display: flex;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: none;
+}
+
+/* Transición para ocultar las cards inactivas */
+.card:not(.activa) {
+    display: flex;
+    transition: all 0.3s ease-in-out, opacity 0.2s linear;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card > .row {
+    color: white;
+    display: flex; 
+    width: 100%;
+}
+
+#icon1, #icon2, #icon3, #icon4, #icon5 {
+    background: transparent;
+    background-color: rgba(211, 211, 211, 15%);
+    color: black;
+    border-radius: 50%;
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    flex-shrink: 0; /* Evita que el icono se reduzca al expandir la card */
+    font-size: x-large;
+}
+
+.Patras{
+    display: none;
+}
+
+input[type="checkbox"]:checked + label .row .Patras{
+    display: flex;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    flex-shrink: 0; /* Evita que el icono se reduzca al expandir la card */
+    font-size: x-large;
+    pointer-events: all;
+}
+
+.card > .row > .description {
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    padding: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column; 
+    opacity: 1; 
+}
+
+.pasoSelector {
+    position: absolute;
+    top: 14%;
+    left: 50%; /* Centrado */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 15em; /* Ancho relativo al tamaño de la letra */
+    max-width: 15em; /* Ancho máximo relativo al tamaño de la letra */
+    height: auto;
+    padding: 0.5em; /* Padding relativo al tamaño de la letra */
+    font-size: clamp(0.6rem, 2.5vw, 1rem);
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    pointer-events: all;
+    cursor: pointer;
+}
+
+
+.texto {
+    display: flex;
+    color: aqua;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    background-color: red;
+    cursor: default;
+}
+
+#Texto-need-logIn{
+    text-align: center;
+}
+
+.elementos {
+    color: aqua;
+    display: none;
+    position: relative;
+}
+
+.elementos p:first-child {
+    margin-bottom: 35%;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 5%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.elementos-ingredientes {
+    color: aqua;
+    display: none;
+    overflow-y: auto;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    cursor:default;
+}
+
+/*Scrollbar de el div de la derecha de ingredientes*/
+
+.elementos-ingredientes::-webkit-scrollbar {
+    width: 15px;
+    background-color: transparent; /* Color de fondo del track */
+    border-radius: 0 10px 10px 0;
+    pointer-events: auto !important;
+}
+
+.elementos-ingredientes::-webkit-scrollbar-thumb {
+    background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
+    border-radius: 10px;
+    border: 2px solid rgba(139, 139, 139);
+    pointer-events: auto !important;
+}
+
+.elementos-ingredientes::-webkit-scrollbar-track {
+    background: transparent; /* Color del track */
+    border-radius: 0 10px 10px 0;
+    pointer-events: auto !important;
+}
+
+.elementos-ingredientes ul li:first-child {
+    margin-top: 2.5%;
+}
+
+.elementos-ingredientes ul li {
+    margin-bottom: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.elementos-ingredientes p {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.elementos-ingredientes p:first-child {
+    margin-top: 3.5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.elementos-ingredientes ul li:last-child {
+    padding-bottom: 5%;
+}
+
+.elementos-ingredientes,
+.pasoSelector {
+    pointer-events: auto !important; /* Forzar interacción */
+    z-index: 1; /* Asegurar que están por encima */
+}
+
+.card .description h4 {
+    color: white !important;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vh; /* Añadir tamaño para mejor visibilidad */
+    bottom: 0;
+}
+
+input:checked + label.card .description {
+    height: 4.8%;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label .description {
+    opacity: 1;
+}
+
+input:checked + label .row .elementos {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 45%; /* Ancho relativo */
+    height: 45vh; /* Altura relativa */
+    top: 38.8%;
+    left: 0%;
+    border-top-right-radius: 55px;
+    overflow-y: auto; /* Scroll interno si el contenido excede */
+}
+
+input:checked + label .row .elementos-ingredientes {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 45%; /* Ancho relativo */
+    height: 45vh; /* Altura relativa */
+    top: 38.8%;
+    right: 0%;
+    border-top-left-radius: 55px;
+    overflow-y: auto; /* Scroll interno si el contenido excede */
+}
+
+/* Imagen cuando el input NO está marcado */
+.card[for="c1"]:not(input:checked) {
+    background-image: url(../../../Imagenes/Pescados/Pescado-al-mojo-de-ajo.webp);
+    background-position: center;
+    background-size: clamp(85%, 100%, 100%) clamp(50%, 100%, 100%);
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c2"]:not(input:checked) {
+    background-image: url(../../../Imagenes/Pescados/1728616423.png); /*720 x 1080*/
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c3"]:not(input:checked) {
+    background-image: url(../../../Imagenes/Pescados/recetas-pescadp-empapelado1.webp);
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c4"]:not(input:checked) {
+    background-image: url(../../../Imagenes/Pescados/tacos-de-pescado-estilo-baja-california_-la-receta-irresistible-que-revoluciona-tus-comidas-635x358.webp);
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+.card[for="c5"]:not(input:checked) {
+    background-image: url(../../../Imagenes/Pescados/salmón.jpg);
+    background-position: center;
+    transition: background-image 3.5s ease;
+}
+
+/* Imagen cuando el input está marcado */
+input#c1:checked + label[for="c1"] {
+    background-image: url(../../../Imagenes/Pescados/Pescado-al-mojo-de-ajo.webp); 
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c2:checked + label[for="c2"] {
+    background-image: url(../../../Imagenes/Pescados/1728616423.png); /*1792 x 1024*/
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c3:checked + label[for="c3"] {
+    background-image: url(../../../Imagenes/Pescados/recetas-pescadp-empapelado1.webp);
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c4:checked + label[for="c4"] {
+    background-image: url(../../../Imagenes/Pescados/tacos-de-pescado-estilo-baja-california_-la-receta-irresistible-que-revoluciona-tus-comidas-635x358.webp);
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+input#c5:checked + label[for="c5"] {
+    background-image: url(../../../Imagenes/Pescados/salmón.jpg);
+    background-position: center;
+    transition: background-image 1s ease;
+    height: 80vh;
+}
+
+#Texto-De-Opcion, #Texto-De-Opcion2, #Texto-De-Opcion3, #Texto-De-Opcion4, #Texto-De-Opcion5 {
+    pointer-events: auto;
+}
+
+header {
+    background-color: rgb(134, 134, 134);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    box-shadow: 1px 1px 10px;
+    height: 120px; 
+    padding: 0 20px; 
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.lista {
+    margin-left: 40px;
+    position: relative;
+    transform: translateY(5px);
+    z-index: 150;
+}
+
+label {
+    cursor: default; /* Cambia el cursor al pasar sobre el label */
+}
+
+#Barras {
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    gap: 0.64rem;
+    cursor: pointer;
+}
+
+#Barras > div {
+    background: black;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+
+#Barras:hover div:first-child {
+    transform: rotate(45deg);
+}
+
+#Barras:hover div:nth-child(2) {
+    opacity: 0;
+}
+
+#Barras:hover div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.desplegable {
+    display: none;
+    position: absolute;
+    background-color: rgba(139, 139, 139);
+    width: 100vw;
+    max-width: 70vw;
+    box-shadow: 1px 1px 3px;
+    list-style-type: none;
+    margin-top: -62px;
+    margin-left: 110%;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .desplegable {
+        max-width: fit-content;
+    }
+}
+
+
+.desplegable li {
+    padding: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.lista .desplegable a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: x-large;
+}
+
+.desplegable li:hover {
+    background-color: rgb(48, 48, 48);
+    border-radius: 10px;
+}
+
+.desplegable li a {
+    margin-left: 30px;
+}
+
+.desplegable li a:first-child {
+    margin-left: -25px;
+}
+
+.desplegable li a:last-child {
+    padding-right: 30px;
+    margin-left: 10px;
+}
+
+/*Scrollbar de la lista de desplegable*/
+
+.desplegable::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(139, 139, 139); /* Color de fondo del track */
+    border-radius: 0 10px 10px 0;
+}
+
+.desplegable::-webkit-scrollbar-thumb {
+    background-color: rgba(170, 169, 169, 0.685); /* Color verde del thumb */
+    border-radius: 10px;
+    border: 2px solid rgba(139, 139, 139);
+}
+
+.desplegable::-webkit-scrollbar-track {
+    background: rgba(139, 139, 139); /* Color del track */
+    border-radius: 0 10px 10px 0;
+}
+
+#need-login{
+    display: contents;
+    pointer-events: none;
+}
+
+#need-login .card{
+    filter: blur(5px);
+}
+
+#IniciarSesion{
+    position: absolute;
+    display: flex;
+    right: 15vw;
+    top: 40px;
+    display: flex;
+}
+
+#btnIniciarSesion{
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: transparent;
+}
+/* Modal (popup) styles */
+.modal {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: black;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    transform: translateX(-17%);
+    height: 115%;
+    min-width: 150%;
+    margin: 0;
+}
+
+@media (max-width: 768px){
+    #IniciarSesion{
+        right: 30vw;
+    }
+    .modal-content{
+        min-width: none;
+        transform: translateY(25%) translateX(-17%);
+    }
+}
+
+.modal-content button:nth-child(1){
+    position: absolute;
+    scale: 150%;
+    right: 15px;
+    top: 0px;
+    height: 5px;
+    width: 5px;
+}
+
+.email-input, .passw-input{
+    display: flex;
+}
+
+.emm, .pass{
+    margin-bottom: -5px;
+}
+
+.Visibilidad{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    right: 15px;
+    top: 33.5%;
+}
+
+#login-modal .Visibilidad{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    right: 15px;
+    top: 40%;
+}
+
+#login-modalEnCasoDeError .Visibilidad{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    right: 15px;
+    top: 40%;
+}
+
+.google, .github{
+    display: inline-block;
+    border: none;
+    margin-top: 55px;
+    padding: 5%;
+    border-radius: 50px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.google{
+    color: blue;
+}
+
+.github{
+    background-color: black;
+    color: white;
+    margin-left: 15px;
+}
+
+
+.CerrarModal{
+    border: none;
+    background-color: transparent;
+}
+
+#Sign-up{
+    position: absolute;
+    display: block;
+    margin-top: 20px;
+    left: 42%;
+}
+
+#Sign-upEnCasoDeError{
+    position: absolute;
+    display: block;
+    margin-top: 20px;
+    left: 42%;
+}
+
+#Registro{
+    position: absolute;
+    display: flex;
+    right: 5%;
+    top: 40px;
+    display: flex;
+}
+
+#btnRegistro{
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: transparent;
+}
+
+
+@media (max-width: 768px){
+    #Registro{
+        right: 5vw;
+    }
+    .Visibilidad{
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        right: 15px;
+        top: 33%;
+    }
+    #login-modal .Visibilidad{
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        right: 15px;
+        top: 39%;
+    }
+}
+
+#Register{
+    position: absolute;
+    display: block;
+    margin-top: 20px;
+    bottom: 5px;
+    margin-left: 32%;
+}
+
+#VisibilidadRegistro{
+    top: 45%;
+}
+
+#Signup-google, #Signup-github{
+    margin-top: 20px;
+}
+
+#LogOut{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    right: 0;
+}
+
+#Ayuda{
+    text-align: center;
+}
+
+#Forgotpassw{
+    position: absolute ;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    max-width: fit-content;
+    margin-top: 4%;
+    right: 5%;
+    color: rgb(74, 74, 255);
+}
+
+
+#SolicitarPassw-modal-content {
+    margin-bottom: 20%;
+}
+
+/* Olvidar Password */
+#OlvidarPassw-modal {
+    margin: 0;
+    padding: 0;
+}
+
+#btnAceptarOlvidarPassw {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+}
+
+#VisibilidadSolicitarPassw {
+    top: 35.5%;
+}
+
+/*Asociar Email*/
+
+#AsociarEmailLabel{
+    display: inline;
+}
+
+#AsociarEmail-modal-content{
+    text-wrap: normal;
+    width: 210px;
+}
+
+#VisibilidadAsociarEmail{
+    top: 57%;
+}
+
+#btnAceptarAsociarEmail{
+    position: absolute;
+    bottom: 5px;
+    left: 40%;
+}
+
+/*Footer*/
+
+#logo {
+    border-radius: 5px;
+}
+
+.enlace a {
+    color: #333;
+    font-weight: bolder;
+    text-decoration:none ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large
+}
