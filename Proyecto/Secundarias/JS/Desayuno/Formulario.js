@@ -47,19 +47,19 @@ envio.addEventListener("click", function() {
             if (inp_desayuno.checked) {
         window.open("../html/desayunos.html", "_self");
         } else if(inp_comida.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/comidas.html", "_self");
         } else if(inp_merienda.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/postres.html", "_self");
         } else if(inp_cena.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/cenas.html", "_self");
         } else if(inp_carnes.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/carnes.html", "_self");
         } else if(inp_pescados.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/pescados.html", "_self");
         } else if(inp_vegano.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/veganos.html", "_self");
         } else if(inp_postres.checked){
-            window.open("../html/desayunos.html", "_self");
+            window.open("../html/postres.html", "_self");
         }
     }
 });
