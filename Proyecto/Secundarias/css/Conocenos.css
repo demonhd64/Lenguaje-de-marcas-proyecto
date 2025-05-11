@@ -92,10 +92,11 @@ button:hover div:nth-child(3) {
     border-radius: 10px;
     top: 90%;
     margin-left: -23%;
+    z-index: 150;
 }
 
 .lista:hover .desplegable{
-    display: inline-block; /*Cuando pasas el raton por el div, sale la lista */
+    display: inline-block; 
 }
 
 .lista:hover .desplegable {
@@ -178,7 +179,7 @@ button:hover div:nth-child(3) {
 
 footer {
     position: relative;
-    background-color: rgb(134, 134, 134); /* Usamos esta si es la que prefieres */
+    background-color: rgb(134, 134, 134); 
     text-align: center;
     width: 100dvw;
     padding: 12px 0; 
