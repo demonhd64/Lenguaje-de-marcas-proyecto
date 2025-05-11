@@ -1,8 +1,8 @@
-// Recuperamos los ingredientes guardados en localStorage
-const ingredientesGuardados = JSON.parse(localStorage.getItem("ingredientesSeleccionados")) || [];
+// Lee los parámetros de la URL
+const params = new URLSearchParams(window.location.search);
+const ingredientesGuardados = JSON.parse(params.get("ingredientes") || "[]");
 
-// Si quieres hacer algo con los ingredientes, como pasarlos a otro archivo
+// Puedes usarlos directamente o exportarlos
 let ingredientesParaFiltro_export = ingredientesGuardados.map(ingrediente => ingrediente.toLowerCase());
 
-
-export {ingredientesParaFiltro_export}
+export { ingredientesParaFiltro_export };

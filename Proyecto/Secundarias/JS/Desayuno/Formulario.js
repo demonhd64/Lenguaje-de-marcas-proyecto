@@ -34,31 +34,32 @@ IngredientesElegido.addEventListener("change", function() {
 
 envio.addEventListener("click", function() {
     const inputs = document.querySelector('input[name="Tipodeplato"]:checked') !==null;
-    // Guardamos los ingredientes seleccionados en localStorage
-    localStorage.setItem("ingredientesSeleccionados", JSON.stringify(ingredientesParaFiltro));
-    
-    if (!inputs){
-        error.style.display = "flex"
-        setTimeout(function(){
-            error.style.display = "none"
-        },2000)
-    } else{
-            if (inp_desayuno.checked) {
-        window.open("../html/desayunos.html", "_self");
-        } else if(inp_comida.checked){
-            window.open("../html/comidas.html", "_self");
-        } else if(inp_merienda.checked){
-            window.open("../html/postres.html", "_self");
-        } else if(inp_cena.checked){
-            window.open("../html/cenas.html", "_self");
-        } else if(inp_carnes.checked){
-            window.open("../html/carnes.html", "_self");
-        } else if(inp_pescados.checked){
-            window.open("../html/pescados.html", "_self");
-        } else if(inp_vegano.checked){
-            window.open("../html/veganos.html", "_self");
-        } else if(inp_postres.checked){
-            window.open("../html/postres.html", "_self");
+
+    const params = new URLSearchParams();
+    params.set("ingredientes", JSON.stringify(ingredientesParaFiltro));
+
+    if (!inputs) {
+        error.style.display = "flex";
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 2000);
+    } else {
+        if (inp_desayuno.checked) {
+            window.location.href = `../html/desayunos.html?${params.toString()}`;
+        } else if (inp_comida.checked) {
+            window.location.href = `../html/comidas.html?${params.toString()}`;
+        } else if (inp_merienda.checked) {
+            window.location.href = `../html/postres.html?${params.toString()}`;
+        } else if (inp_cena.checked) {
+            window.location.href = `../html/cenas.html?${params.toString()}`;
+        } else if (inp_carnes.checked) {
+            window.location.href = `../html/carnes.html?${params.toString()}`;
+        } else if (inp_pescados.checked) {
+            window.location.href = `../html/pescados.html?${params.toString()}`;
+        } else if (inp_vegano.checked) {
+            window.location.href = `../html/veganos.html?${params.toString()}`;
+        } else if (inp_postres.checked) {
+            window.location.href = `../html/postres.html?${params.toString()}`;
         }
     }
 });
