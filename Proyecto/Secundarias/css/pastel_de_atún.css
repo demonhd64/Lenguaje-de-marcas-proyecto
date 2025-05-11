@@ -1,0 +1,191 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+}
+
+header {
+    margin-top: 0px;
+    background-color:  rgb(139, 139, 139);
+    padding: 12px 20px; /* Ajusta el padding para un mejor espaciado */
+    border-radius: 9px;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacia los elementos */
+    box-shadow: 1px 1px 10px;
+    width: 100%;
+    height: 7%;
+}
+
+main{
+    flex: 1;
+}
+
+.lista {
+    position: relative;
+    display: inline-block;
+}
+
+label {
+    cursor: default; /* Cambia el cursor al pasar sobre el label */
+}
+
+button {
+    margin-left: 20px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    gap: 0.64rem;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button > div {
+    background: black;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+    margin-top: 0.5px;
+}
+
+button:hover div:first-child {
+    transform: rotate(45deg);
+}
+
+button:hover div:nth-child(2) {
+    opacity: 0;
+}
+
+button:hover div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.desplegable {
+    display: none; /* Mantiene la lista oculta por defecto */
+    position: absolute;
+    left: 0;
+    background-color: rgb(139, 139, 139);
+    min-width: 160px;
+    width: 200px;
+    box-shadow: 1px 1px 3px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: -20px;
+    top: 70px;
+    border-radius: 10px;
+    top: 90%;
+    margin-left: -23%;
+    z-index: 150;
+}
+
+.lista:hover .desplegable{
+    display: inline-block; 
+}
+
+.lista:hover .desplegable {
+    display: inline-block;
+}
+
+.desplegable li {
+    padding: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.desplegable li:hover {
+    background-color: rgb(48, 48, 48);
+    border-radius: 10px;
+}
+
+.lista .desplegable a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: x-large;
+}
+
+#recetario-magico {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Permite que el div ocupe el espacio disponible */
+    display: flex; 
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #recetario-magico {
+        font-size: 1.5rem;
+    }
+}
+
+#Imagen-Calle-grande, #Imagen-Calle-pequeño{
+    margin-top: 5%;
+}
+
+#Cont-Img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+}
+
+#Cont-Info{
+    margin-top: 5%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 5%;
+} 
+
+#Titulo{
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+
+#logo {
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.enlace a {
+    color: #333;
+    font-weight: bolder;
+    text-decoration:none ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large
+}
+
+#Preparación {
+    margin-top: 3%;
+}
+
+footer {
+    position: relative;
+    background-color: rgb(134, 134, 134); 
+    text-align: center;
+    width: 100dvw;
+    padding: 12px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
