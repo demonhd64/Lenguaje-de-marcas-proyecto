@@ -113,33 +113,36 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     const textosPasos = {
         pasoSelector1: {
-            1: 'Salpimenta los filetes de pescado.',
-            2: 'En una sartén, derrite la mantequilla y sofríe el ajo hasta dorar.',
-            3: 'Agrega el jugo de limón y mezcla.',
-            4: 'Incorpora los filetes y cocina 4-5 minutos por cada lado.',
-            5: 'Sirve con arroz o ensalada, espolvoreando perejil.',
+            1: 'Hidrata los chiles en agua caliente por 10 minutos.',
+            2: 'Licúa los chiles con cebolla, ajo, comino, orégano, vinagre, jugo de naranja y sal.',
+            3: 'Marina los champiñones en esta mezcla por 30 minutos.',
+            4: 'Cocina en sartén hasta que se doren.',
+            5: 'Sirve en tortillas con piña y cilantro.',
         },
         pasoSelector2: {
-            1: 'Marina el pescado en el jugo de limón por 30-40 minutos hasta que se cueza.',
-            2: 'Escurre un poco y mezcla con los demás ingredientes.',
-            3: 'Salpimenta al gusto y sirve frío con tostadas o galletas saladas.',
+            1: 'Sofríe la cebolla, ajo y tomate.',
+            2: 'Añade las lentejas, zanahoria, papa, laurel, comino y sal.',
+            3: 'Agrega suficiente agua y cocina a fuego medio por 30 a 40 minutos.',
+            4: 'Ajusta sal y sirve caliente.',
         },
         pasoSelector3: {
-            1: 'Coloca cada filete en un trozo de papel aluminio.',
-            2: 'Cubre con las verduras, sazona y añade jugo de limón.',
-            3: 'Cierra bien formando un sobre.',
-            4: 'Hornea a 180°C por 25-30 minutos o cocina sobre comal tapado.',
-            5: 'Sirve directo en el papel.',
+            1: 'Tritura los garbanzos con los demás ingredientes hasta formar una pasta.',
+            2: 'Forma hamburguesas y refrigera 15 minutos.',
+            3: 'Cocina en sartén con poco aceite hasta que estén doradas.',
+            4: 'Sirve en pan vegano con tus ingredientes favoritos.',
         },
         pasoSelector4: {
-            1: 'Mezcla la harina, huevo, cerveza y especias hasta formar una mezcla para empanizar.',
-            2: 'Pasa el pescado por la mezcla y fríe hasta dorar.',
-            3: 'Sirve en tortillas con col, crema y salsa al gusto.',
+            1: 'Sofríe cebolla, ajo y tomate.',
+            2: 'Añade el curry y mezcla bien.',
+            3: 'Incorpora garbanzos, espinaca y leche de coco.',
+            4: 'Cocina a fuego bajo por 10-15 minutos.',
+            5: 'Sirve con arroz basmati o integral.',
         },
         pasoSelector5: {
-            1: 'Sazona el salmón con sal, pimienta, eneldo y jugo de limón.',
-            2: 'Calienta una sartén con aceite y cocina el salmón, primero del lado de la piel (4-5 min), luego voltea y cocina 2-3 minutos más.',
-            3: 'Sirve con arroz, quinoa o verduras salteadas.',
+            1: 'Enfría la quinoa cocida.',
+            2: 'Mezcla con el resto de los ingredientes.',
+            3: 'Aliña con limón, aceite, sal y pimienta.',
+            4: 'Sirve fría como plato principal o acompañamiento.',
         }
     };
 
