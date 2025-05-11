@@ -1,4 +1,8 @@
+import { mensajes } from "../Desayuno/Tostify.js"
+
 const envio = document.querySelector("#botón");
+
+const inputs = document.querySelector('input[name="Tipodeplato"]:checked') !==null;
 
 const inp_desayuno = document.querySelector("#desayuno"); // Para la caja de desayuno
 
@@ -17,8 +21,11 @@ IngredientesElegido.addEventListener("change", function() {
 
 envio.addEventListener("click", function() {
     // Guardamos los ingredientes seleccionados en localStorage
-    //No te lo voy a explicar porque es locura basicamente se guarda en memoria local del ordenador de cache
     localStorage.setItem("ingredientesSeleccionados", JSON.stringify(ingredientesParaFiltro));
+    
+    if (!inputs){
+        mensajes("No has marcado nada","error","null")
+    }
 
     if (inp_desayuno.checked) {
         window.open("../html/desayunos.html", "_self");
