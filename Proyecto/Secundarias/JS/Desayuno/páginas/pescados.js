@@ -113,38 +113,33 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     const textosPasos = {
         pasoSelector1: {
-            1: 'Licúa los jitomates con el ajo y un poco de agua.',
-            2: 'En una sartén con aceite caliente, sofríe la cebolla y los jalapeños.',
-            3: 'Agrega la carne, salpimenta y cocina hasta que se dore.',
-            4: 'Incorpora el jitomate licuado y deja cocinar a fuego medio por 15 minutos.',
-            5: 'Sirve caliente con arroz o frijoles',
+            1: 'Salpimenta los filetes de pescado.',
+            2: 'En una sartén, derrite la mantequilla y sofríe el ajo hasta dorar.',
+            3: 'Agrega el jugo de limón y mezcla.',
+            4: 'Incorpora los filetes y cocina 4-5 minutos por cada lado.',
+            5: 'Sirve con arroz o ensalada, espolvoreando perejil.',
         },
         pasoSelector2: {
-            1: 'Mezcla el ajo, vino, mostaza, miel, sal, pimienta y romero.',
-            2: 'Unta la mezcla sobre el cerdo y deja marinar al menos 1 hora.',
-            3: 'Precalienta el horno a 180°C.',
-            4: 'Coloca el cerdo en una charola y hornea por 1 hora o hasta que esté dorado.',
-            5: 'Deja reposar 10 minutos antes de cortar.',
+            1: 'Marina el pescado en el jugo de limón por 30-40 minutos hasta que se cueza.',
+            2: 'Escurre un poco y mezcla con los demás ingredientes.',
+            3: 'Salpimenta al gusto y sirve frío con tostadas o galletas saladas.',
         },
         pasoSelector3: {
-            1: 'Mezcla la carne, huevo, pan, ajo, sal y orégano. Forma albóndigas.',
-            2: 'Fríelas hasta que se doren y resérvalas.',
-            3: 'Licúa los tomates con la cebolla y un poco de sal.',
-            4: 'Cocina la salsa 10 minutos y luego añade las albóndigas.',
-            5: 'Cocina 10-15 minutos más y sirve.',
+            1: 'Coloca cada filete en un trozo de papel aluminio.',
+            2: 'Cubre con las verduras, sazona y añade jugo de limón.',
+            3: 'Cierra bien formando un sobre.',
+            4: 'Hornea a 180°C por 25-30 minutos o cocina sobre comal tapado.',
+            5: 'Sirve directo en el papel.',
         },
         pasoSelector4: {
-            1: 'Salpimenta el pollo y fríelo en aceite hasta dorar.',
-            2: 'Agrega el ajo y cocina 2 minutos sin quemarlo.',
-            3: 'Añade el vino y cocina a fuego bajo por 20 minutos.',
-            4: 'Espolvorea perejil antes de servir.',
+            1: 'Mezcla la harina, huevo, cerveza y especias hasta formar una mezcla para empanizar.',
+            2: 'Pasa el pescado por la mezcla y fríe hasta dorar.',
+            3: 'Sirve en tortillas con col, crema y salsa al gusto.',
         },
         pasoSelector5: {
-            1: 'Dora la carne en una olla con aceite.',
-            2: 'Agrega cebolla, ajo, tomate y sofríe.',
-            3: 'Añade zanahoria, papa, sal, pimienta y laurel.',
-            4: 'Cubre con agua y cocina a fuego medio por 45 minutos o hasta que esté suave.',
-            5: 'Sirve caliente con arroz blanco.',
+            1: 'Sazona el salmón con sal, pimienta, eneldo y jugo de limón.',
+            2: 'Calienta una sartén con aceite y cocina el salmón, primero del lado de la piel (4-5 min), luego voltea y cocina 2-3 minutos más.',
+            3: 'Sirve con arroz, quinoa o verduras salteadas.',
         }
     };
 
