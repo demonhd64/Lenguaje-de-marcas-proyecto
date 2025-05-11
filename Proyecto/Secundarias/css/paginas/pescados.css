@@ -319,67 +319,67 @@ input:checked + label .row .elementos-ingredientes {
 
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Carnes/emplatado-final-del-bistec-de-res-a-la-mexicana.webp);
+    background-image: url(../../../Imagenes/Pescados/Pescado-al-mojo-de-ajo.webp);
     background-position: center;
     background-size: clamp(85%, 100%, 100%) clamp(50%, 100%, 100%);
     transition: background-image 3.5s ease;
 }
 
 .card[for="c2"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Carnes/redondo-de-cerdo-asado-al-horno.webp); /*720 x 1080*/
+    background-image: url(../../../Imagenes/Pescados/1728616423.png); /*720 x 1080*/
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c3"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Carnes/1140-meatballs-in-tomato-sauce-esp.jpg);
+    background-image: url(../../../Imagenes/Pescados/recetas-pescadp-empapelado1.webp);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c4"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Carnes/pollo-al-ajillo-garlic-chicken-recipe-2.jpg);
+    background-image: url(../../../Imagenes/Pescados/tacos-de-pescado-estilo-baja-california_-la-receta-irresistible-que-revoluciona-tus-comidas-635x358.webp);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c5"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Carnes/principal-1-815x458.jpg);
+    background-image: url(../../../Imagenes/Pescados/salmón.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 /* Imagen cuando el input está marcado */
 input#c1:checked + label[for="c1"] {
-    background-image: url(../../../Imagenes/Carnes/emplatado-final-del-bistec-de-res-a-la-mexicana.webp); 
+    background-image: url(../../../Imagenes/Pescados/Pescado-al-mojo-de-ajo.webp); 
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c2:checked + label[for="c2"] {
-    background-image: url(../../../Imagenes/Carnes/redondo-de-cerdo-asado-al-horno.webp); /*1792 x 1024*/
+    background-image: url(../../../Imagenes/Pescados/1728616423.png); /*1792 x 1024*/
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c3:checked + label[for="c3"] {
-    background-image: url(../../../Imagenes/Carnes/1140-meatballs-in-tomato-sauce-esp.jpg);
+    background-image: url(../../../Imagenes/Pescados/recetas-pescadp-empapelado1.webp);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c4:checked + label[for="c4"] {
-    background-image: url(../../../Imagenes/Carnes/pollo-al-ajillo-garlic-chicken-recipe-2.jpg);
+    background-image: url(../../../Imagenes/Pescados/tacos-de-pescado-estilo-baja-california_-la-receta-irresistible-que-revoluciona-tus-comidas-635x358.webp);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c5:checked + label[for="c5"] {
-    background-image: url(../../../Imagenes/Carnes/principal-1-815x458.jpg);
+    background-image: url(../../../Imagenes/Pescados/salmón.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
