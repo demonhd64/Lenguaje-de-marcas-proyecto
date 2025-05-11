@@ -1,8 +1,6 @@
 
 const envio = document.querySelector("#botón");
 
-const inputs = document.querySelector('input[name="Tipodeplato"]:checked') !==null;
-
 const error = document.querySelector('#error')
 
 const inp_desayuno = document.querySelector("#desayuno"); // Para la caja de desayuno
@@ -35,6 +33,7 @@ IngredientesElegido.addEventListener("change", function() {
 });
 
 envio.addEventListener("click", function() {
+    const inputs = document.querySelector('input[name="Tipodeplato"]:checked') !==null;
     // Guardamos los ingredientes seleccionados en localStorage
     localStorage.setItem("ingredientesSeleccionados", JSON.stringify(ingredientesParaFiltro));
     
