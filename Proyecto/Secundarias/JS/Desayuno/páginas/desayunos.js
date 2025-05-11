@@ -119,36 +119,33 @@ document.addEventListener('DOMContentLoaded', function () {
             6: 'Servimos con plátano en rodajas y sirope de agave. Guardar en la nevera si sobra.'
         },
         pasoSelector2: {
-            1: 'Paso 1 del card 2.',
-            2: 'Paso 2 del card 2.',
-            3: 'Paso 3 del card 2.',
-            4: 'Paso 4 del card 2.',
-            5: 'Paso 5 del card 2.',
-            6: 'Paso 6 del card 2.'
+            1: 'Lava las fresas y córtalas en mitades si son grandes.',
+            2: 'Coloca todos los ingredientes en una licuadora: fresas, plátano, leche, yogur (si usas), miel de acacia y hielo..',
+            3: 'Licúa hasta obtener una mezcla homogénea y cremosa.',
+            4: 'Sirve frío y decora con una fresa entera o unas hojas de menta si quieres.',
         },
         pasoSelector3: {
-            1: 'Paso 1 del card 3.',
-            2: 'Paso 2 del card 3.',
-            3: 'Paso 3 del card 3.',
-            4: 'Paso 4 del card 3.',
-            5: 'Paso 5 del card 3.',
-            6: 'Paso 6 del card 3.'
+            1: 'Bate los huevos en un bol con sal y pimienta.',
+            2: 'Calienta el aceite o mantequilla en una sartén a fuego medio.',
+            3: 'Añade las espinacas y saltea por 1-2 minutos hasta que se marchiten.',
+            4: 'Vierte los huevos batidos y remueve constantemente hasta que cuajen.',
+            5: 'Agrega el queso, mezcla ligeramente, y retira del fuego cuando el queso empiece a derretirse.',
+            6: 'Sirve caliente con pan tostado.'
         },
         pasoSelector4: {
-            1: 'Paso 1 del card 4.',
-            2: 'Paso 2 del card 4.',
-            3: 'Paso 3 del card 4.',
-            4: 'Paso 4 del card 4.',
-            5: 'Paso 5 del card 4.',
-            6: 'Paso 6 del card 4.'
+            1: 'Bate los huevos en un bol junto con la leche, la canela y la vainilla.',
+            2: 'Sumerge cada rebanada de pan en la mezcla por ambos lados.',
+            3: 'Calienta la mantequilla en una sartén a fuego medio.',
+            4: 'Cocina las rebanadas de pan hasta que estén doradas por ambos lados (aproximadamente 2 minutos por lado).',
+            5: 'Sirve con miel, jarabe de maple, fruta fresca o azúcar glass.',
         },
         pasoSelector5: {
-            1: 'Paso 1 del card 5.',
-            2: 'Paso 2 del card 5.',
-            3: 'Paso 3 del card 5.',
-            4: 'Paso 4 del card 5.',
-            5: 'Paso 5 del card 5.',
-            6: 'Paso 6 del card 5.'
+            1: 'Tuesta las rebanadas de pan hasta que estén crujientes.',
+            2: 'Pela y machaca el aguacate en un bol con sal, pimienta y un poco de limón si lo deseas.',
+            3: 'Para los huevos pochados: hierve agua en una olla, añade el vinagre, y baja a fuego suave. Rompe un huevo en una taza y deslízalo suavemente en el agua. Cocina 3 minutos y retira con una espumadera. Repite con el segundo huevo.',
+            4: 'Unta el aguacate sobre las tostadas.',
+            5: 'Coloca un huevo pochado encima de cada una.',
+            6: 'Agrega un poco de sal, pimienta y algún topping como semillas de sésamo, chile en hojuelas o un chorrito de aceite de oliva.'
         }
     };
 
