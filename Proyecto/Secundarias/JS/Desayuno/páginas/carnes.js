@@ -2,6 +2,8 @@ import { ingredientesParaFiltro_export } from "../../../../Almacenamiento/datos.
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { auth } from "../Firebase.js";
 
+console.log(ingredientesParaFiltro_export)
+
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
@@ -108,53 +110,61 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Manejo de pasos
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const textosPasos = {
+        pasoSelector1: {
+            1: 'Licúa los jitomates con el ajo y un poco de agua.',
+            2: 'En una sartén con aceite caliente, sofríe la cebolla y los jalapeños.',
+            3: 'Agrega la carne, salpimenta y cocina hasta que se dore.',
+            4: 'Incorpora el jitomate licuado y deja cocinar a fuego medio por 15 minutos.',
+            5: 'Sirve caliente con arroz o frijoles',
+        },
+        pasoSelector2: {
+            1: 'Mezcla el ajo, vino, mostaza, miel, sal, pimienta y romero.',
+            2: 'Unta la mezcla sobre el cerdo y deja marinar al menos 1 hora.',
+            3: 'Precalienta el horno a 180°C.',
+            4: 'Coloca el cerdo en una charola y hornea por 1 hora o hasta que esté dorado.',
+            5: 'Deja reposar 10 minutos antes de cortar.',
+        },
+        pasoSelector3: {
+            1: 'Mezcla la carne, huevo, pan, ajo, sal y orégano. Forma albóndigas.',
+            2: 'Fríelas hasta que se doren y resérvalas.',
+            3: 'Licúa los tomates con la cebolla y un poco de sal.',
+            4: 'Cocina la salsa 10 minutos y luego añade las albóndigas.',
+            5: 'Cocina 10-15 minutos más y sirve.',
+        },
+        pasoSelector4: {
+            1: 'Salpimenta el pollo y fríelo en aceite hasta dorar.',
+            2: 'Agrega el ajo y cocina 2 minutos sin quemarlo.',
+            3: 'Añade el vino y cocina a fuego bajo por 20 minutos.',
+            4: 'Espolvorea perejil antes de servir.',
+        },
+        pasoSelector5: {
+            1: 'Dora la carne en una olla con aceite.',
+            2: 'Agrega cebolla, ajo, tomate y sofríe.',
+            3: 'Añade zanahoria, papa, sal, pimienta y laurel.',
+            4: 'Cubre con agua y cocina a fuego medio por 45 minutos o hasta que esté suave.',
+            5: 'Sirve caliente con arroz blanco.',
+        }
+    };
+
     const selectores = document.getElementsByClassName('pasoSelector');
 
-    for (let i =  0; i < selectores.length; i++) {
-        selectores[i].addEventListener('change', function() {
-            const pasoSeleccionado = this.value;
+    for (let i = 0; i < selectores.length; i++) {
+        selectores[i].addEventListener('change', function () {
             const idSelector = this.id;
-            const textoPaso = document.getElementById(idSelector === 'pasoSelector1' ? 'Texto-De-Opcion' : 'Texto-De-Opcion2');
+            const pasoSeleccionado = this.value;
+            const textoPaso = document.getElementById('Texto-De-Opcion' + idSelector.replace('pasoSelector', ''));
 
-            if (idSelector === 'pasoSelector1') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Ponemos el puré de plátano en un bol y le añadimos 1 huevo, media cucharadita de canela en polvo, una pizca de sal y 10 g de impulsor químico. Vertemos también 50 ml de leche de avena sin azúcar y mezclamos todo muy bien.';
-                        break;
-                    case '3':
-                        textoPaso.textContent = 'Con la masa anterior bien mezclada, añadimos 100 g de harina de avena y volvemos a mezclar.';
-                        break;
-                    case '4':
-                        textoPaso.textContent = 'Preparamos una sartén plana con un poco de aceite que podremos untar con una brocha o un trozo de papel (añadir aceite es opcional, las tortitas pueden hacerse sin aceite). Llevamos la sartén al fuego y esperamos hasta que esté caliente. Vertemos una cuchara grande de la masa.';
-                        break;
-                    case '5':
-                        textoPaso.textContent = 'Dejamos que se haga la tortita por un lado durante unos segundos, el fuego no debe estar muy alto o se nos quemarán. Sabremos que están bien hechas por el lado en que las cocinamos primero, cuando veamos salir burbujas de la masa. Entonces le damos la vuelta y dejamos que se cocine por el otro lado. Seguimos haciendo más tortitas.';
-                        break;
-                    case '6':
-                        textoPaso.textContent = 'Servimos las tortitas recién hechas con plátano en rodajas y sirope de agave. También podemos guardarlas en la nevera durante un par de días y calentarlas un poco en el microondas o el horno antes de comerlas.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            } else if (idSelector === 'pasoSelector2') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = '';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            }
+            if (!textoPaso) return;
+
+            // Buscamos el texto correspondiente al paso y lo mostramos
+            const texto = textosPasos[idSelector]?.[pasoSeleccionado] || '';
+            textoPaso.textContent = texto;
         });
     }
 });
+
 
 // Log in
 
