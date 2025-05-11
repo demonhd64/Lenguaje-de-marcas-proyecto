@@ -1,13 +1,13 @@
-html {
-    overflow-x: hidden;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     flex-direction: column;
     display: flex;
+    min-height: 100vh;
 }
 
 header {
@@ -19,8 +19,12 @@ header {
     align-items: center; /* Centra verticalmente */
     justify-content: space-between; /* Espacia los elementos */
     box-shadow: 1px 1px 10px;
-    width: 100vw;
-    height: 7vw;
+    width: 100%;
+    height: 7%;
+}
+
+main{
+    flex: 1;
 }
 
 .lista {
@@ -88,10 +92,11 @@ button:hover div:nth-child(3) {
     border-radius: 10px;
     top: 90%;
     margin-left: -23%;
+    z-index: 150;
 }
 
 .lista:hover .desplegable{
-    display: inline-block; /*Cuando pasas el raton por el div, sale la lista */
+    display: inline-block; 
 }
 
 .lista:hover .desplegable {
@@ -131,23 +136,33 @@ button:hover div:nth-child(3) {
     }
 }
 
-footer {
-    margin-top: 0px;
-    background-color: rgb(139, 139, 139);
-    padding: 12px 20px;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
-    box-shadow: 1px 1px 10px;
-    height: 7vw;
+#Imagen-Calle-grande, #Imagen-Calle-pequeño{
+    margin-top: 5%;
 }
+
+#Cont-Img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+}
+
+#Cont-Info{
+    margin-top: 5%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+} 
+
+#Titulo{
+    text-align: center;
+    margin-bottom: 5%;
+}
+
 
 #logo {
     opacity: 0.9;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px ;
-    margin-left: -13vw
 }
 
 .enlace a {
@@ -158,6 +173,14 @@ footer {
     font-size: xx-large
 }
 
-main  {
-    height: 40vw;
+footer {
+    position: relative;
+    background-color: rgb(134, 134, 134); 
+    text-align: center;
+    width: 100dvw;
+    padding: 12px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: auto;
 }
