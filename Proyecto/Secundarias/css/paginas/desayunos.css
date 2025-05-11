@@ -332,19 +332,19 @@ input:checked + label .row .elementos-ingredientes {
 }
 
 .card[for="c3"]:not(input:checked) {
-    background-image: url();
+    background-image: url(../../../Imagenes/Desayuno/Huevos-con-espinaca-y-queso-puede-ser-un-desayuno-o-un-almuerzo-completo-y-nutritivo-en-20-minutos.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c4"]:not(input:checked) {
-    background-image: url();
+    background-image: url(../../../Imagenes/Desayuno/tostadas.jpg-editada.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c5"]:not(input:checked) {
-    background-image: url();
+    background-image: url(../../../Imagenes/Desayuno/TOSTADA-DE-AGUACATE-Y-HUEVO-FRITO.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
@@ -365,21 +365,21 @@ input#c2:checked + label[for="c2"] {
 }
 
 input#c3:checked + label[for="c3"] {
-    background-image: url();
+    background-image: url(../../../Imagenes/Desayuno/Huevos-con-espinaca-y-queso-puede-ser-un-desayuno-o-un-almuerzo-completo-y-nutritivo-en-20-minutos.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c4:checked + label[for="c4"] {
-    background-image: url();
+    background-image: url(../../../Imagenes/Desayuno/tostadas.jpg-editada.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c5:checked + label[for="c5"] {
-    background-image: url();
+    background-image: url(../../../Imagenes/Desayuno/TOSTADA-DE-AGUACATE-Y-HUEVO-FRITO.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;

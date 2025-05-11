@@ -2,6 +2,8 @@ import { ingredientesParaFiltro_export } from "../../../../Almacenamiento/datos.
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { auth } from "../Firebase.js";
 
+console.log(ingredientesParaFiltro_export)
+
 // Función principal de filtrado que considera ambos tipos de filtros
 function aplicarFiltros() {
     const cards = document.querySelectorAll('.card');
