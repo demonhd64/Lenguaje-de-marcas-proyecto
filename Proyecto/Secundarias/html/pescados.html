@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Imagenes/logo/Pestaña/Logo_pestaña.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/paginas/pescados.css">
+    <title>Fogonía | Desayunos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="row-header">
+        <div class="col-sm-12">
+            <header>
+                <nav>
+                    <div class="menu-container">
+                        <div class="lista">
+                            <input type="checkbox" id="activo"/>
+                            <label for="activo">
+                                <button id="Barras">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </button>
+                            </label>
+                            <ul class="desplegable">
+                                <li><a href="../../index.html">Inicio</a></li>
+                                <li><a href="../html/comidas.html">Comidas</a></li>
+                                <li><a href="../html/cenas.html">Cenas</a></li>
+                                <li><a href="../html/carnes.html">Carnes</a></li>
+                                <li><a href="../html/pescados.html">Pescados</a></li>
+                                <li><a href="../html/veganos.html">Vegano</a></li>
+                                <li><a href="../html/postres.html">Postres</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="IniciarSesion" class="col-md-4">
+                        <button id="btnIniciarSesion" class="btnSign">Iniciar sesión</button>
+
+                        <div id="login-modal" class="modal">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="modal-content">
+                                        <button id="CerrarModalLogIn" class="CerrarModal">x</button>
+                                        <form id="Sing in">
+                                                <div class="row">
+                                                    <label for="text" class="emm"><p>Usuario:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="text" id="LogIn_email" class="email-input" placeholder="Introduce tu email" required>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="password" class="pass"><p>Contraseña:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="password" id="LogIn_passw" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                </div>
+                                                <p id="Forgotpassw" style="display: none; cursor: pointer;">¿Has olvidado tu contraseña?</p>
+                                                <label for="visibilidad" class="Visibilidad">
+                                                    <i class="fa-regular fa-eye" id="eye-OpenLogin" style="display: none; cursor: pointer;"></i>
+                                                    <i class="fa-regular fa-eye-slash" id="eye-closedLogin" style="cursor: pointer;"></i>
+                                                </label>
+                                                <button type="button" id="Login-google" class="google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
+                                                <button type="button" id="Login-github" class="github"><i class="fa-brands fa-github"></i>   Github</button>
+                                                <button type="submit" id="Sign-up">Login</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Registro" class="col-md-4">
+                        <button id="btnRegistro" class="btnSign">Registrate</button>
+
+                        <button style="display:none;" id="LogOut">Cerrar sesión</button>
+                        <div id="registro-modal" class="modal">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="modal-content">
+                                        <button id="CerrarModalRegistro" class="CerrarModal">x</button>
+                                        <form id="Registrarse">
+                                                <div class="row">
+                                                    <label for="text" class="emm"><p>Usuario:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="text" id="Registro_email" class="email-input" placeholder="Introduce tu usuario" required>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="password" class="pass"><p>Contraseña:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="password" id="Registro_contraseña" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                </div>
+                                                    <label for="visibilidad" class="Visibilidad" id="VisibilidadRegistro">
+                                                        <i class="fa-regular fa-eye" id="eye-OpenRegistro" style="display: none; cursor: pointer;"></i>
+                                                        <i class="fa-regular fa-eye-slash" id="eye-closedRegistro" style="cursor: pointer;"></i>
+                                                </label>
+                                                <button type="button" id="Signup-google" class="google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
+                                                <button type="button" id="Signup-github" class="github"><i class="fa-brands fa-github"></i>   Github</button>
+                                                <button type="submit" id="Register">Registrate</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="IniciarSesionEnCasoDeError" class="col-md-4">
+                        <div id="login-modalEnCasoDeError" class="modal">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="modal-content">
+                                        <button id="CerrarModalLogInEnCasoDeError" class="CerrarModal">x</button>
+                                        <form id="Sing inEnCasoDeError">
+                                                <div class="row">
+                                                    <label for="text" class="emm"><p>Usuario:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="text" id="LogIn_emailEnCasoDeError" class="email-input" placeholder="Introduce tu email" required>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="password" class="pass"><p>Contraseña:</p></label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="password" id="LogIn_passwEnCasoDeError" class="passw-input" placeholder="Introduce tu contraseña" required>
+                                                </div>
+                                                <p id="Forgotpassw" style="display: none; cursor: pointer;">¿Has olvidado tu contraseña?</p>
+                                                <label for="visibilidad" class="Visibilidad">
+                                                    <i class="fa-regular fa-eye" id="eye-OpenLoginEnCasoDeError" style="display: none; cursor: pointer;"></i>
+                                                    <i class="fa-regular fa-eye-slash" id="eye-closedLoginEnCasoDeError" style="cursor: pointer;"></i>
+                                                </label>
+                                                <button type="button" id="Login-googleEnCasoDeError" class="google"><i class="fa-brands fa-google" style="color: blue;"></i>   Google</button>
+                                                <button type="button" id="Login-githubEnCasoDeError" class="github"><i class="fa-brands fa-github"></i>   Github</button>
+                                                <button type="submit" id="Sign-upEnCasoDeError">Login</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </nav>
+            </header>
+        </div>
+    </div>
+    <div class="row">
+        <h3 id="Texto-need-logIn">Se necesita registrarse para poder acceder a todo el contenido</h3>
+        <h5 id="Ayuda">Para mirar la receta haga click en una tarjeta</h5>
+    </div>
+    <div class="row">
+        <div class="wrapper">
+            <div class="container-body">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c1" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c1" class="card">
+                        <div class="row">
+                            <div><p id="icon1"></p></div>
+                            <div id="Patras1" class="Patras"><i class="fa-solid fa-arrow-left"></i></div>
+                            <div class="col-sm-6">
+                                <div class="elementos">
+                                    <p>Receta</p>
+                                    <select id="pasoSelector1" class="pasoSelector">
+                                        <option value="">-- Selecciona un paso --</option>
+                                        <option value="1">Paso 1</option>
+                                        <option value="2">Paso 2</option>
+                                        <option value="3">Paso 3</option>
+                                        <option value="4">Paso 4</option>
+                                        <option value="5">Paso 5</option>
+                                    </select>
+                                    <p id="Texto-De-Opcion1" class="texto"></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="elementos-ingredientes">
+                                    <p>ingredientes</p>
+                                    <ul>
+                                        <li>500 g de bistec de res en tiras</li>
+                                        <li>3 jitomates</li>
+                                        <li>1 cebolla en tiras</li>
+                                        <li>2 chiles jalapeños en rodajas</li>
+                                        <li>2 dientes de ajo</li>
+                                        <li>Sal y pimienta al gusto</li>
+                                        <li>Aceite vegetal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h4>Bistec a la Mexicana</h4>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <input type="checkbox" name="slide" id="c2" class="opcionCheck" onclick="MirarSiActivo(this)">
+                    <label for="c2" class="card">
+                        <div class="row">
+                            <div><p id="icon2"></p></div>
+                            <div id="Patras2" class="Patras"><i class="fa-solid fa-arrow-left"></i></div>
+                            <div class="col-sm-6">
+                                <div class="elementos">
+                                    <p>Receta</p>
+                                    <select id="pasoSelector2" class="pasoSelector">
+                                        <option value="">-- Selecciona un paso --</option>
+                                        <option value="1">Paso 1</option>
+                                        <option value="2">Paso 2</option>
+                                        <option value="3">Paso 3</option>
+                                        <option value="4">Paso 4</option>
+                                        <option value="5">Paso 5</option>
+                                    </select>
+                                    <p id="Texto-De-Opcion2" class="texto"></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="elementos-ingredientes">
+                                    <p>ingredientes</p>
+                                    <ul>
+                                        <li>1 kg de lomo de cerdo</li>
+                                        <li>3 dientes de ajo picados</li>
+                                        <li>1/2 taza de vino blanco</li>
+                                        <li>2 cucharadas de mostaza</li>
+                                        <li>2 cucharadas de miel</li>
+                                        <li>Sal, pimienta y romero</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h4>Asado de Cerdo al Horno</h4>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <!--Wrapper para hacer el blur del login-->
+                <div id="need-login">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                        <input type="checkbox" name="slide" id="c3" class="opcionCheck" onclick="MirarSiActivo(this)">
+                        <label for="c3" class="card">
+                            <div class="row">
+                                <div><p id="icon3"></p></div>
+                                <div id="Patras3" class="Patras"><i class="fa-solid fa-arrow-left"></i></div>
+                                <div class="col-sm-6">
+                                    <div class="elementos">
+                                        <p>Receta</p>
+                                        <select id="pasoSelector3" class="pasoSelector">
+                                            <option value="">-- Selecciona un paso --</option>
+                                            <option value="1">Paso 1</option>
+                                            <option value="2">Paso 2</option>
+                                            <option value="3">Paso 3</option>
+                                            <option value="4">Paso 4</option>
+                                            <option value="5">Paso 5</option>
+                                        </select>
+                                        <p id="Texto-De-Opcion3" class="texto"></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="elementos-ingredientes">
+                                        <p>ingredientes</p>
+                                        <ul>
+                                            <li>500 g de carne molida de res</li>
+                                            <li>1 huevo</li>
+                                            <li>1/2 taza de pan rallado</li>
+                                            <li>1 diente de ajo picado</li>
+                                            <li>4 tomates</li>
+                                            <li>1/4 de cebolla</li>
+                                            <li>Sal y orégano</li>
+                                            <li>Aceite para freír</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <h4>Albóndigas en Salsa de Tomate</h4>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                        <input type="checkbox" name="slide" id="c4" class="opcionCheck" onclick="MirarSiActivo(this)">
+                        <label for="c4" class="card">
+                            <div class="row">
+                                <div><p id="icon4"></p></div>
+                                <div id="Patras4" class="Patras"><i class="fa-solid fa-arrow-left"></i></div>
+                                <div class="col-sm-6">
+                                    <div class="elementos">
+                                        <p>Receta</p>
+                                        <select id="pasoSelector4" class="pasoSelector">
+                                            <option value="">-- Selecciona un paso --</option>
+                                            <option value="1">Paso 1</option>
+                                            <option value="2">Paso 2</option>
+                                            <option value="3">Paso 3</option>
+                                            <option value="4">Paso 4</option>
+                                        </select>
+                                        <p id="Texto-De-Opcion4" class="texto"></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="elementos-ingredientes">
+                                        <p>ingredientes</p>
+                                        <ul>
+                                            <li>6 piezas de pollo (muslos o piernas)</li>
+                                            <li>6 dientes de ajo laminados</li>
+                                            <li>1/2 taza de vino blanco</li>
+                                            <li>Aceite de oliva</li>
+                                            <li>Sal, pimienta y perejil picado</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <h4>Pollo al Ajillo</h4>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                        <input type="checkbox" name="slide" id="c5" class="opcionCheck" onclick="MirarSiActivo(this)">
+                        <label for="c5" class="card">
+                            <div class="row">
+                                <div><p id="icon5"></p></div>
+                                <div id="Patras5" class="Patras"><i class="fa-solid fa-arrow-left"></i></div>
+                                <div class="col-sm-6">
+                                    <div class="elementos">
+                                        <p>Receta</p>
+                                        <select id="pasoSelector5" class="pasoSelector">
+                                            <option value="">-- Selecciona un paso --</option>
+                                            <option value="1">Paso 1</option>
+                                            <option value="2">Paso 2</option>
+                                            <option value="3">Paso 3</option>
+                                            <option value="4">Paso 4</option>
+                                            <option value="5">Paso 5</option>
+                                        </select>
+                                        <p id="Texto-De-Opcion5" class="texto"></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="elementos-ingredientes">
+                                        <p>ingredientes</p>
+                                        <ul>
+                                            <li>700 g de carne de res en cubos</li>
+                                            <li>3 papas en cubos</li>
+                                            <li>2 zanahorias en rodajas</li>
+                                            <li>1 cebolla picada</li>
+                                            <li>2 tomates</li>
+                                            <li>2 dientes de ajo</li>
+                                            <li>Sal, pimienta, laurel y aceite</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <h4>Carne de Res Guisada con Papas</h4>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row text-center align-items-center">
+                <div class="col-12 col-md-3 mb-3 mb-md-0">
+                    <img src="../../Imagenes/logo/IMG-20250506-WA0001.png" alt="" id="logo" height="130px">
+                </div>
+                <div class="col-12 col-md-3 mb-3 mb-md-0 enlace">
+                    <h3><a href="../html/Conocenos.html">Acerca de nosotros</a></h3>
+                </div>
+                <div class="col-12 col-md-3 mb-3 mb-md-0 enlace">
+                    <h3><a href="#">Ayuda</a></h3>
+                </div>
+                <div class="col-12 col-md-3 mb-3 mb-md-0 enlace">
+                    <h3><a href="#">Contáctanos</a></h3>
+                </div>
+            </div>
+        </div>
+    </footer>   
+    <p style="display: flex; position: absolute; top: 10%;">Se ha de cambiar la id de firebase de github para la nueva app con el id de host online</p>
+    <script type="module" src="../JS/Desayuno/páginas/pescados.js"></script>
+    <script type="module" src="../JS/Desayuno/SignUp/Email_Passw/Signup.js"></script>
+    <script type="module" src="../JS/Desayuno/Login/LogIn.js"></script>
+    <script type="module" src="../JS/Desayuno/Login/Google/LogIn.js"></script>
+    <script type="module" src="../JS/Desayuno/SignUp/Google/Signup.js"></script>
+    <script type="module" src="../JS/Desayuno/SignUp/Github/Signup.js"></script>
+    <script type="module" src="../JS/Desayuno/Login/Github/LogIn.js"></script>
+    <script type="module" src="../JS/Desayuno/logOut.js"></script>
+    <script type="module" src="../JS/Desayuno/Forgot_passw/forgotpassw_desayuno.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
