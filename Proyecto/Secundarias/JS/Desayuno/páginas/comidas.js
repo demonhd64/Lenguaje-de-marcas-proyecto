@@ -108,53 +108,63 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Manejo de pasos
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const textosPasos = {
+        pasoSelector1: {
+            1: 'Limpia los ajos tiernos retirando las raíces y la parte verde más oscura. Lávalos, sécalos con papel de cocina y córtalos en rodajas no demasiado finas.',
+            2: 'Limpia los champiñones eliminando la parte terrosa del tallo. Lávalos rápidamente bajo el grifo, sin sumergirlos para que no absorban agua. Sécalos muy bien con papel de cocina y córtalos en láminas.',
+            3: 'Lava el perejil y sécalo. Reserva unas hojas para decorar el plato al final y pica finas las demás. Casca los huevos en un cuenco, salpimiéntalos y aromatiza con el perejil picado. Bátelos ligeramente con las varillas manuales.',
+            4: 'Pon al fuego una sartén con el aceite y cuando esté bien caliente, añade los ajetes y los champiñones. Salpimienta y saltéalos unos 5 minutos, removiendo de vez en cuando con una cuchara de madera.',
+            5: 'Incorpora la mezcla de huevos y prosigue la cocción, sin dejar de remover, hasta que empiecen a cuajarse; deben quedar melosos. Reparte el revuelto en platos o cazuelitas, decóralo con el perejil reservado y sírvelo en seguida.',
+        },
+        pasoSelector2: {
+            1: 'Comienza por precalentar el horno a 175ºC. Los burritos se pueden cocinar también en la freidora de aire. Pon una cucharada de aceite de oliva en una sartén a fuego medio. Cuando esté caliente pon a pochar la cebolla picada y sofríe hasta que esté tierna. Añade el ajo laminado y cocina durante un minuto más.',
+            2: 'Cuando el sofrito de cebolla y ajo esté listo, añade el pollo troceado, pon una pizca de sal y pimienta y cocina. Agrega el zumo de limón y termina de hacer.',
+            3: 'Extiende una tortilla de trigo, pon encima la mezcla de pollo que has cocinado y cubre con queso cheddar. Enrolla el burrito con cuidado y ponlo en una fuente de horno. Haz lo mismo con el resto.',
+            4: 'Espolvorea sobre los burritos un poco más de queso cheddar y una pizca de cilantro picado, y hornéalos durante 15 minutos, hasta que el queso se derrita.',
+            5: 'Una vez horneados los burritos, sírvelos acompañados de crema agria o salsa picante, o ambas.',
+        },
+        pasoSelector3: {
+            1: 'Lava, despunta y corta el calabacín en daditos. Pela y pica el ajo. Calienta la mantequilla en una sartén y sofríe ambos un par de minutos. Agrega la harina y dórala ligeramente durante 1 minuto. Vierte la leche caliente y cuece, sin dejar de remover, hasta que espese.',
+            2: 'Vierte la preparación en una fuente y deja que se entibie. Añade el queso cortado en daditos, unas hojitas de albahaca lavada y picada y salpimienta, remueve y extiende bien la masa. Déjala reposar durante 4 horas en la nevera.',
+            3: 'Forma las croquetas, pásalas por el huevo batido y el pan rallado y fríelas en abundante aceite caliente hasta que se doren. Escúrrelas y sírvelas con un poco más de albahaca.'
+        },
+        pasoSelector4: {
+            1: 'Pela la cebolla y las zanahorias, y trocéalas. Rehoga la primera en la mantequilla durante 2 minutos.',
+            2: 'Añade la zanahoria, espolvorea con la harina, vierte el caldo, salpimenta y cuece durante 10 minutos.',
+            3: 'Pica los piñones y mézclalos con el queso. Forma los crujientes de queso fundiendo 4 cucharadas de la mezcla en una sartén. Haz 8 crujientes.',
+            4: 'Tritura la verdura, añade el zumo de las naranjas y la nata a la crema de zanahoria, ajusta de sal y remueve.',
+            5: 'Reparte la crema en 4 cuencos y sírvela decorada con los crujientes de queso y piñones.'
+        },
+        pasoSelector5: {
+            1: 'Lava bien las patatas, sécalas y pínchalas varias veces con la punta de un cuchillo. Envuélvelas en film o cúbrelas con una tapa apta para microondas y cuécelas durante 4 minutos.',
+            2: 'Dales la vuelta y prosigue la cocción 3-5 minutos, según el tipo de patata y de su tamaño. Retíralas y espera a que se templen.',
+            3: 'En una sartén, pon 1 cucharada de aceite y caliéntalo. Añade la carne picada y saltéala un par de minutos, sin dejar de remover para que quede suelta.',
+            4: 'Añade el tomate frito, salpimienta al gusto y mezcla.',
+            5: 'Limpia los champiñones, lávalos, sécalos y córtalos en láminas finas.',
+            6: 'Corta las patatas por la mitad a lo largo; retírales un poco de la pulpa con una cucharita y mézclala con el sofrito de carne y tomate.',
+            7: 'Salpimienta el interior de las patatas y rellénalas con la preparación anterior. Reparte por encima las láminas de champiñón y ralla el queso curado sobre ellas.',
+            8: 'Precalienta el horno a 180 °C, coloca dentro las patatas y caliéntalas 2 o 3 minutos, hasta que el queso se funda. Decora con el tomillo, lavado y troceado, y sirve.' 
+        }
+    };
+
     const selectores = document.getElementsByClassName('pasoSelector');
 
-    for (let i =  0; i < selectores.length; i++) {
-        selectores[i].addEventListener('change', function() {
-            const pasoSeleccionado = this.value;
+    for (let i = 0; i < selectores.length; i++) {
+        selectores[i].addEventListener('change', function () {
             const idSelector = this.id;
-            const textoPaso = document.getElementById(idSelector === 'pasoSelector1' ? 'Texto-De-Opcion' : 'Texto-De-Opcion2');
+            const pasoSeleccionado = this.value;
+            const textoPaso = document.getElementById('Texto-De-Opcion' + idSelector.replace('pasoSelector', ''));
 
-            if (idSelector === 'pasoSelector1') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = 'Aplastamos con un tenedor 2 plátanos maduros hasta conseguir una textura de puré con pocos grumos.';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Ponemos el puré de plátano en un bol y le añadimos 1 huevo, media cucharadita de canela en polvo, una pizca de sal y 10 g de impulsor químico. Vertemos también 50 ml de leche de avena sin azúcar y mezclamos todo muy bien.';
-                        break;
-                    case '3':
-                        textoPaso.textContent = 'Con la masa anterior bien mezclada, añadimos 100 g de harina de avena y volvemos a mezclar.';
-                        break;
-                    case '4':
-                        textoPaso.textContent = 'Preparamos una sartén plana con un poco de aceite que podremos untar con una brocha o un trozo de papel (añadir aceite es opcional, las tortitas pueden hacerse sin aceite). Llevamos la sartén al fuego y esperamos hasta que esté caliente. Vertemos una cuchara grande de la masa.';
-                        break;
-                    case '5':
-                        textoPaso.textContent = 'Dejamos que se haga la tortita por un lado durante unos segundos, el fuego no debe estar muy alto o se nos quemarán. Sabremos que están bien hechas por el lado en que las cocinamos primero, cuando veamos salir burbujas de la masa. Entonces le damos la vuelta y dejamos que se cocine por el otro lado. Seguimos haciendo más tortitas.';
-                        break;
-                    case '6':
-                        textoPaso.textContent = 'Servimos las tortitas recién hechas con plátano en rodajas y sirope de agave. También podemos guardarlas en la nevera durante un par de días y calentarlas un poco en el microondas o el horno antes de comerlas.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            } else if (idSelector === 'pasoSelector2') {
-                switch (pasoSeleccionado) {
-                    case '1':
-                        textoPaso.textContent = '';
-                        break;
-                    case '2':
-                        textoPaso.textContent = 'Has seleccionado el Paso 2. Aquí está la información correspondiente al Paso 2.';
-                        break;
-                    default:
-                        textoPaso.textContent = ''; // Limpiar el texto si no hay selección
-                }
-            }
+            if (!textoPaso) return;
+
+            // Buscamos el texto correspondiente al paso y lo mostramos
+            const texto = textosPasos[idSelector]?.[pasoSeleccionado] || '';
+            textoPaso.textContent = texto;
         });
     }
 });
+
 
 // Log in
 
