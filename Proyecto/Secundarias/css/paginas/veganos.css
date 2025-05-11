@@ -319,67 +319,67 @@ input:checked + label .row .elementos-ingredientes {
 
 /* Imagen cuando el input NO está marcado */
 .card[for="c1"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/concept-of-tasty-food-with-taco-on-yellow-backgrou-2021-12-10-16-42-02-utc-scaled.webp);
     background-position: center;
     background-size: clamp(85%, 100%, 100%) clamp(50%, 100%, 100%);
     transition: background-image 3.5s ease;
 }
 
 .card[for="c2"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Veganos/); /*720 x 1080*/
+    background-image: url(../../../Imagenes/Veganos/th.jpg); /*720 x 1080*/
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c3"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/garbansoooooo.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c4"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/GarbCurry1-800x675.jpeg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 .card[for="c5"]:not(input:checked) {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/principal_5cb62f13ceb97.jpg);
     background-position: center;
     transition: background-image 3.5s ease;
 }
 
 /* Imagen cuando el input está marcado */
 input#c1:checked + label[for="c1"] {
-    background-image: url(../../../Imagenes/Veganos/); 
+    background-image: url(../../../Imagenes/Veganos/concept-of-tasty-food-with-taco-on-yellow-backgrou-2021-12-10-16-42-02-utc-scaled.webp); 
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c2:checked + label[for="c2"] {
-    background-image: url(../../../Imagenes/Veganos/); /*1792 x 1024*/
+    background-image: url(../../../Imagenes/Veganos/th.jpg); /*1792 x 1024*/
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c3:checked + label[for="c3"] {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/garbansoooooo.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c4:checked + label[for="c4"] {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/GarbCurry1-800x675.jpeg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
 }
 
 input#c5:checked + label[for="c5"] {
-    background-image: url(../../../Imagenes/Veganos/);
+    background-image: url(../../../Imagenes/Veganos/principal_5cb62f13ceb97.jpg);
     background-position: center;
     transition: background-image 1s ease;
     height: 80vh;
